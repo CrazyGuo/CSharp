@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMapConfig>
+  <properties uri="file://DatabaseConfigure/EAS/Config/database.config" />
+  <settings>
+    <setting useStatementNamespaces="false" />
+    <setting cacheModelsEnabled="true" />
+    <setting validateSqlMap="false" />
+    <setting useReflectionOptimizer="true" />
+    <setting commandTimeout="300" />
+  </settings>
+  <providers uri="file://DatabaseConfigure/EAS/Config/providers.config" />
+  <database>
+    <provider name="Oracle" />
+    <dataSource  name="EAS"  connectionString="Data Source= (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST =10.10.10.3)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ORCL)
+    )
+  );User ID=hs;Password=aaaaaa;Persist Security Info=True"/>
+  </database>
+  <typeHandlers>
+  </typeHandlers>
+  <sqlMaps>
+    <sqlMap uri="file://DatabaseConfigure/EAS/MapperSql/sql.xml" />
+  </sqlMaps>
+</sqlMapConfig>

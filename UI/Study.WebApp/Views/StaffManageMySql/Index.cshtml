@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutTab.cshtml";  
+} 
+<div id="tb" style="padding:2px 5px;">
+		Date From: <input id="birthBegin" class="easyui-datebox" style="width:110px">
+		To: <input id="birthEnd" class="easyui-datebox" style="width:110px">
+		Sex: 
+		<select class="easyui-combobox" panelHeight="auto" style="width:100px">
+			<option value="0">男</option>
+			<option value="1">女</option>
+		</select>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="doSearch()">Search</a>
+	</div>
+<table id="List"></table>
+<script type="text/javascript">
+    $(function () {      
+        $('#List').datagrid({
+            url: '/StaffManage/GetStaffs',
+            toolbar: '#tb',
+            queryParams: GetParameters(),
+            methord: 'post',
+            height: $(window).height(),
+            fitColumns: true,
+            sortName: 'STAFF_NAME',
+            sortOrder: 'desc',
+            idField: 'STAFF_CARD_NO',
+            pagination: true,
+            striped: true, //奇偶行是否区分
+            singleSelect: true,//单选模式
+            rownumbers: true,//行号
+            columns: [[
+                { field: 'STAFF_NAME', title: 'ID', align: 'center' },
+                { field: 'STAFF_CARD_NO', title: '名称', width: 120, align: 'center' },
+                { field: 'HOME_ADDRESS', title: '年龄', width: 80, align: 'center' },
+                { field: 'STAFF_BIRTH', title: '生日', width: 80, align: 'center' },
+                { field: 'STAFF_PHONE', title: '照片', align: 'center' },
+                { field: 'GRADUATION_SCHOOL', title: '说明', width: 60, align: 'center' }
+            ]],
+            onLoadSuccess: function (data) {
+                totalCount = data.total;
+            }
+        });
+        //设置分页控件 
+        var p = $('#List').datagrid('getPager');
+        $(p).pagination({
+            pageSize: 10,//每页显示的记录条数，默认为10 
+            pageList: [5, 10, 15],//可以设置每页记录条数的列表 
+            beforePageText: '第',//页数文本框前显示的汉字 
+            afterPageText: '页    共 {pages} 页',
+            displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录'
+        });
+    });
+
+    function GetParameters() {
+        var p = {
+            birthBegin: $("#birthBegin").datebox("getValue"),
+            birthEnd: $("#birthEnd").datebox("getValue")
+        };
+        return p;
+    }
+
+    function doSearch() {
+        $('#List').datagrid('load', GetParameters());
+    }
+</script>

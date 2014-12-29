@@ -1,0 +1,7 @@
+﻿1.由数据库表生成实体类 Table--->Entity
+Entity注册到XML中
+2.生成SQL语句 到 XML中
+3.写Service业务层
+4.Contoller
+5.View 页面
+6. EasyUI代码

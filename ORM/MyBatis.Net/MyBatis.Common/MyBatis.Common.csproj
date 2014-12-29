@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3120646D-7DF1-46A7-A516-15602C509E0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyBatis.Common</RootNamespace>
+    <AssemblyName>MyBatis.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\External-Bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\AbstractConfiguration.cs" />
+    <Compile Include="Configuration\ConfigurationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\IConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\MutableConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Assert.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\AndConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\AnythingConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\AssignableFromConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\BaseConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\CompositeConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\ContainsConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\EmptyConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\EqualConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\EventFromConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\GreaterThanConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\Is.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\LessThanConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\LikeConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\NegationBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\NotConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\OrConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\SameAs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Constraints\TypeOfConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Contract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\ContractMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Ensure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Exceptions\AssertionException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Exceptions\DesignByContractException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Exceptions\InvariantException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Exceptions\PostConditionException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Exceptions\PreConditionException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contracts\Require.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataSourceDeSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\IDataSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\IDbProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\ProviderDeSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\ProviderSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SqliteDbProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SqlServerDbProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\ConfigurationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\ForeignKeyException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\IbatisException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\ProbeException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\ResourceException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\ConfigurationSectionHandler.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\ILoggerFactoryAdapter.cs" />
+    <Compile Include="Logging\Impl\AbstractLogger.cs" />
+    <Compile Include="Logging\Impl\ConsoleOutLogger.cs" />
+    <Compile Include="Logging\Impl\ConsoleOutLoggerFA.cs" />
+    <Compile Include="Logging\Impl\NoOpLogger.cs" />
+    <Compile Include="Logging\Impl\NoOpLoggerFA.cs" />
+    <Compile Include="Logging\Impl\TraceLogger.cs" />
+    <Compile Include="Logging\Impl\TraceLoggerFA.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="Logging\LogSetting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AbstractResource.cs" />
+    <Compile Include="Resources\AssemblyResource.cs" />
+    <Compile Include="Resources\AssemblyResourceLoader.cs" />
+    <Compile Include="Resources\CustomUriBuilder.cs" />
+    <Compile Include="Resources\FileResource.cs" />
+    <Compile Include="Resources\FileResourceLoader.cs" />
+    <Compile Include="Resources\FileResourceLoadEventArgs.cs" />
+    <Compile Include="Resources\IResource.cs" />
+    <Compile Include="Resources\IResourceLoader.cs" />
+    <Compile Include="Resources\ResourceLoaderRegistry.cs" />
+    <Compile Include="Resources\Resources.cs" />
+    <Compile Include="Resources\StaticContentResource.cs" />
+    <Compile Include="Resources\UrlResource.cs" />
+    <Compile Include="Resources\UrlResourceLoader.cs" />
+    <Compile Include="Utilities\ConfigWatcherHandler.cs" />
+    <Compile Include="Utilities\HashCodeProvider.cs" />
+    <Compile Include="Utilities\Objects\AbstractFactory.cs" />
+    <Compile Include="Utilities\Objects\ActivatorFactory.cs" />
+    <Compile Include="Utilities\Objects\ActivatorObjectFactory.cs" />
+    <Compile Include="Utilities\Objects\BoxingOpCodes.cs" />
+    <Compile Include="Utilities\Objects\DelegateFactory.cs" />
+    <Compile Include="Utilities\Objects\DelegateObjectFactory.cs" />
+    <Compile Include="Utilities\Objects\EmitObjectFactory.cs" />
+    <Compile Include="Utilities\Objects\FactoryBuilder.cs" />
+    <Compile Include="Utilities\Objects\FactoryLogAdapter.cs" />
+    <Compile Include="Utilities\Objects\IFactory.cs" />
+    <Compile Include="Utilities\Objects\IObjectFactory.cs" />
+    <Compile Include="Utilities\Objects\Members\AccessorFactory.cs" />
+    <Compile Include="Utilities\Objects\Members\BaseAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\DelegateGetFieldAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\DelegatePropertyGetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\DelegatePropertySetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\DelegateSetFieldAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\EmitFieldGetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\EmitFieldSetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\EmitPropertyGetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\EmitPropertySetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\GetAccessorFactory.cs" />
+    <Compile Include="Utilities\Objects\Members\IAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\IGet.cs" />
+    <Compile Include="Utilities\Objects\Members\IGetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\IGetAccessorFactory.cs" />
+    <Compile Include="Utilities\Objects\Members\ISet.cs" />
+    <Compile Include="Utilities\Objects\Members\ISetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\ISetAccessorFactory.cs" />
+    <Compile Include="Utilities\Objects\Members\ReflectionFieldGetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\ReflectionFieldSetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\ReflectionPropertyGetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\ReflectionPropertySetAccessor.cs" />
+    <Compile Include="Utilities\Objects\Members\SetAccessorFactory.cs" />
+    <Compile Include="Utilities\Objects\ObjectFactory.cs" />
+    <Compile Include="Utilities\Objects\ObjectProbe.cs" />
+    <Compile Include="Utilities\Objects\ReflectionInfo.cs" />
+    <Compile Include="Utilities\ReadOnlyDictionary.cs" />
+    <Compile Include="Utilities\ReadOnlyICollection.cs" />
+    <Compile Include="Utilities\ScriptRunner.cs" />
+    <Compile Include="Utilities\StringTokenizer.cs" />
+    <Compile Include="Utilities\TypesResolver\CachedTypeResolver.cs" />
+    <Compile Include="Utilities\TypesResolver\ITypeResolver.cs" />
+    <Compile Include="Utilities\TypesResolver\TypeRegistry.cs" />
+    <Compile Include="Utilities\TypesResolver\TypeResolver.cs" />
+    <Compile Include="Utilities\TypeUtils.cs" />
+    <Compile Include="Xml\NodeUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\MyBatis.Common.dll" />
+    <Content Include="bin\Debug\MyBatis.Common.pdb" />
+    <Content Include="obj\Debug\MyBatis.Common.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MyBatis.Common.dll" />
+    <Content Include="obj\Debug\MyBatis.Common.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
