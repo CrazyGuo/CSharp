@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/46/trunk/src/MyBatis.Common/Utilities/TypesResolver
+END
+CachedTypeResolver.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/42/trunk/src/MyBatis.Common/Utilities/TypesResolver/CachedTypeResolver.cs
+END
+ITypeResolver.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/42/trunk/src/MyBatis.Common/Utilities/TypesResolver/ITypeResolver.cs
+END
+TypeResolver.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/46/trunk/src/MyBatis.Common/Utilities/TypesResolver/TypeResolver.cs
+END
+TypeRegistry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/42/trunk/src/MyBatis.Common/Utilities/TypesResolver/TypeRegistry.cs
+END

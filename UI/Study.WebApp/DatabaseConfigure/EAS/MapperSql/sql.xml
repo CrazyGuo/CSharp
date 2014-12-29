@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="WH.Moddle" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="Menu" type="Study.Entity.Common.Menu, Study.Entity"/>
+    <typeAlias alias="Staff" type="Study.Entity.Staff, Study.Entity"/>
+  </alias>
+  <statements>
+    <select id="qStaff" resultClass="int" >
+      select count(*)
+      from t_sm_purorder
+    </select>    
+  </statements>
+</sqlMap>
+

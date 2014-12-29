@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            var dt = new Ext.form.DateField({
+                fieldLabel: '日期',
+                emptyText: '请选择日期',
+                format: 'Y-m-d',
+                disabledDays: [0, 6]
+            });
+            dt.render('dt');
+            var time = new Ext.form.TimeField({
+                fieldLabel: '时间',
+                emptyText: '请选择时间',
+                //minValue:'12:00',
+                // maxValue:'11:00',
+                increment: 10
+            });
+            time.render('time');
+        });
+    </script>
