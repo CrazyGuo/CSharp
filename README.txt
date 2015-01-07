@@ -7,3 +7,4 @@
 1.Mybatis.Net ORM 框架,已配置好SQL Server,Oracle,MySql,MongoDB数据库
 2.网站主要使用Asp.net MVC5
 3.前端技术主要使用EasyUI
+4.Html解析
