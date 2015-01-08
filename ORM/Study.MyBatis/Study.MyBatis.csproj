@@ -50,9 +50,9 @@
     <Compile Include="MyBatisSingleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\BaseService.cs" />
-    <Compile Include="Service\MainDBService.cs" />
-    <Compile Include="DataMapperExtension.cs" />
     <Compile Include="Service\MySqlService.cs" />
+    <Compile Include="Service\SqlServerSevice.cs" />
+    <Compile Include="DataMapperExtension.cs" />
     <Compile Include="Service\OracleService.cs" />
     <Compile Include="XmlConvertClass.cs" />
   </ItemGroup>
