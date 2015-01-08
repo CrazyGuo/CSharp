@@ -43,3 +43,4 @@ C:\work\CrazyCSharp\ORM\MyBatis.Net\MyBatis.Common\bin\Debug\MyBatis.Common.dll
 C:\work\CrazyCSharp\ORM\MyBatis.Net\MyBatis.Common\bin\Debug\MyBatis.Common.pdb
 C:\work\CrazyCSharp\ORM\MyBatis.Net\MyBatis.Common\obj\Debug\MyBatis.Common.dll
 C:\work\CrazyCSharp\ORM\MyBatis.Net\MyBatis.Common\obj\Debug\MyBatis.Common.pdb
+C:\work\CrazyCSharp\ORM\MyBatis.Net\MyBatis.Common\obj\Debug\MyBatis.Common.csprojResolveAssemblyReference.cache

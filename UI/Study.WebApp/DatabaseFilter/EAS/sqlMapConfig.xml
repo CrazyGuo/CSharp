@@ -12,7 +12,7 @@
   <database>
     <provider name="Oracle" />
     <dataSource  name="EAS"  connectionString="Data Source= (DESCRIPTION =
-    (ADDRESS = (PROTOCOL = TCP)(HOST =10.10.10.3)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST =192.168.80.6)(PORT = 1521))
     (CONNECT_DATA =
       (SERVER = DEDICATED)
       (SERVICE_NAME = ORCL)
