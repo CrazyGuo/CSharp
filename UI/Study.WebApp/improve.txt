@@ -5,3 +5,4 @@ Entity注册到XML中
 4.Contoller
 5.View 页面
 6. EasyUI代码
+7.
