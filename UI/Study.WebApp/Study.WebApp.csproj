@@ -501,6 +501,7 @@
     <Content Include="Scripts\jquery.easyui.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.tree.js" />
+    <Content Include="test.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
