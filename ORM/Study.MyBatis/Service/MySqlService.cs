@@ -7,6 +7,7 @@ namespace Study.MyBatis.Service
     {
         public IDataMapper DataMapper;
         private ISession Session;
+
         public MySqlService()
         {
             DataMapper = MyBatisSingleton.GetDatabaseMapper("OA");
