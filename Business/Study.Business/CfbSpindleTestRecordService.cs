@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Study.Business
 {
-   public class CfbSpindleTestRecordService : MainDBService
+   public class CfbSpindleTestRecordService : SqlServerService
     {
        public IList<double> GetRecords()
        {

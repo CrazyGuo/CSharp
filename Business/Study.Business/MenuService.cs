@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Study.Business
 {
-    public class MenuService : MainDBService
+    public class MenuService : SqlServerService
     {
         public IList<Menu> GetMenus(string Id)
         {

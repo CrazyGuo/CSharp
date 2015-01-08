@@ -3,11 +3,11 @@ using MyBatis.DataMapper.Session;
 
 namespace Study.MyBatis.Service
 {
-    public abstract class MainDBService : BaseService
+    public abstract class SqlServerService : BaseService
     {
         public IDataMapper DataMapper;
         private ISession Session;
-        public MainDBService()
+        public SqlServerService()
         {
             DataMapper = MyBatisSingleton.GetDatabaseMapper("PTS");
             Session = MyBatisSingleton.GetTransaction("PTS");            

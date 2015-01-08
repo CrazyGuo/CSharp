@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Study.Business
 {
-    public class StaffService : MainDBService
+    public class StaffService : SqlServerService
     {
         public IList<Staff> GetStaffs(int page, int rows,string birthBegin, string birthEnd, ref int totalCount)
         {
