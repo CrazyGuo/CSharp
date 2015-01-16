@@ -6,6 +6,7 @@ using MongoDB;
 using MongoDB.Configuration;
 using MongoDB.GridFS;
 using System.Linq.Expressions;
+using System.IO;
 
 namespace Study.MongoDB.Core
 {
@@ -97,10 +98,24 @@ namespace Study.MongoDB.Core
         {
             mongo.Disconnect();
         }
-    
-        public void InsertFile()
+
+        public void InsertFile(string filename)
         {
-             
+            byte[] byteImg = File.ReadAllBytes(filename); 
+            GridFile gridFile = new GridFile(mongoDatabase);
+            using (GridFileStream gfs = gridFile.Create(filename))
+            {
+                gfs.Write(byteImg, 0, byteImg.Length);
+            }
         }
+
+        private byte[] GridFsRead(string filename)
+        {
+            GridFile gridFile = new GridFile(mongoDatabase);
+            GridFileStream gridFileStream = gridFile.OpenRead(filename);
+            byte[] bytes = new byte[gridFileStream.Length];
+            gridFileStream.Read(bytes, 0, bytes.Length);
+            return bytes;
+        }  
    }
 }
