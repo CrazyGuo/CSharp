@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MongoDB;
 using MongoDB.Configuration;
+using MongoDB.GridFS;
 using System.Linq.Expressions;
 
 namespace Study.MongoDB.Core
@@ -13,18 +14,15 @@ namespace Study.MongoDB.Core
         Document doc = new Document();
         private string connectionString = "mongodb://localhost";
         private string databaseName = "myDatabase";
-        private string collectionName = "hr_staff_info";
         private Mongo mongo;
         private MongoDatabase mongoDatabase;
-        public MongoCollection<T> mongoCollection;
+        public IMongoCollection<T> mongoCollection;
 
         public Repository()
         {
-            Type t = typeof(T);
-            string name= t.Name;
             mongo = GetMongo(); 
             mongoDatabase = mongo.GetDatabase(databaseName) as MongoDatabase;
-            mongoCollection = mongoDatabase.GetCollection<T>(collectionName) as MongoCollection<T>;
+            mongoCollection= mongoDatabase.GetCollection<T>();
         }
 
         private Mongo GetMongo()
@@ -99,5 +97,10 @@ namespace Study.MongoDB.Core
         {
             mongo.Disconnect();
         }
-    }
+    
+        public void InsertFile()
+        {
+             
+        }
+   }
 }

@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study.DevExpress", "UI\Stud
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBatisQueryGenerator", "UI\IBatisQueryGenerator\WindowsApplication01\IBatisQueryGenerator.csproj", "{142F2954-15B5-4CA7-A0F7-D79CEDF796B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.GridFS", "NoSQL\MongoDB.GridFS\MongoDB.GridFS.csproj", "{B42DBBF9-0A1F-4749-9787-013BF8D8F435}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{142F2954-15B5-4CA7-A0F7-D79CEDF796B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{142F2954-15B5-4CA7-A0F7-D79CEDF796B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{142F2954-15B5-4CA7-A0F7-D79CEDF796B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B42DBBF9-0A1F-4749-9787-013BF8D8F435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42DBBF9-0A1F-4749-9787-013BF8D8F435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42DBBF9-0A1F-4749-9787-013BF8D8F435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42DBBF9-0A1F-4749-9787-013BF8D8F435}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,5 +165,6 @@ Global
 		{55D5DB5D-1597-47DB-960D-6F47FB102757} = {8BADB68D-53C9-4B16-8F09-B62E994EFCBF}
 		{85A7B068-0EDB-4CCE-8E23-1BAF51B4CB53} = {8BADB68D-53C9-4B16-8F09-B62E994EFCBF}
 		{142F2954-15B5-4CA7-A0F7-D79CEDF796B7} = {8BADB68D-53C9-4B16-8F09-B62E994EFCBF}
+		{B42DBBF9-0A1F-4749-9787-013BF8D8F435} = {F232DFDC-8360-4C61-9A45-DAC907E7D143}
 	EndGlobalSection
 EndGlobal

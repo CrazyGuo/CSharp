@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MongoDB.GridFS\MongoDB.GridFS.csproj">
+      <Project>{b42dbbf9-0a1f-4749-9787-013bf8d8f435}</Project>
+      <Name>MongoDB.GridFS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MongoDB\MongoDB.csproj">
       <Project>{b125bba6-bffd-44fa-9254-9b1754cd8af3}</Project>
       <Name>MongoDB</Name>
