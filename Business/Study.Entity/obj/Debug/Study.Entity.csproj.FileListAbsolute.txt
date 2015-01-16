@@ -1,0 +1,8 @@
+C:\develop\project\CurrentWork\OPCDialog\Study.Entity\bin\Debug\Study.Entity.dll
+C:\develop\project\CurrentWork\OPCDialog\Study.Entity\bin\Debug\Study.Entity.pdb
+C:\develop\project\CurrentWork\OPCDialog\Study.Entity\obj\Debug\Study.Entity.dll
+C:\develop\project\CurrentWork\OPCDialog\Study.Entity\obj\Debug\Study.Entity.pdb
+C:\work\CrazyCSharp\Business\Study.Entity\bin\Debug\Study.Entity.dll
+C:\work\CrazyCSharp\Business\Study.Entity\bin\Debug\Study.Entity.pdb
+C:\work\CrazyCSharp\Business\Study.Entity\obj\Debug\Study.Entity.dll
+C:\work\CrazyCSharp\Business\Study.Entity\obj\Debug\Study.Entity.pdb

@@ -1,0 +1,8 @@
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\bin\Debug\MongoDB.GridFS.xml
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\bin\Debug\MongoDB.GridFS.dll
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\bin\Debug\MongoDB.GridFS.pdb
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\bin\Debug\MongoDB.dll
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\bin\Debug\MongoDB.pdb
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\obj\Debug\MongoDB.GridFS.csprojResolveAssemblyReference.cache
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\obj\Debug\MongoDB.GridFS.dll
+C:\work\CrazyCSharp\NoSQL\MongoDB.GridFS\obj\Debug\MongoDB.GridFS.pdb

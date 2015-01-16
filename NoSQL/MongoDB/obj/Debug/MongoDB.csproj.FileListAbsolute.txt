@@ -1,0 +1,6 @@
+C:\develop\project\CurrentWork\OPCDialog\MongoDB\bin\Debug\MongoDB.xml
+C:\develop\project\CurrentWork\OPCDialog\MongoDB\bin\Debug\MongoDB.dll
+C:\develop\project\CurrentWork\OPCDialog\MongoDB\bin\Debug\MongoDB.pdb
+C:\develop\project\CurrentWork\OPCDialog\MongoDB\obj\Debug\MongoDB.csprojResolveAssemblyReference.cache
+C:\develop\project\CurrentWork\OPCDialog\MongoDB\obj\Debug\MongoDB.dll
+C:\develop\project\CurrentWork\OPCDialog\MongoDB\obj\Debug\MongoDB.pdb

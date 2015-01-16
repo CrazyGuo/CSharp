@@ -1,0 +1,9 @@
+C:\develop\project\CurrentWork\OPCDialog\NetUtility\bin\Debug\NetUtility.dll
+C:\develop\project\CurrentWork\OPCDialog\NetUtility\bin\Debug\NetUtility.pdb
+C:\develop\project\CurrentWork\OPCDialog\NetUtility\obj\Debug\NetUtility.dll
+C:\develop\project\CurrentWork\OPCDialog\NetUtility\obj\Debug\NetUtility.pdb
+C:\work\CrazyCSharp\Tools\NetUtility\bin\Debug\NetUtility.dll
+C:\work\CrazyCSharp\Tools\NetUtility\bin\Debug\NetUtility.pdb
+C:\work\CrazyCSharp\Tools\NetUtility\obj\Debug\NetUtility.csprojResolveAssemblyReference.cache
+C:\work\CrazyCSharp\Tools\NetUtility\obj\Debug\NetUtility.dll
+C:\work\CrazyCSharp\Tools\NetUtility\obj\Debug\NetUtility.pdb

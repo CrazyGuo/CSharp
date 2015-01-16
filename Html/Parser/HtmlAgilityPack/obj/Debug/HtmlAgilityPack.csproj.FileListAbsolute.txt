@@ -1,0 +1,5 @@
+C:\develop\project\CurrentWork\OPCDialog\Html\Parser\HtmlAgilityPack\bin\Debug\HtmlAgilityPack.xml
+C:\develop\project\CurrentWork\OPCDialog\Html\Parser\HtmlAgilityPack\bin\Debug\HtmlAgilityPack.dll
+C:\develop\project\CurrentWork\OPCDialog\Html\Parser\HtmlAgilityPack\bin\Debug\HtmlAgilityPack.pdb
+C:\develop\project\CurrentWork\OPCDialog\Html\Parser\HtmlAgilityPack\obj\Debug\HtmlAgilityPack.dll
+C:\develop\project\CurrentWork\OPCDialog\Html\Parser\HtmlAgilityPack\obj\Debug\HtmlAgilityPack.pdb

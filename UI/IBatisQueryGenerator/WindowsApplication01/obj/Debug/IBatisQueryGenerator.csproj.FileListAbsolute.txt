@@ -1,0 +1,16 @@
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\bin\Debug\WindowsApplication01.exe
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\bin\Debug\WindowsApplication01.pdb
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.csprojResolveAssemblyReference.cache
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\obj\Debug\WindowsApplication01.Form1.resources
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\obj\Debug\WindowsApplication01.Properties.Resources.resources
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.csproj.GenerateResource.Cache
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\obj\Debug\WindowsApplication01.exe
+C:\work\MyBatisAuto\IBatisQueryGenerator\WindowsApplication01\obj\Debug\WindowsApplication01.pdb
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\bin\Debug\IBatisQueryGenerator.exe
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\bin\Debug\IBatisQueryGenerator.pdb
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.csprojResolveAssemblyReference.cache
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.GenerateSQLForm.resources
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.Properties.Resources.resources
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.csproj.GenerateResource.Cache
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.exe
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.pdb

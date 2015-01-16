@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Linq.Expressions;
+using System.Collections.Generic;
 using MongoDB;
 using MongoDB.Configuration;
 using MongoDB.GridFS;
-using System.Linq.Expressions;
-using System.IO;
 
 namespace Study.MongoDB.Core
 {
    public class Repository<T> where T : class
     {
-        Document doc = new Document();
         private string connectionString = "mongodb://localhost";
         private string databaseName = "myDatabase";
         private Mongo mongo;
