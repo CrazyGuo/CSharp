@@ -14,3 +14,4 @@ C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBati
 C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.csproj.GenerateResource.Cache
 C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.exe
 C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\obj\Debug\IBatisQueryGenerator.pdb
+C:\work\CrazyCSharp\UI\IBatisQueryGenerator\WindowsApplication01\bin\Debug\IBatisQueryGenerator.exe.config

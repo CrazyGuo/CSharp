@@ -139,5 +139,12 @@ namespace IBatisQueryGenerator
         {
             getQuery();
         }
+
+        private void BtnGenerateEntity_Click(object sender, EventArgs e)
+        {
+            GenerateEntity ge = new GenerateEntity();
+            string entity = ge.begin(this.cboDbName.Text,this.cboTable.Text);
+            this.rtbResultSql.Text = entity;
+        }
     }
 }

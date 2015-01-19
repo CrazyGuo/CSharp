@@ -57,6 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.BtnGenerateEntity = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -327,11 +328,22 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "密码：";
             // 
+            // BtnGenerateEntity
+            // 
+            this.BtnGenerateEntity.Location = new System.Drawing.Point(328, 375);
+            this.BtnGenerateEntity.Name = "BtnGenerateEntity";
+            this.BtnGenerateEntity.Size = new System.Drawing.Size(108, 42);
+            this.BtnGenerateEntity.TabIndex = 28;
+            this.BtnGenerateEntity.Text = "GenerateEntity";
+            this.BtnGenerateEntity.UseVisualStyleBackColor = true;
+            this.BtnGenerateEntity.Click += new System.EventHandler(this.BtnGenerateEntity_Click);
+            // 
             // GenerateSQLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 472);
+            this.Controls.Add(this.BtnGenerateEntity);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -396,6 +408,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button BtnGenerateEntity;
     }
 }
 
