@@ -75,22 +75,40 @@ namespace IBatisQueryGenerator
 
         private void getQuery()
         {
+            StringBuilder bulider = new StringBuilder();
+            string nodeAppend = "";
             string sql=listBoxQueryKindCd.SelectedItem.ToString();
             SqlOperationType type=SqlOperationType.Select;
             if(sql.Equals("select",StringComparison.OrdinalIgnoreCase))
             {
+                string select="<select id=\"\" parameterClass=\"\" resultClass=\"\"> ";                
+                bulider.Append(select);
+                bulider.Append("\r\n");
+                nodeAppend = @"</select>";
                 type = SqlOperationType.Select;
             }
             else if (sql.Equals("insert", StringComparison.OrdinalIgnoreCase))
             {
+                string insert = "<insert id=\"\" parameterClass=\"\" resultClass=\"\"> ";
+                bulider.Append(insert);
+                bulider.Append("\r\n");
+                nodeAppend = @"</insert>";
                 type = SqlOperationType.Insert;
             }
             else if (sql.Equals("update", StringComparison.OrdinalIgnoreCase))
             {
+                string update = "<update id=\"\" parameterClass=\"\" resultClass=\"\"> ";
+                bulider.Append(update);
+                bulider.Append("\r\n");
+                nodeAppend = @"</update>";
                 type = SqlOperationType.Update;
             }
             else if (sql.Equals("delete", StringComparison.OrdinalIgnoreCase))
             {
+                string delete = "<delete id=\"\" parameterClass=\"\" resultClass=\"\"> ";
+                bulider.Append(delete);
+                bulider.Append("\r\n");
+                nodeAppend = @"</delete>";
                 type = SqlOperationType.Delete;
             }
             try
@@ -103,8 +121,10 @@ namespace IBatisQueryGenerator
                     int.Parse(txtNColKor.Text),
                     type,
                     chkComment.Checked);
-
-                rtbResultSql.Text = result;
+                bulider.Append(result);
+                bulider.Append("\r\n");
+                bulider.Append(nodeAppend);
+                rtbResultSql.Text = bulider.ToString();
             }
 
             catch (MyException my)
