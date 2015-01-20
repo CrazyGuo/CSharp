@@ -4,10 +4,11 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Collections;
 using System.Data;
+using System.Linq;
 
 namespace IBatisQueryGenerator
 {
-    class EntConnection
+    public class EntConnection
     {
         private SqlConnection conn;
         private IEntQueryByProject query;
@@ -17,7 +18,6 @@ namespace IBatisQueryGenerator
             this.query = query;
             this.conn = new SqlConnection(query.getConnectionInfo().ToString());
         }
-
 
         public ArrayList getSchemaList()
         {
@@ -29,12 +29,10 @@ namespace IBatisQueryGenerator
             return getList(this.query.getTableQuery(schemaName));
         }
 
-
         public DataTable getColumnList(string tableName, bool upperYn)
         {
             return getColumnList(this.query.getColumnQuery(tableName, upperYn));
         }
-
 
         private ArrayList getList(StringBuilder sbQuery)
         {
@@ -76,7 +74,6 @@ namespace IBatisQueryGenerator
 
             return list;
         }
-
 
         private DataTable getColumnList(StringBuilder sbQuery)
         {
@@ -139,15 +136,53 @@ namespace IBatisQueryGenerator
             return dt;
         }
 
-
         public void close()
         {
             Console.WriteLine("Close()");
             this.conn.Close();
         }
 
+        #region Generate EntityClass
+        private DataTable GetDataTable(string commandText, params SqlParameter[] parms)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                SqlCommand command = conn.CreateCommand();
+                command.CommandText = commandText;
+                command.Parameters.AddRange(parms);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return dt;
+        }
 
-
-
+        public  List<DbColumn> GetDbColumns(string sql, string database, string tableName, string schema = "dbo")
+        {
+            SqlParameter param = new SqlParameter("@tableName", SqlDbType.NVarChar, 100) { Value = string.Format("{0}.{1}.{2}", database, schema, tableName) };
+            DataTable dt = GetDataTable(sql, param);
+            return dt.Rows.Cast<DataRow>().Select(row => new DbColumn()
+            {
+                ColumnID = (int)row["ColumnID"],
+                IsPrimaryKey = (bool)row["IsPrimaryKey"],
+                ColumnName = row["ColumnName"].ToString(),
+                ColumnType = row["ColumnType"].ToString(),
+                IsIdentity = (bool)row["IsIdentity"],
+                IsNullable = (bool)row["IsNullable"],
+                ByteLength = (int)row["ByteLength"],
+                CharLength = (int)row["CharLength"],
+                Scale = (int)row["Scale"],
+                Remark = row["Remark"].ToString()
+            }).ToList();
+        }
+        #endregion      
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IBatisQueryGenerator
 {
-    interface IEntQueryByProject
+   public interface IEntQueryByProject
     {
         StringBuilder getConnectionInfo();
         StringBuilder getSchemaQuery();
