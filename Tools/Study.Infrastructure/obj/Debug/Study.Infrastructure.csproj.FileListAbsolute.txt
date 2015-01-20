@@ -1,4 +1,0 @@
-C:\develop\project\CurrentWork\OPCDialog\Study.Infrastructure\bin\Debug\Study.Infrastructure.dll
-C:\develop\project\CurrentWork\OPCDialog\Study.Infrastructure\bin\Debug\Study.Infrastructure.pdb
-C:\develop\project\CurrentWork\OPCDialog\Study.Infrastructure\obj\Debug\Study.Infrastructure.dll
-C:\develop\project\CurrentWork\OPCDialog\Study.Infrastructure\obj\Debug\Study.Infrastructure.pdb

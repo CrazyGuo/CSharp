@@ -78,6 +78,7 @@
     <Compile Include="ConnectionMSSQL2000.cs" />
     <Compile Include="ConvertGridToIBatisQuery.cs" />
     <Compile Include="CombineSelectQuery.cs" />
+    <Compile Include="DbColumn.cs" />
     <Compile Include="EntConnection.cs" />
     <Compile Include="GenerateEntity.cs" />
     <Compile Include="GenerateSQLForm.cs">
@@ -99,6 +100,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlOperationType.cs" />
+    <Compile Include="SqlServerDbTypeMap.cs" />
     <EmbeddedResource Include="GenerateSQLForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>GenerateSQLForm.cs</DependentUpon>

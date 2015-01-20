@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ItemList>
-  <Item  name="PTS" enable="true" path="\PTS\sqlMapConfig.xml"></Item>
-  <Item name="ProjectOne"  enable="false" path="\ProjectOne\sqlMapConfig.xml"></Item>
-</ItemList>

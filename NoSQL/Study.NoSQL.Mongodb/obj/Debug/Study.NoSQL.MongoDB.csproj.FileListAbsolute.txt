@@ -1,8 +1,0 @@
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\bin\Debug\Study.NoSQL.MongoDB.dll
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\bin\Debug\Study.NoSQL.MongoDB.pdb
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\bin\Debug\MongoDB.dll
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\bin\Debug\MongoDB.pdb
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\bin\Debug\MongoDB.xml
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\obj\Debug\Study.NoSQL.MongoDB.csprojResolveAssemblyReference.cache
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\obj\Debug\Study.NoSQL.MongoDB.dll
-C:\develop\project\CurrentWork\OPCDialog\Study.NoSQL.MongoDB\obj\Debug\Study.NoSQL.MongoDB.pdb
