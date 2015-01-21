@@ -21,7 +21,7 @@ namespace Study.WebApp.Controllers
 
         public JsonResult GetStaffs(int page, int rows, string birthBegin, string birthEnd)
         {
-            Repository<Staff> repository = new Repository<Staff>();
+            MongoDbRemoteRepository<Staff> repository = new MongoDbRemoteRepository<Staff>();
             repository.Connect();
             List<Staff> list = repository.List(i => i.GRADUATION_SCHOOL=="四川大学");
             repository.CloseConnect();
