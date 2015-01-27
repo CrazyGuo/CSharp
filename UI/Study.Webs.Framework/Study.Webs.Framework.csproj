@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C0D1953-51C0-4CA6-A89C-3E41D2F606A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Study.Webs.Framework</RootNamespace>
+    <AssemblyName>Study.Webs.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.Webs.EasyUi\Align.cs" />
+    <Compile Include="Util.Webs.EasyUi\Base\ComponentBase.cs" />
+    <Compile Include="Util.Webs.EasyUi\Base\IComponent.cs" />
+    <Compile Include="Util.Webs.EasyUi\Base\IOption.cs" />
+    <Compile Include="Util.Webs.EasyUi\Base\OptionBase.cs" />
+    <Compile Include="Util.Webs.EasyUi\Buttons\DialogButton.cs" />
+    <Compile Include="Util.Webs.EasyUi\Buttons\IDialogButton.cs" />
+    <Compile Include="Util.Webs.EasyUi\Buttons\ILinkButton.cs" />
+    <Compile Include="Util.Webs.EasyUi\Buttons\ILinkButton`.cs" />
+    <Compile Include="Util.Webs.EasyUi\Buttons\LinkButton.cs" />
+    <Compile Include="Util.Webs.EasyUi\Buttons\LinkButton`.cs" />
+    <Compile Include="Util.Webs.EasyUi\EasyUiAttributeBuilder.cs" />
+    <Compile Include="Util.Webs.EasyUi\EasyUiControllerBase.cs" />
+    <Compile Include="Util.Webs.EasyUi\EasyUiFactory.cs" />
+    <Compile Include="Util.Webs.EasyUi\EasyUiFactory`.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Comboxs\Combox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Comboxs\ComboxItem.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Comboxs\Combox`.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Comboxs\EntityCombox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Comboxs\ICombox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Comboxs\ICombox`.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Comboxs\IEntityCombox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\DataAnnotationsLoader.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Results\EasyUiResult.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\Results\StateCode.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\Combo.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\EntityTextBox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\ICombo.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\IEntityTextBox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\ITextBox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\ITextBox`.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\TextBox.cs" />
+    <Compile Include="Util.Webs.EasyUi\Forms\TextBoxs\TextBox`.cs" />
+    <Compile Include="Util.Webs.EasyUi\Grids\DataGrid.cs" />
+    <Compile Include="Util.Webs.EasyUi\Grids\DataGridColumn.cs" />
+    <Compile Include="Util.Webs.EasyUi\Grids\DataGridResult.cs" />
+    <Compile Include="Util.Webs.EasyUi\Grids\DataGrid`.cs" />
+    <Compile Include="Util.Webs.EasyUi\Grids\IDataGrid.cs" />
+    <Compile Include="Util.Webs.EasyUi\Grids\IDataGridColumn.cs" />
+    <Compile Include="Util.Webs.EasyUi\Grids\IDataGrid`.cs" />
+    <Compile Include="Util.Webs.EasyUi\HtmlHelperExtentions.cs" />
+    <Compile Include="Util.Webs.EasyUi\Layouts\ILayout.cs" />
+    <Compile Include="Util.Webs.EasyUi\Layouts\ILayoutOption.cs" />
+    <Compile Include="Util.Webs.EasyUi\Layouts\IRegionOption.cs" />
+    <Compile Include="Util.Webs.EasyUi\Layouts\Layout.cs" />
+    <Compile Include="Util.Webs.EasyUi\Layouts\LayoutOption.cs" />
+    <Compile Include="Util.Webs.EasyUi\Layouts\RegionOption.cs" />
+    <Compile Include="Util.Webs.EasyUi\Menus\IMenu.cs" />
+    <Compile Include="Util.Webs.EasyUi\Menus\IMenuItem.cs" />
+    <Compile Include="Util.Webs.EasyUi\Menus\Menu.cs" />
+    <Compile Include="Util.Webs.EasyUi\Menus\MenuItem.cs" />
+    <Compile Include="Util.Webs.EasyUi\Services\EasyUiService.cs" />
+    <Compile Include="Util.Webs.EasyUi\Services\IEasyUiService.cs" />
+    <Compile Include="Util.Webs\AttributeBuilder.cs" />
+    <Compile Include="Util.Webs\Attributes\Node.cs" />
+    <Compile Include="Util.Webs\Attributes\NodeItem.cs" />
+    <Compile Include="Util.Webs\ControllerBase.cs" />
+    <Compile Include="Util.Webs\HtmlEscape.cs" />
+    <Compile Include="Util.Webs\Json.cs" />
+    <Compile Include="Util.Webs\JsonAttributeBuilder.cs" />
+    <Compile Include="Util\Conv.cs" />
+    <Compile Include="Util\Enum.cs" />
+    <Compile Include="Util\Extensions.Convert.cs" />
+    <Compile Include="Util\Extensions.Enum.cs" />
+    <Compile Include="Util\Extensions.Expression.cs" />
+    <Compile Include="Util\Extensions.Helper.cs" />
+    <Compile Include="Util\Extensions.Validate.cs" />
+    <Compile Include="Util\Extensions.ValidationAttribute.cs" />
+    <Compile Include="Util\Item.cs" />
+    <Compile Include="Util\Lambda.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\ClassFactory.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\DynamicClass.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\DynamicExpression.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\DynamicOrdering.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\DynamicProperty.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\DynamicQueryable.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\ExpressionParser.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\ParseException.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\Res.cs" />
+    <Compile Include="Util\Lambdas\Dynamics\Signature.cs" />
+    <Compile Include="Util\Lambdas\ExpressionBuilder.cs" />
+    <Compile Include="Util\Lambdas\ParameterRebinder.cs" />
+    <Compile Include="Util\Operator.cs" />
+    <Compile Include="Util\OrderByAttribute.cs" />
+    <Compile Include="Util\Reflection.cs" />
+    <Compile Include="Util\Regex.cs" />
+    <Compile Include="Util\Resource.cs" />
+    <Compile Include="Util\Str.cs" />
+    <Compile Include="Util\Str`.cs" />
+    <Compile Include="Util\Sys.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
