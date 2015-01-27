@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Repository.cs" />
+    <Compile Include="MondodbConfig.cs" />
+    <Compile Include="MongoDBaseService.cs" />
+    <Compile Include="MongoDbLocalRepository.cs" />
+    <Compile Include="MongoDbRemoteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
