@@ -134,13 +134,16 @@ namespace Study.MyBatis
 
         private static IList<T> Page<T>(IMappedStatement mappedStatement, RequestScope request, ISession session, long page, long itemsPerPage, string sql, object paramObject, ref int totalCount)
         {
-            string sqlCount, sqlPage;
+            string sqlCount, sqlPage,oldPreparedSql;
+            oldPreparedSql = request.PreparedStatement.PreparedSql;
             BuildPageQueries(mappedStatement,request, session, (page - 1) * itemsPerPage, itemsPerPage, sql, paramObject, out sqlCount, out sqlPage,ref totalCount, paramObject);
 
+            
             request.PreparedStatement.PreparedSql = sqlPage;
             mappedStatement.PreparedCommand.Create(request, session, mappedStatement.Statement, paramObject);
             //难点三: 此处代码拷贝的MappedStatement的，就是增加了相关参数
             IList<T> result = RunQueryForList<T>(mappedStatement.Statement, request, session, paramObject, null, null);
+            request.PreparedStatement.PreparedSql = oldPreparedSql;
             return result;
         }
 
