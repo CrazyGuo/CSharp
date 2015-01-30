@@ -47,13 +47,13 @@ namespace Study.MyBatis
             }
         }
 
-        public static DataTable RunQueryForDataTableWithPage(this IDataMapper mapper, string tag, object paramObject, string orderby, int beginNo, int endNo, ref int totalCount)
+        public static DataTable RunQueryForDataTableWithPage(this IDataMapper mapper, string tag, object paramObject, string orderby, int willShowedPage, int pageSize, ref int totalCount)
         {
             DataMapper dataMaper = (DataMapper)mapper;
             IMappedStatement mappedStatement = dataMaper.GetMappedStatement(tag);
             using (var sessionScope = new DataMapperLocalSessionScope(mappedStatement.ModelStore.SessionStore, mappedStatement.ModelStore.SessionFactory))
             {
-                return mappedStatement.RunQueryForDataTableWithPage(sessionScope.Session, paramObject, orderby, beginNo, endNo, ref totalCount);
+                return mappedStatement.RunQueryForDataTableWithPage(sessionScope.Session, paramObject, orderby, willShowedPage, pageSize, ref totalCount);
             }
         }   
     }
