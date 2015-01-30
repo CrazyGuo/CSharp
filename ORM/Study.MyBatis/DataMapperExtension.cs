@@ -33,17 +33,17 @@ namespace Study.MyBatis
         /// <param name="tag">SQL Statement的id</param>
         /// <param name="paramObject">参数</param>
         /// <param name="orderby">查询条件，必须确保数据库中有这一列</param>
-        /// <param name="beginNo">开始行数</param>
-        /// <param name="endNo">结束行数</param>
+        /// <param name="willShowedPage">开始行数</param>
+        /// <param name="pageSize">结束行数</param>
         /// <param name="totalCount">总条数</param>
         /// <returns>查询结果</returns>
-        public static IList<T> QueryForListWithPage<T>(this IDataMapper mapper, string tag, object paramObject, string orderby, int beginNo, int endNo, ref int totalCount)
+        public static IList<T> QueryForListWithPage<T>(this IDataMapper mapper, string tag, object paramObject, string orderby, int willShowedPage, int pageSize, ref int totalCount)
         {
             DataMapper dataMaper = (DataMapper)mapper;
             IMappedStatement mappedStatement = dataMaper.GetMappedStatement(tag);
             using (var sessionScope = new DataMapperLocalSessionScope(mappedStatement.ModelStore.SessionStore, mappedStatement.ModelStore.SessionFactory))
             {
-                return mappedStatement.QueryForListWithPage<T>(sessionScope.Session, paramObject, orderby, beginNo, endNo, ref totalCount);
+                return mappedStatement.QueryForListWithPage<T>(sessionScope.Session, paramObject, orderby, willShowedPage, pageSize, ref totalCount);
             }
         }
 

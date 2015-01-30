@@ -27,7 +27,7 @@ namespace Study.MyBatis
         private static Regex rxOrderBy = new Regex(@"\bORDER\s+BY\s+(?:\((?>\((?<depth>)|\)(?<-depth>)|.?)*(?(depth)(?!))\)|[\w\(\)\.])+(?:\s+(?:ASC|DESC))?(?:\s*,\s*(?:\((?>\((?<depth>)|\)(?<-depth>)|.?)*(?(depth)(?!))\)|[\w\(\)\.])+(?:\s+(?:ASC|DESC))?)*", RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.Compiled);
         private static Regex rxDistinct = new Regex(@"\ADISTINCT\s", RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.Compiled);
 
-        public static IList<T> QueryForListWithPage<T>(this IMappedStatement mappedStatement, ISession session, object paramObject, string orderby, int beginNo, int endNo, ref int totalCount)
+        public static IList<T> QueryForListWithPage<T>(this IMappedStatement mappedStatement, ISession session, object paramObject, string orderby, int willShowedPage, int pageSize, ref int totalCount)
         {
             IStatement statement = mappedStatement.Statement;
             //statement.
@@ -35,10 +35,10 @@ namespace Study.MyBatis
             string statementsql = request.PreparedStatement.PreparedSql;
 
             //难点2 改写自PetaPoco
-            return Page<T>(mappedStatement, request, session, beginNo, endNo, statementsql, paramObject,ref totalCount);
+            return Page<T>(mappedStatement, request, session, willShowedPage, pageSize, statementsql, paramObject,ref totalCount);
         }
 
-        public static DataTable RunQueryForDataTableWithPage(this IMappedStatement mappedStatement, ISession session, object paramObject, string orderby, int beginNo, int endNo, ref int totalCount)
+        public static DataTable RunQueryForDataTableWithPage(this IMappedStatement mappedStatement, ISession session, object paramObject, string orderby, int willShowedPage, int pageSize, ref int totalCount)
         {
             IStatement statement = mappedStatement.Statement;
             //statement.
@@ -46,7 +46,7 @@ namespace Study.MyBatis
             string statementsql = request.PreparedStatement.PreparedSql;
 
             //难点2 改写自PetaPoco
-            return DataTablePage(mappedStatement, request, session, beginNo, endNo, statementsql, paramObject, ref totalCount);
+            return DataTablePage(mappedStatement, request, session, willShowedPage, pageSize, statementsql, paramObject, ref totalCount);
         }
 
         private static bool SplitSqlForPaging(string sql, out string sqlCount, out string sqlSelectRemoved, out string sqlOrderBy)
