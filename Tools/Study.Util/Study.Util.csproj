@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70FC7313-B72A-4E28-8AAA-9F5556EC5A57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Study.Util</RootNamespace>
+    <AssemblyName>Study.Util</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conv.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Extensions.Convert.cs" />
+    <Compile Include="Extensions.Enum.cs" />
+    <Compile Include="Extensions.Expression.cs" />
+    <Compile Include="Extensions.Helper.cs" />
+    <Compile Include="Extensions.Validate.cs" />
+    <Compile Include="Extensions.ValidationAttribute.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Lambda.cs" />
+    <Compile Include="Lambdas\Dynamics\ClassFactory.cs" />
+    <Compile Include="Lambdas\Dynamics\DynamicClass.cs" />
+    <Compile Include="Lambdas\Dynamics\DynamicExpression.cs" />
+    <Compile Include="Lambdas\Dynamics\DynamicOrdering.cs" />
+    <Compile Include="Lambdas\Dynamics\DynamicProperty.cs" />
+    <Compile Include="Lambdas\Dynamics\DynamicQueryable.cs" />
+    <Compile Include="Lambdas\Dynamics\ExpressionParser.cs" />
+    <Compile Include="Lambdas\Dynamics\ParseException.cs" />
+    <Compile Include="Lambdas\Dynamics\Res.cs" />
+    <Compile Include="Lambdas\Dynamics\Signature.cs" />
+    <Compile Include="Lambdas\ExpressionBuilder.cs" />
+    <Compile Include="Lambdas\ParameterRebinder.cs" />
+    <Compile Include="Logs\LogLevel.cs" />
+    <Compile Include="Operator.cs" />
+    <Compile Include="OrderByAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection.cs" />
+    <Compile Include="Regex.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="Str.cs" />
+    <Compile Include="Str`.cs" />
+    <Compile Include="Sys.cs" />
+    <Compile Include="Validations\IValidation.cs" />
+    <Compile Include="Validations\IValidationHandler.cs" />
+    <Compile Include="Validations\IValidationRule.cs" />
+    <Compile Include="Validations\ValidationHandler.cs" />
+    <Compile Include="Validations\ValidationResultCollection.cs" />
+    <Compile Include="Warning.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="R.resx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

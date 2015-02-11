@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3253C08-942A-47C3-9D3F-68C82313E986}</ProjectGuid>
+    <ProjectGuid>{20D09DCA-CDE9-4C9B-BCD8-429BA7D40599}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NetUtility</RootNamespace>
-    <AssemblyName>NetUtility</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>Study.ApplicationServices</RootNamespace>
+    <AssemblyName>Study.ApplicationServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,12 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,11 +40,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetHtmlCode.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="DtoBase.cs" />
+    <Compile Include="IServiceStudyBase.cs" />
+    <Compile Include="MapFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceStudyBase.cs" />
+    <Compile Include="ServiceStudyBase`.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\ORM\MyBatis.Net\MyBatis.DataMapper\MyBatis.DataMapper.csproj">
+      <Project>{4c8da439-2f2b-455d-8876-166fa37c868d}</Project>
+      <Name>MyBatis.DataMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ORM\Study.MyBatis\Study.MyBatis.csproj">
+      <Project>{dbef33b2-f18a-4980-ba75-d47108b55ce0}</Project>
+      <Name>Study.MyBatis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Study.Util\Study.Util.csproj">
+      <Project>{70fc7313-b72a-4e28-8aaa-9f5556ec5a57}</Project>
+      <Name>Study.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Syudy.Domains.Framework\Study.Domains.Framework.csproj">
+      <Project>{b67abe2e-481c-4f6f-8a3b-e0c14fc819e6}</Project>
+      <Name>Study.Domains.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

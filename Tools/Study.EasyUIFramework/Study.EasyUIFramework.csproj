@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08076E91-D256-48B3-BC5A-C91839FBA495}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Study.EasyUIFramework</RootNamespace>
+    <AssemblyName>Study.EasyUIFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLLs\AutoFac\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Align.cs" />
+    <Compile Include="Base\ComponentBase.cs" />
+    <Compile Include="Base\IComponent.cs" />
+    <Compile Include="Base\IOption.cs" />
+    <Compile Include="Base\OptionBase.cs" />
+    <Compile Include="Buttons\DialogButton.cs" />
+    <Compile Include="Buttons\IDialogButton.cs" />
+    <Compile Include="Buttons\ILinkButton.cs" />
+    <Compile Include="Buttons\ILinkButton`.cs" />
+    <Compile Include="Buttons\LinkButton.cs" />
+    <Compile Include="Buttons\LinkButton`.cs" />
+    <Compile Include="EasyUiAttributeBuilder.cs" />
+    <Compile Include="EasyUiControllerBase.cs" />
+    <Compile Include="EasyUiFactory.cs" />
+    <Compile Include="EasyUiFactory`.cs" />
+    <Compile Include="Forms\Comboxs\Combox.cs" />
+    <Compile Include="Forms\Comboxs\ComboxItem.cs" />
+    <Compile Include="Forms\Comboxs\Combox`.cs" />
+    <Compile Include="Forms\Comboxs\EntityCombox.cs" />
+    <Compile Include="Forms\Comboxs\ICombox.cs" />
+    <Compile Include="Forms\Comboxs\ICombox`.cs" />
+    <Compile Include="Forms\Comboxs\IEntityCombox.cs" />
+    <Compile Include="Forms\DataAnnotationsLoader.cs" />
+    <Compile Include="Forms\Results\EasyUiResult.cs" />
+    <Compile Include="Forms\Results\StateCode.cs" />
+    <Compile Include="Forms\TextBoxs\Combo.cs" />
+    <Compile Include="Forms\TextBoxs\EntityTextBox.cs" />
+    <Compile Include="Forms\TextBoxs\ICombo.cs" />
+    <Compile Include="Forms\TextBoxs\IEntityTextBox.cs" />
+    <Compile Include="Forms\TextBoxs\ITextBox.cs" />
+    <Compile Include="Forms\TextBoxs\ITextBox`.cs" />
+    <Compile Include="Forms\TextBoxs\TextBox.cs" />
+    <Compile Include="Forms\TextBoxs\TextBox`.cs" />
+    <Compile Include="Grids\DataGrid.cs" />
+    <Compile Include="Grids\DataGridColumn.cs" />
+    <Compile Include="Grids\DataGridResult.cs" />
+    <Compile Include="Grids\DataGrid`.cs" />
+    <Compile Include="Grids\IDataGrid.cs" />
+    <Compile Include="Grids\IDataGridColumn.cs" />
+    <Compile Include="Grids\IDataGrid`.cs" />
+    <Compile Include="HtmlHelperExtentions.cs" />
+    <Compile Include="Layouts\ILayout.cs" />
+    <Compile Include="Layouts\ILayoutOption.cs" />
+    <Compile Include="Layouts\IRegionOption.cs" />
+    <Compile Include="Layouts\Layout.cs" />
+    <Compile Include="Layouts\LayoutOption.cs" />
+    <Compile Include="Layouts\RegionOption.cs" />
+    <Compile Include="Menus\IMenu.cs" />
+    <Compile Include="Menus\IMenuItem.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\MenuItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EasyUiService.cs" />
+    <Compile Include="Services\IEasyUiService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Study.UtilWebs\Study.UtilWebs.csproj">
+      <Project>{29bbe49a-22c8-4edc-8499-e6cd9b6d220c}</Project>
+      <Name>Study.UtilWebs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Study.Util\Study.Util.csproj">
+      <Project>{70fc7313-b72a-4e28-8aaa-9f5556ec5a57}</Project>
+      <Name>Study.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
