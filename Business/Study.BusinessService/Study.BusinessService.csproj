@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F08F27DD-2AB6-4B74-8E93-7739E77E8D7F}</ProjectGuid>
+    <ProjectGuid>{7299D11B-7317-4E1F-A923-06F1DD02D5AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Study.Entity</RootNamespace>
-    <AssemblyName>Study.Entity</AssemblyName>
+    <RootNamespace>Study.BusinessService</RootNamespace>
+    <AssemblyName>Study.BusinessService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,13 +28,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,26 +39,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application.cs" />
-    <Compile Include="ApplicationDto.cs" />
-    <Compile Include="ApplicationQuery.cs" />
-    <Compile Include="Common\Menu.cs" />
+    <Compile Include="ApplicationService.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="IApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Staff.cs" />
-    <Compile Include="WebJobs\JobInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ORM\Study.MyBatis\Study.MyBatis.csproj">
+      <Project>{dbef33b2-f18a-4980-ba75-d47108b55ce0}</Project>
+      <Name>Study.MyBatis</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Tools\Study.ApplicationServices\Study.ApplicationServices.csproj">
       <Project>{20d09dca-cde9-4c9b-bcd8-429ba7d40599}</Project>
       <Name>Study.ApplicationServices</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Tools\Study.Util\Study.Util.csproj">
-      <Project>{70fc7313-b72a-4e28-8aaa-9f5556ec5a57}</Project>
-      <Name>Study.Util</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Tools\Syudy.Domains.Framework\Study.Domains.Framework.csproj">
       <Project>{b67abe2e-481c-4f6f-8a3b-e0c14fc819e6}</Project>
       <Name>Study.Domains.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Study.Entity\Study.Entity.csproj">
+      <Project>{f08f27dd-2ab6-4b74-8e93-7739e77e8d7f}</Project>
+      <Name>Study.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
