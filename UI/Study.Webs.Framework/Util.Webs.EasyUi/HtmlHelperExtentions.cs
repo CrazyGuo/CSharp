@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using Util.Webs.EasyUi.Services;
 
-namespace Util.Webs.EasyUi 
+namespace Study.Webs.Framework 
 {
     /// <summary>
     /// HtmlHelper扩展 - EasyUi扩展

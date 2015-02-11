@@ -5,7 +5,7 @@ using Util.Webs.EasyUi.Forms.Comboxs;
 using Util.Webs.EasyUi.Forms.TextBoxs;
 using Util.Webs.EasyUi.Services;
 
-namespace Util.Webs.EasyUi 
+namespace Study.Webs.Framework 
 {
     /// <summary>
     /// EasyUi工厂

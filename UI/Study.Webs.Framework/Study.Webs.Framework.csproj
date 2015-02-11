@@ -30,15 +30,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\PtsSolution\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\..\PtsSolution\packages\Autofac.Mvc5.3.3.3\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\..\..\PtsSolution\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\packages\EntLib\6.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\PtsSolution\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PtsSolution\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PtsSolution\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PtsSolution\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -50,7 +77,178 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="ApplicationDto.cs" />
+    <Compile Include="ApplicationQuery.cs" />
+    <Compile Include="ApplicationService.cs" />
+    <Compile Include="IApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.ApplicationServices\DtoBase.cs" />
+    <Compile Include="Util.ApplicationServices\IServiceBase.cs" />
+    <Compile Include="Util.ApplicationServices\IServiceStudyBase.cs" />
+    <Compile Include="Util.ApplicationServices\MapFactory.cs" />
+    <Compile Include="Util.ApplicationServices\ServiceBase.cs" />
+    <Compile Include="Util.ApplicationServices\ServiceBase`.cs" />
+    <Compile Include="Util.ApplicationServices\ServiceStudyBase.cs" />
+    <Compile Include="Util.ApplicationServices\ServiceStudyBase`.cs" />
+    <Compile Include="Util.DI.Autofac\ConfigBase.cs" />
+    <Compile Include="Util.DI.Autofac\Container.cs" />
+    <Compile Include="Util.DI.Autofac\SecurityConfig.cs" />
+    <Compile Include="Util.Domains\AggregateRoot.cs" />
+    <Compile Include="Util.Domains\AggregateRoot`.cs" />
+    <Compile Include="Util.Domains\DomainBase.cs" />
+    <Compile Include="Util.Domains\EntityBase.cs" />
+    <Compile Include="Util.Domains\EntityBase`.cs" />
+    <Compile Include="Util.Domains\IAggregateRoot.cs" />
+    <Compile Include="Util.Domains\IEntity.cs" />
+    <Compile Include="Util.Domains\Repositories\ICriteria.cs" />
+    <Compile Include="Util.Domains\Repositories\IPager.cs" />
+    <Compile Include="Util.Domains\Repositories\IQueryBase.cs" />
+    <Compile Include="Util.Domains\Repositories\IRepository.cs" />
+    <Compile Include="Util.Domains\Repositories\IRepository`.cs" />
+    <Compile Include="Util.Domains\Repositories\Pager.cs" />
+    <Compile Include="Util.Domains\Repositories\PagerList.cs" />
+    <Compile Include="Util.Domains\StateDescription.cs" />
+    <Compile Include="Util.Domains\ValidationFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\AttributeValidatorFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\CompositeValidatorBuilder.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\CompositeValidatorFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ConfigurationValidatedElement.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ConfigurationValidatedType.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ConfigurationValidatorBuilder.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ConfigurationValidatorFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\AndCompositeValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ConfigurationCultureInfoConverter.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ContainsCharactersValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\CustomValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\DateTimeRangeValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\DesignResources.Designer.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\DomainConfigurationElement.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\DomainValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\EnumConversionValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\NotNullValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ObjectCollectionValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ObjectValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\OrCompositeValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\PropertyComparisonValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\RangeValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\RangeValidatorData.Generic.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\RegexValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\RelativeDateTimeValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\StringLengthValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\TypeConversionValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedFieldReference.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedFieldReferenceCollection.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedMemberReference.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedMethodReference.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedMethodReferenceCollection.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedPropertyReference.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedPropertyReferenceCollection.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedTypeReference.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatedTypeReferenceCollection.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidationDesignTime.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidationRulesetData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidationRulesetDataCollection.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidationSettings.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValidatorDataCollection.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Configuration\ValueValidatorData.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\DataErrorInfoHelper.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\GlobalSuppressions.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Integration\IValidationIntegrationProxy.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Integration\ValidationIntegrationHelper.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Integration\ValueConvertEventArgs.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\IValidatedElement.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\IValidatedType.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\IValidatorDescriptor.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\MemberAccessValidatorBuilderFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\MemberValueAccessBuilder.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\MetadataValidatedElement.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\MetadataValidatedParameterElement.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\MetadataValidatedType.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\MetadataValidatorBuilder.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ParameterValidatorFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\PropertyValidationFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ReflectionMemberValueAccessBuilder.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\TagFilter.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validation.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationAttributeValidatedElement.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationAttributeValidatedType.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationAttributeValidatorBuilder.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationAttributeValidatorFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationReflectionHelper.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationResult.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationResults.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidationSpecificationSource.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validator.Generic.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidatorBuilderBase.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidatorCacheKey.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValidatorFactory.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\AndCompositeValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\BaseValidationAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ComparisonOperator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\CompositionType.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ContainsCharacters.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ContainsCharactersValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ContainsCharactersValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\DateTimeRangeValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\DateTimeRangeValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\DateTimeUnit.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\DomainValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\DomainValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\EnumConversionValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\EnumConversionValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\FieldValueAccess.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\FieldValueValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\GenericValidatorWrapper.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\HasSelfValidationAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\IgnoreNullsAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\MemberAccessValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\MethodReturnValueValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\MethodValueAccess.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\NotNullValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\NotNullValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\NullIgnoringValidatorWrapper.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ObjectCollectionValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ObjectCollectionValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ObjectValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ObjectValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\OrCompositeValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\PropertyComparisonValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\PropertyComparisonValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\PropertyValueAccess.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\PropertyValueValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RangeBoundaryType.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RangeChecker.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RangeValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RangeValidator.Generic.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RangeValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RegexValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RegexValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RelativeDateTimeGenerator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RelativeDateTimeValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\RelativeDateTimeValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\SelfValidationAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\SelfValidationValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\StringLengthValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\StringLengthValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\TypeConversionValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\TypeConversionValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValidationAttributeValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValidatorArgumentsValidatorHelper.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValidatorCompositionAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValueAccess.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValueAccessComparisonValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValueAccessValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValueValidator.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValueValidator.Generic.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\Validators\ValueValidatorAttribute.cs" />
+    <Compile Include="Util.Validations.EntLib\00-Source\ValueAccessValidatorBuilder.cs" />
+    <Compile Include="Util.Validations.EntLib\Resources.Designer.cs" />
+    <Compile Include="Util.Validations.EntLib\Validation.cs" />
     <Compile Include="Util.Webs.EasyUi\Align.cs" />
     <Compile Include="Util.Webs.EasyUi\Base\ComponentBase.cs" />
     <Compile Include="Util.Webs.EasyUi\Base\IComponent.cs" />
@@ -112,6 +310,7 @@
     <Compile Include="Util.Webs\Json.cs" />
     <Compile Include="Util.Webs\JsonAttributeBuilder.cs" />
     <Compile Include="Util\Conv.cs" />
+    <Compile Include="Util\Datas\IUnitOfWork.cs" />
     <Compile Include="Util\Enum.cs" />
     <Compile Include="Util\Extensions.Convert.cs" />
     <Compile Include="Util\Extensions.Enum.cs" />
@@ -133,6 +332,7 @@
     <Compile Include="Util\Lambdas\Dynamics\Signature.cs" />
     <Compile Include="Util\Lambdas\ExpressionBuilder.cs" />
     <Compile Include="Util\Lambdas\ParameterRebinder.cs" />
+    <Compile Include="Util\Logs\LogLevel.cs" />
     <Compile Include="Util\Operator.cs" />
     <Compile Include="Util\OrderByAttribute.cs" />
     <Compile Include="Util\Reflection.cs" />
@@ -141,6 +341,30 @@
     <Compile Include="Util\Str.cs" />
     <Compile Include="Util\Str`.cs" />
     <Compile Include="Util\Sys.cs" />
+    <Compile Include="Util\Validations\IValidation.cs" />
+    <Compile Include="Util\Validations\IValidationHandler.cs" />
+    <Compile Include="Util\Validations\IValidationRule.cs" />
+    <Compile Include="Util\Validations\ValidationHandler.cs" />
+    <Compile Include="Util\Validations\ValidationResultCollection.cs" />
+    <Compile Include="Util\Warning.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Util.Validations.EntLib\00-Source\Configuration\DesignResources.resx" />
+    <EmbeddedResource Include="Util.Validations.EntLib\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ORM\MyBatis.Net\MyBatis.DataMapper\MyBatis.DataMapper.csproj">
+      <Project>{4c8da439-2f2b-455d-8876-166fa37c868d}</Project>
+      <Name>MyBatis.DataMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ORM\Study.MyBatis\Study.MyBatis.csproj">
+      <Project>{dbef33b2-f18a-4980-ba75-d47108b55ce0}</Project>
+      <Name>Study.MyBatis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
