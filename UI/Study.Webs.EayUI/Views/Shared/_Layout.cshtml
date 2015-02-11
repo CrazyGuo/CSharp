@@ -1,0 +1,19 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render( "~/Scripts/EasyUi/themes/default/css" )
+    @Styles.Render( "~/Scripts/EasyUi/themes/color.css" )
+    @Styles.Render( "~/Css/css" )
+    <script type="text/javascript" src="/Scripts/EasyUi/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/EasyUi/jquery.easyui.min.js"></script>
+    @Scripts.Render( "~/Scripts/Utils/js" )
+    <script type="text/javascript" src="/Scripts/EasyUi/easyui-lang-zh_CN.js"></script>
+    @RenderSection( "head",false )
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

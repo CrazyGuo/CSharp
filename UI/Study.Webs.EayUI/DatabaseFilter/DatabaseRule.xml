@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<digester-rules>
+  <pattern  value="ItemList">
+    <object-create-rule typeName="Study.MyBatis.ItemList, Study.MyBatis"/>
+    <pattern value="Item">
+      <object-create-rule typeName="Study.MyBatis.Item, Study.MyBatis"/>
+      <set-properties-rule/>
+      <set-next-rule methodName="AddItem"></set-next-rule>
+    </pattern>
+  </pattern>
+</digester-rules >

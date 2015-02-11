@@ -1,0 +1,47 @@
+﻿/*布局*/
+.easyui-layout .top { padding: 0 3px; }
+.easyui-layout .center { padding: 3px; }
+/*分隔线*/
+.line { clear: both; display: block; overflow: hidden; text-indent: -1000px; width: auto; height: 1px; padding: 4px 0 0 0; margin-bottom: 5px; border-style: dotted; border-width: 0 0 1px 0; }
+/*清除浮动*/
+.clear{ clear: both;}
+/*工具栏*/
+.toolbar{ border: solid 1px #95b8e7;background: #e0edff}
+/*站点路径*/
+.sitepath{height: 30px; color: #444;border-left: solid 1px #95b8e7;background: #f9f9f9;padding-top: 5px}
+.sitepath span.title{ font-weight: bold;padding-left: 6px;}
+.sitepath span a{color: #444;text-decoration: none;padding: 0 5px 0 6px; line-height: 30px}
+/*表单*/
+.divForm { margin: 0; padding: 10px 20px; }
+.divForm .formtitle { font-size: 14px; font-weight: bold; padding: 5px 0; margin-bottom: 10px; border-bottom: 1px solid #ccc; }
+.form { display: block; overflow: auto; margin: 0; padding: 10px 30px; }
+.form dl { float: left; display: block; width: 280px; height: auto; margin: 0; padding: 0 10px 5px 0; }
+.form dt { float: left; width: 80px; padding: 0; margin: 0; padding-right: 5px; }
+.form dd { float: left; display: block; width: 160px; margin: 0; padding: 0; }
+.form label { float: left; width: 80px; padding: 0; line-height: 21px; }
+.form input { float: left; }
+.form select { float: left; }
+.form dl.nowrap { width: 98%; height: auto; clear: both; }
+.form dl.nowrap dd { width: 560px; }
+.form.w2 dl { width: 360px; }
+.form.w2 dt { width: 120px; }
+.form.w2 dd { width: 220px; }
+.form.w2 label { width: 120px; }
+/*查询表单*/
+.divQueryForm { margin: 0; padding: 2px 5px; }
+.divQueryForm .button{ float: left; }
+.divQueryForm .form { padding: 8px 8px 3px 8px; }
+.divQueryForm .form dl { width: 200px; }
+.divQueryForm .form dt { width: 80px; }
+.divQueryForm .form dd { width: 110px; }
+.divQueryForm .form input { width: 100px; }
+/*查看详细*/
+.divDetail { margin: 0; padding: 10px 20px; }
+.divDetail .detailTitle { font-size: 14px; font-weight: bold; padding: 5px 0; margin-bottom: 10px; border-bottom: 1px solid #ccc; }
+.divDetail .detailContent { display: block; overflow: auto; margin: 0; padding: 10px 30px; }
+.divDetail .detailContent dl { float: left; display: block; width: 360px; height: auto; margin: 0; padding: 0 10px 10px 0; }
+.divDetail .detailContent dt { float: left; width: 120px; padding: 0; margin: 0; padding-right: 5px; }
+.divDetail .detailContent dd { float: left; display: block; width: 220px; margin: 0; padding: 0; }
+.divDetail .detailContent dl.full{ width: 96%;}
+.divDetail .detailContent dl.full dd{ width: 80%;}
+

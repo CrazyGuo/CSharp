@@ -1,0 +1,40 @@
+﻿@model ApplicationDto
+
+<div class="divDetail">
+    <div class="detailTitle">应用程序管理</div>
+    <div class="detailContent">
+        <dl>
+            <dt>@Html.LabelFor( t => t.Code )</dt>
+            <dd>
+                @Model.Code
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.Name )</dt>
+            <dd>
+                @Model.Name
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.Enabled )</dt>
+            <dd>
+                @Model.Enabled.Description()
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.CreateTime )</dt>
+            <dd>
+                @Model.CreateTime.ToDateTimeString()
+            </dd>
+        </dl>
+        <dl class="full">
+            <dt>@Html.LabelFor( t => t.Note )</dt>
+            <dd style="width: 60%">
+                @Model.Note
+            </dd>
+        </dl>
+    </div>
+</div>
+<div id="dialogButtons">
+    @Html.EasyUi().DialogButton( "关 闭" ).Icon( "icon-cancel" ).Width( 90 ).CloseDialog()
+</div>

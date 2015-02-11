@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="WH.Moddle" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="Menu" type="Study.Entity.Common.Menu, Study.Entity"/>
+    <typeAlias alias="Staff" type="Study.Entity.Staff, Study.Entity"/>
+    <typeAlias alias="Application" type="Study.Entity.Application, Study.Entity"/>
+    <typeAlias alias="ApplicationDto" type="Study.Entity.ApplicationDto, Study.Entity"/>
+  </alias>
+  <cacheModels >
+    <cacheModel id="TestCache" type ="Fifo" flushInterval="6000" share ="true">
+      <flushOnExecute  statement ="qMenus"/>
+    </cacheModel>
+  </cacheModels>
+  <statements>
+    <select id="qApplication" resultClass="ApplicationDto" parameterClass="Application">
+      SELECT [ApplicationId] as Id
+      ,[Code]
+      ,[Name]
+      ,[Note]
+      ,[Enabled]
+      ,[CreateTime]
+      ,[Version]
+      FROM [Security].[Systems].[Applications]
+    </select>
+    <select id="qApplicationId" resultClass="ApplicationDto" parameterClass="string">
+      SELECT [ApplicationId] as Id
+      ,[Code]
+      ,[Name]
+      ,[Note]
+      ,[Enabled]
+      ,[CreateTime]
+      ,[Version]
+      FROM [Security].[Systems].[Applications]
+      where ApplicationId = #Id#
+    </select>
+    <delete id="dApplicationId"  parameterClass="string">
+      Delete
+      FROM [Security].[Systems].[Applications]
+      where ApplicationId = #Id#
+    </delete>
+    <insert id="iApplicationId" parameterClass="ApplicationDto">
+      INSERT INTO [Security].[Systems].[Applications](ApplicationId,Code,Name,Note,Enabled,CreateTime)
+      VALUES (#Id#,#Code#,#Name#,#Note#,#Enabled#,#CreateTime#)
+    </insert>
+    <update id="uApplicationId" parameterClass="ApplicationDto">
+      update [Security].[Systems].[Applications]
+      set Code=#Code#,
+      Name=#Name#,
+      Note=#Note#,
+      Enabled=#Enabled#
+      where ApplicationId =#Id#
+    </update>
+    <insert id="InsertOpcGroupItem" parameterClass="Hashtable">
+      INSERT INTO [OPC].[dbo].[T_OPC_GroupItem]
+      VALUES (#groupid#,#item#,#itemclient#)
+    </insert>
+    <select id="qMenus" resultClass="Menu" parameterClass="string">
+      SELECT  [Id]
+      ,[Value]
+      ,[Text]
+      ,[Icon]
+      ,[HasChildren]
+      ,[Showcheck]
+      ,[Complete]
+      ,[Isexpand]
+      ,[Checkstate]
+      ,[ParentId]
+      FROM [Menu]
+      where [ParentId]=#ParentId#
+    </select>
+    <select id="qStaff" resultClass="Staff" parameterClass="Hashtable" cacheModel="TestCache">
+      SELECT  [STAFF_NAME]
+      ,[STAFF_CARD_NO]
+      ,[STAFF_BIRTH]
+      ,[STAFF_PHONE]
+      ,[HOME_ADDRESS]
+      ,[GRADUATION_SCHOOL]
+      ,[GRADUATION_DATE]
+      ,[STAFF_MAJOR]
+      ,[JOB_POSITION]
+      ,[SEX]
+      FROM [Staff]
+      where [SEX]='1'
+      and [STAFF_CARD_NO] in
+      (
+      select [STAFF_CARD_NO]
+      from [Staff]
+      where [STAFF_CARD_NO] like '$STAFF_CARD_NO$%'
+      )
+      <dynamic prepend="and">
+        <isNotEmpty prepend="and" property="birthBegin">
+          [STAFF_BIRTH] >= #birthBegin#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="birthEnd">
+          #birthEnd#>= [STAFF_BIRTH]
+        </isNotEmpty>
+      </dynamic>
+      
+    </select>
+  </statements>
+</sqlMap>
+

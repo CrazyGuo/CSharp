@@ -1,0 +1,40 @@
+﻿@model ApplicationDto
+@{
+    var x = @Html.EasyUi();
+}
+<div class="divForm">
+    <div class="formtitle">应用程序管理</div>
+    <form id="form" class="form" action="/Systems/Application/Save">
+        <dl>
+            <dt>@Html.LabelFor( t => t.Code )</dt>
+            <dd>
+                @x.TextBox( t => t.Code )
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.Name )</dt>
+            <dd>
+                @x.TextBox( t => t.Name )
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.Enabled )</dt>
+            <dd>
+                @x.Combox( t => t.Enabled )
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.Note )</dt>
+            <dd>
+                @x.TextBox( t => t.Note ).MultiLine( 200, 50 )
+            </dd>
+        </dl>
+        @Html.HiddenFor( t => t.Id )
+        @Html.HiddenFor( t => t.CreateTime )
+        @Html.HiddenFor( t => t.Version )
+    </form>
+</div>
+<div id="dialogButtons">
+    @x.LinkButton( "保 存" ).Icon( "icon-ok" ).Width( 90 ).Click( "$.easyui.submit()" )
+    @x.DialogButton( "关 闭" ).Icon( "icon-cancel" ).Width( 90 ).CloseDialog()
+</div>

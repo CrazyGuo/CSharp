@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "管理系统";
+}
+@section head
+{
+    <script type="text/javascript" src="/Scripts/Projects/index.js"></script>
+}
+<div id="divMain" class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north'" style="height:60px;">
+        @Html.Partial( "Index/Top" )
+    </div>
+    <div data-options="region:'west',title:'功能菜单',split:true,maxWidth:500" style="width:180px;">
+        @Html.Partial( "Index/Left" )
+    </div>
+    <div data-options="region:'center'">
+        @Html.Partial( "Index/Center" )
+    </div>
+    <div id="divFoot" data-options="region:'south',title:'页脚',split:true" style="height:80px;" collapsetitle="Copyright ©何镇汐 版权所有"></div>
+</div>
+<div id="div_index_data"></div>

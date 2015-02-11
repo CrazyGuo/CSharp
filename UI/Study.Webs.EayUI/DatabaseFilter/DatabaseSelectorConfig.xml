@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ItemList>
+  <Item  name="PTS" enable="true" path="\PTS\sqlMapConfig.xml"></Item>
+  <Item name="OA"  enable="false" path="\OA\sqlMapConfig.xml"></Item>
+  <Item name="EAS"  enable="false" path="\EAS\sqlMapConfig.xml"></Item>
+</ItemList>
