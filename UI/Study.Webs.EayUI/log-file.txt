@@ -1,0 +1,23 @@
+[Header] \r\n2015-02-11 15:06:39,850 [1] INFO  log4a [(null)]  - Pegin
+[Header] \r\n2015-02-11 17:10:55,098 [1] INFO  log4a [(null)]  - Hello
+2015-02-11 17:10:56,816 [1] INFO  log4a [(null)]  - End
+[Header]\r\n2015-02-11 22:07:54,425 [1] INFO  log4a [(null)]  - Hello
+2015-02-11 22:07:55,988 [1] INFO  log4a [(null)]  - End
+[Header]\n2015-02-11 22:09:48,702 [1] INFO  log4a [(null)]  - Hello
+2015-02-11 22:09:50,265 [1] INFO  log4a [(null)]  - End
+Header\r\n2015-02-11 22:11:09,945 [1] INFO  log4a [(null)]  - Hello
+2015-02-11 22:11:11,570 [1] INFO  log4a [(null)]  - End
+B:2015-02-11 22:25:17,988,1,INFO ,log4a,Application_Start
+2015-02-11 22:25:19,675,1,INFO ,log4a,Application_End
+2015-02-11 22:25:33,964,7,INFO ,log4a,Query
+2015-02-11 22:25:37,745,8,INFO ,log4a,Edit
+2015-02-11 22:25:43,964,8,INFO ,log4a,Update
+2015-02-11 22:25:44,284,8,INFO ,log4a,Query
+2015-02-11 22:25:54,023,8,INFO ,log4a,Delete
+2015-02-11 22:25:54,366,8,INFO ,log4a,Query
+2015-02-11 22:26:02,659,8,INFO ,log4a,Look
+2015-02-11 22:26:18,171,7,INFO ,log4a,Look
+B:2015-02-11 22:36:17,171,1,INFO ,log4a,Application_Start
+2015-02-11 22:36:19,843,1,INFO ,log4a,Application_End
+2015-02-11 22:36:32,007,8,INFO ,log4a,Query
+2015-02-11 22:36:37,538,8,INFO ,log4a,Look

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Study.DI.Autofac;
+using System.Reflection;
 
 namespace Study.Webs.EayUI
 {
@@ -14,6 +15,7 @@ namespace Study.Webs.EayUI
     {
         protected void Application_Start()
         {
+            LogOuts.Info("Application_Start");
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -21,6 +23,7 @@ namespace Study.Webs.EayUI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
             Container.RegisterMvc(typeof(MvcApplication).Assembly,new SecurityConfig());
+            LogOuts.Info("Application_End");
         }
     }
 }
