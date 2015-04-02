@@ -11,7 +11,9 @@ namespace Study.Webs.EayUI.Controllers
     {
         public string GetTree()
         {
-            return "[{\"id\": 1,\"text\": \"应用程序管理\",\"attributes\":{ \"url\":\"/systems/application\"}}]";
+            return "[{\"id\": 1,\"text\": \"应用程序管理\",\"attributes\":{ \"url\":\"/systems/application\"}},"+
+            "{\"id\": 2,\"text\": \"MoneyOut\",\"attributes\":{ \"url\":\"/systems/moneyout\"}},"+
+            "{\"id\": 3,\"text\": \"D3Report\",\"attributes\":{ \"url\":\"/D3Report/FirstReport\"}}" + "]";
         }
     }
 }

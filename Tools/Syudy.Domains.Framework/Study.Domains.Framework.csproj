@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregateRoot.cs" />
+    <Compile Include="AggregateRootIntId.cs" />
     <Compile Include="AggregateRoot`.cs" />
     <Compile Include="DomainBase.cs" />
     <Compile Include="EntityBase.cs" />

@@ -79,6 +79,8 @@
     <Compile Include="ConvertGridToIBatisQuery.cs" />
     <Compile Include="CombineSelectQuery.cs" />
     <Compile Include="DbColumn.cs" />
+    <Compile Include="EasyUI\GenerateHtml.cs" />
+    <Compile Include="EasyUI\GenerateServiceCode.cs" />
     <Compile Include="EntConnection.cs" />
     <Compile Include="GenerateEntity.cs" />
     <Compile Include="GenerateSQLForm.cs">

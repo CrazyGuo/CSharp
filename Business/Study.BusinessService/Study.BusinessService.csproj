@@ -40,8 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="IApplicationService.cs" />
+    <Compile Include="IMoneyKindService.cs" />
+    <Compile Include="IMoneyOutService.cs" />
+    <Compile Include="MoneyKindService.cs" />
+    <Compile Include="MoneyOutService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

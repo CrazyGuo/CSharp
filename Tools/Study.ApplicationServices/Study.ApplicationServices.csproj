@@ -40,12 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DtoBase.cs" />
     <Compile Include="IServiceStudyBase.cs" />
-    <Compile Include="MapFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceStudyBase.cs" />
+    <Compile Include="ServiceStudyBaseIntId.cs" />
     <Compile Include="ServiceStudyBase`.cs" />
   </ItemGroup>
   <ItemGroup>

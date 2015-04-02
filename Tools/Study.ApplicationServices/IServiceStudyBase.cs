@@ -18,5 +18,6 @@ namespace Study.ApplicationServices
         IList<TDto> FetchMany(string ids);
         PagerList<TDto> FetchPages(TQuery query);
         IList<TDto> FetchAll(TQuery query);
+        IList<TDto> FetchAll( );
     }
 }

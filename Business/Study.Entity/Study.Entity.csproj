@@ -48,11 +48,22 @@
     <Compile Include="ApplicationDto.cs" />
     <Compile Include="ApplicationQuery.cs" />
     <Compile Include="Common\Menu.cs" />
+    <Compile Include="MoneyKind.cs" />
+    <Compile Include="MoneyKindDto.cs" />
+    <Compile Include="MoneyKindQuery.cs" />
+    <Compile Include="MoneyOut.cs" />
+    <Compile Include="MoneyOutDto.cs" />
+    <Compile Include="MoneyOutQuery.cs" />
+    <Compile Include="OpcModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="WebJobs\JobInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\NoSQL\MongoDB\MongoDB.csproj">
+      <Project>{b125bba6-bffd-44fa-9254-9b1754cd8af3}</Project>
+      <Name>MongoDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Tools\Study.ApplicationServices\Study.ApplicationServices.csproj">
       <Project>{20d09dca-cde9-4c9b-bcd8-429ba7d40599}</Project>
       <Name>Study.ApplicationServices</Name>

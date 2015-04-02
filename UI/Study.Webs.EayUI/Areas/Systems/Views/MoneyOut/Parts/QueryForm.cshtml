@@ -1,0 +1,20 @@
+﻿
+@model MoneyOutQuery
+@{
+   var x = @Html.EasyUi();
+}
+<div id="divQuery" class="divQueryForm">
+    <form id="formQuery" class="form" action="/systems/moneyout/Query">
+        <dl>
+            <dt>@Html.LabelFor(t => t.KindType)</dt>
+            <dd>
+                @x.Combox(t => t.KindType).Load("/systems/moneykind/QueryAll","Id","Name")
+            </dd>
+        </dl>
+        <span class="button">
+            @x.LinkButton("查 询").Width(70).Icon("icon-search").Click("$.easyui.query()")
+        </span>
+    </form>
+
+</div>
+

@@ -1,3 +1,4 @@
+using IBatisQueryGenerator.EasyUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,13 +76,18 @@ namespace IBatisQueryGenerator
 
         private void getQuery()
         {
+            string name = cboTable.SelectedItem.ToString();
+            string sqlId = string.Empty;
+            string parameterClass = name + "Query";
+            string resultClass = name + "Dto";
             StringBuilder bulider = new StringBuilder();
             string nodeAppend = "";
             string sql=listBoxQueryKindCd.SelectedItem.ToString();
             SqlOperationType type=SqlOperationType.Select;
             if(sql.Equals("select",StringComparison.OrdinalIgnoreCase))
             {
-                string select="<select id=\"\" parameterClass=\"\" resultClass=\"\"> ";                
+                sqlId = "q" + name;
+                string select="<select id=\""+sqlId+"\" parameterClass=\""+parameterClass+"\" resultClass=\""+resultClass+"\"> ";                
                 bulider.Append(select);
                 bulider.Append("\r\n");
                 nodeAppend = @"</select>";
@@ -89,7 +95,8 @@ namespace IBatisQueryGenerator
             }
             else if (sql.Equals("insert", StringComparison.OrdinalIgnoreCase))
             {
-                string insert = "<insert id=\"\" parameterClass=\"\" resultClass=\"\"> ";
+                sqlId = "i" + name;
+                string insert = "<insert id=\""+sqlId+"\" parameterClass=\""+parameterClass+"\" resultClass=\""+resultClass+"\"> ";
                 bulider.Append(insert);
                 bulider.Append("\r\n");
                 nodeAppend = @"</insert>";
@@ -97,7 +104,8 @@ namespace IBatisQueryGenerator
             }
             else if (sql.Equals("update", StringComparison.OrdinalIgnoreCase))
             {
-                string update = "<update id=\"\" parameterClass=\"\" resultClass=\"\"> ";
+                sqlId = "u" + name;
+                string update = "<update id=\""+sqlId+"\" parameterClass=\""+parameterClass+"\" resultClass=\""+resultClass+"\"> ";
                 bulider.Append(update);
                 bulider.Append("\r\n");
                 nodeAppend = @"</update>";
@@ -105,7 +113,8 @@ namespace IBatisQueryGenerator
             }
             else if (sql.Equals("delete", StringComparison.OrdinalIgnoreCase))
             {
-                string delete = "<delete id=\"\" parameterClass=\"\" resultClass=\"\"> ";
+                sqlId = "d" + name;
+                string delete = "<delete id=\""+sqlId+"\" parameterClass=\""+parameterClass+"\" resultClass=\""+resultClass+"\"> ";
                 bulider.Append(delete);
                 bulider.Append("\r\n");
                 nodeAppend = @"</delete>";
@@ -163,8 +172,29 @@ namespace IBatisQueryGenerator
         private void BtnGenerateEntity_Click(object sender, EventArgs e)
         {
             GenerateEntity ge = new GenerateEntity(conn);
-            string entity = ge.BeginGenerateEntity(this.cboDbName.Text,this.cboTable.Text);
-            this.rtbResultSql.Text = entity;
+            string entity = ge.BeginGenerateEntityClass(this.cboDbName.Text, this.cboTable.Text, this.cboTable.Text);
+            this.rtbEntity.Text = entity;
+            this.rtbQuery.Text = ge.BeginGenerateEntityQuery(this.cboDbName.Text, this.cboTable.Text);
+            this.rtbEntityDto.Text = ge.BeginGenerateEntityDto(this.cboDbName.Text, this.cboTable.Text);
+        }
+
+        private void btnGenerateEasyUI_Click(object sender, EventArgs e)
+        {
+            GenerateServiceCode gs = new GenerateServiceCode();
+            gs.Name = cboTable.SelectedItem.ToString();
+            this.rtbIservice.Text = gs.IServiceCode();
+            this.rtbService.Text = gs.ServiceCode();
+            this.rtbController.Text = gs.ControllerCode();
+        }
+
+        private void btnHtml_Click(object sender, EventArgs e)
+        {
+            GenerateHtml html = new GenerateHtml();
+            string name = cboTable.SelectedItem.ToString();
+            html.Name = name;
+            html.Url = txtUrl.Text.Trim();
+            rtbIndex.Text = html.Index();
+            rtbQueryForm.Text = html.QueryForm();
         }
     }
 }

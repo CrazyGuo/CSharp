@@ -16,6 +16,14 @@ namespace Study.Webs.EayUI.Base
         }
 
         [HttpPost]
+        public JsonResult QueryAll()
+        {
+            LogOuts.Info("Query");
+            var list = Service.FetchAll();
+            return Json(list);
+        }
+
+        [HttpPost]
         public virtual ActionResult Query(TQuery query)
         {
             LogOuts.Info("Query");

@@ -99,6 +99,12 @@ namespace Study.ApplicationServices
             return DataMapper.QueryForList<TDto>(fetchQuery, query);
         }
 
+        public virtual IList<TDto> FetchAll()
+        {
+            string fetchQuery = GetFetchQueryId();
+            return DataMapper.QueryForList<TDto>(fetchQuery,null);
+        }
+
         #endregion
 
         public virtual string GetAddId()

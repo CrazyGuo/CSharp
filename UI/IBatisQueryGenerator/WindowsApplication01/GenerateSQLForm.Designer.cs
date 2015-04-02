@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTable = new System.Windows.Forms.DataGridView();
             this.col_eng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_kor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,39 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.BtnGenerateEntity = new System.Windows.Forms.Button();
+            this.btnGenerateEasyUI = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.SQL = new System.Windows.Forms.TabPage();
+            this.Entity = new System.Windows.Forms.TabPage();
+            this.rtbEntity = new System.Windows.Forms.RichTextBox();
+            this.Query = new System.Windows.Forms.TabPage();
+            this.rtbQuery = new System.Windows.Forms.RichTextBox();
+            this.Dto = new System.Windows.Forms.TabPage();
+            this.rtbEntityDto = new System.Windows.Forms.RichTextBox();
+            this.IService接口 = new System.Windows.Forms.TabPage();
+            this.rtbIservice = new System.Windows.Forms.RichTextBox();
+            this.Service实现 = new System.Windows.Forms.TabPage();
+            this.rtbService = new System.Windows.Forms.RichTextBox();
+            this.Controller = new System.Windows.Forms.TabPage();
+            this.rtbController = new System.Windows.Forms.RichTextBox();
+            this.Indexcshtml = new System.Windows.Forms.TabPage();
+            this.rtbIndex = new System.Windows.Forms.RichTextBox();
+            this.btnHtml = new System.Windows.Forms.Button();
+            this.QueryForm = new System.Windows.Forms.TabPage();
+            this.rtbQueryForm = new System.Windows.Forms.RichTextBox();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.SQL.SuspendLayout();
+            this.Entity.SuspendLayout();
+            this.Query.SuspendLayout();
+            this.Dto.SuspendLayout();
+            this.IService接口.SuspendLayout();
+            this.Service实现.SuspendLayout();
+            this.Controller.SuspendLayout();
+            this.Indexcshtml.SuspendLayout();
+            this.QueryForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTable
@@ -81,8 +113,8 @@
             // col_eng
             // 
             this.col_eng.DataPropertyName = "col_eng";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_eng.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_eng.DefaultCellStyle = dataGridViewCellStyle2;
             this.col_eng.HeaderText = "字段";
             this.col_eng.Name = "col_eng";
             this.col_eng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -113,15 +145,15 @@
             // rtbResultSql
             // 
             this.rtbResultSql.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbResultSql.Location = new System.Drawing.Point(553, 48);
+            this.rtbResultSql.Location = new System.Drawing.Point(6, 1);
             this.rtbResultSql.Name = "rtbResultSql";
-            this.rtbResultSql.Size = new System.Drawing.Size(479, 288);
+            this.rtbResultSql.Size = new System.Drawing.Size(626, 288);
             this.rtbResultSql.TabIndex = 3;
             this.rtbResultSql.Text = "";
             // 
             // btnGenerateSql
             // 
-            this.btnGenerateSql.Location = new System.Drawing.Point(179, 375);
+            this.btnGenerateSql.Location = new System.Drawing.Point(152, 382);
             this.btnGenerateSql.Name = "btnGenerateSql";
             this.btnGenerateSql.Size = new System.Drawing.Size(106, 42);
             this.btnGenerateSql.TabIndex = 4;
@@ -139,7 +171,7 @@
             "DELETE"});
             this.listBoxQueryKindCd.Location = new System.Drawing.Point(73, 367);
             this.listBoxQueryKindCd.Name = "listBoxQueryKindCd";
-            this.listBoxQueryKindCd.Size = new System.Drawing.Size(73, 56);
+            this.listBoxQueryKindCd.Size = new System.Drawing.Size(73, 82);
             this.listBoxQueryKindCd.TabIndex = 5;
             // 
             // label2
@@ -330,7 +362,7 @@
             // 
             // BtnGenerateEntity
             // 
-            this.BtnGenerateEntity.Location = new System.Drawing.Point(328, 375);
+            this.BtnGenerateEntity.Location = new System.Drawing.Point(285, 381);
             this.BtnGenerateEntity.Name = "BtnGenerateEntity";
             this.BtnGenerateEntity.Size = new System.Drawing.Size(108, 42);
             this.BtnGenerateEntity.TabIndex = 28;
@@ -338,11 +370,238 @@
             this.BtnGenerateEntity.UseVisualStyleBackColor = true;
             this.BtnGenerateEntity.Click += new System.EventHandler(this.BtnGenerateEntity_Click);
             // 
+            // btnGenerateEasyUI
+            // 
+            this.btnGenerateEasyUI.Location = new System.Drawing.Point(409, 380);
+            this.btnGenerateEasyUI.Name = "btnGenerateEasyUI";
+            this.btnGenerateEasyUI.Size = new System.Drawing.Size(113, 42);
+            this.btnGenerateEasyUI.TabIndex = 29;
+            this.btnGenerateEasyUI.Text = "EasyUI";
+            this.btnGenerateEasyUI.UseVisualStyleBackColor = true;
+            this.btnGenerateEasyUI.Click += new System.EventHandler(this.btnGenerateEasyUI_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.SQL);
+            this.tabControl1.Controls.Add(this.Entity);
+            this.tabControl1.Controls.Add(this.Query);
+            this.tabControl1.Controls.Add(this.Dto);
+            this.tabControl1.Controls.Add(this.IService接口);
+            this.tabControl1.Controls.Add(this.Service实现);
+            this.tabControl1.Controls.Add(this.Controller);
+            this.tabControl1.Controls.Add(this.Indexcshtml);
+            this.tabControl1.Controls.Add(this.QueryForm);
+            this.tabControl1.Location = new System.Drawing.Point(581, 50);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(643, 321);
+            this.tabControl1.TabIndex = 30;
+            // 
+            // SQL
+            // 
+            this.SQL.Controls.Add(this.rtbResultSql);
+            this.SQL.Location = new System.Drawing.Point(4, 22);
+            this.SQL.Name = "SQL";
+            this.SQL.Padding = new System.Windows.Forms.Padding(3);
+            this.SQL.Size = new System.Drawing.Size(635, 295);
+            this.SQL.TabIndex = 0;
+            this.SQL.Text = "SQL";
+            this.SQL.UseVisualStyleBackColor = true;
+            // 
+            // Entity
+            // 
+            this.Entity.BackColor = System.Drawing.Color.Red;
+            this.Entity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Entity.Controls.Add(this.rtbEntity);
+            this.Entity.ForeColor = System.Drawing.Color.Red;
+            this.Entity.Location = new System.Drawing.Point(4, 22);
+            this.Entity.Name = "Entity";
+            this.Entity.Size = new System.Drawing.Size(635, 295);
+            this.Entity.TabIndex = 4;
+            this.Entity.Text = "Entity";
+            this.Entity.UseVisualStyleBackColor = true;
+            // 
+            // rtbEntity
+            // 
+            this.rtbEntity.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbEntity.Location = new System.Drawing.Point(4, 3);
+            this.rtbEntity.Name = "rtbEntity";
+            this.rtbEntity.Size = new System.Drawing.Size(626, 288);
+            this.rtbEntity.TabIndex = 4;
+            this.rtbEntity.Text = "";
+            // 
+            // Query
+            // 
+            this.Query.BackColor = System.Drawing.Color.Red;
+            this.Query.Controls.Add(this.rtbQuery);
+            this.Query.Location = new System.Drawing.Point(4, 22);
+            this.Query.Name = "Query";
+            this.Query.Size = new System.Drawing.Size(635, 295);
+            this.Query.TabIndex = 5;
+            this.Query.Text = "Query";
+            // 
+            // rtbQuery
+            // 
+            this.rtbQuery.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbQuery.Location = new System.Drawing.Point(4, 3);
+            this.rtbQuery.Name = "rtbQuery";
+            this.rtbQuery.Size = new System.Drawing.Size(626, 288);
+            this.rtbQuery.TabIndex = 4;
+            this.rtbQuery.Text = "";
+            // 
+            // Dto
+            // 
+            this.Dto.BackColor = System.Drawing.Color.Red;
+            this.Dto.Controls.Add(this.rtbEntityDto);
+            this.Dto.Location = new System.Drawing.Point(4, 22);
+            this.Dto.Name = "Dto";
+            this.Dto.Size = new System.Drawing.Size(635, 295);
+            this.Dto.TabIndex = 6;
+            this.Dto.Text = "Dto";
+            // 
+            // rtbEntityDto
+            // 
+            this.rtbEntityDto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbEntityDto.Location = new System.Drawing.Point(4, 3);
+            this.rtbEntityDto.Name = "rtbEntityDto";
+            this.rtbEntityDto.Size = new System.Drawing.Size(626, 288);
+            this.rtbEntityDto.TabIndex = 4;
+            this.rtbEntityDto.Text = "";
+            // 
+            // IService接口
+            // 
+            this.IService接口.Controls.Add(this.rtbIservice);
+            this.IService接口.Location = new System.Drawing.Point(4, 22);
+            this.IService接口.Name = "IService接口";
+            this.IService接口.Padding = new System.Windows.Forms.Padding(3);
+            this.IService接口.Size = new System.Drawing.Size(635, 295);
+            this.IService接口.TabIndex = 1;
+            this.IService接口.Text = "IService接口";
+            this.IService接口.UseVisualStyleBackColor = true;
+            // 
+            // rtbIservice
+            // 
+            this.rtbIservice.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbIservice.Location = new System.Drawing.Point(4, 3);
+            this.rtbIservice.Name = "rtbIservice";
+            this.rtbIservice.Size = new System.Drawing.Size(626, 288);
+            this.rtbIservice.TabIndex = 4;
+            this.rtbIservice.Text = "";
+            // 
+            // Service实现
+            // 
+            this.Service实现.Controls.Add(this.rtbService);
+            this.Service实现.Location = new System.Drawing.Point(4, 22);
+            this.Service实现.Name = "Service实现";
+            this.Service实现.Size = new System.Drawing.Size(635, 295);
+            this.Service实现.TabIndex = 2;
+            this.Service实现.Text = "Service实现";
+            this.Service实现.UseVisualStyleBackColor = true;
+            // 
+            // rtbService
+            // 
+            this.rtbService.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbService.Location = new System.Drawing.Point(4, 3);
+            this.rtbService.Name = "rtbService";
+            this.rtbService.Size = new System.Drawing.Size(626, 288);
+            this.rtbService.TabIndex = 5;
+            this.rtbService.Text = "";
+            // 
+            // Controller
+            // 
+            this.Controller.Controls.Add(this.rtbController);
+            this.Controller.Location = new System.Drawing.Point(4, 22);
+            this.Controller.Name = "Controller";
+            this.Controller.Size = new System.Drawing.Size(635, 295);
+            this.Controller.TabIndex = 3;
+            this.Controller.Text = "Controller";
+            this.Controller.UseVisualStyleBackColor = true;
+            // 
+            // rtbController
+            // 
+            this.rtbController.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbController.Location = new System.Drawing.Point(4, 3);
+            this.rtbController.Name = "rtbController";
+            this.rtbController.Size = new System.Drawing.Size(626, 288);
+            this.rtbController.TabIndex = 6;
+            this.rtbController.Text = "";
+            // 
+            // Indexcshtml
+            // 
+            this.Indexcshtml.Controls.Add(this.rtbIndex);
+            this.Indexcshtml.Location = new System.Drawing.Point(4, 22);
+            this.Indexcshtml.Name = "Indexcshtml";
+            this.Indexcshtml.Size = new System.Drawing.Size(635, 295);
+            this.Indexcshtml.TabIndex = 7;
+            this.Indexcshtml.Text = "Index.cshtml";
+            this.Indexcshtml.UseVisualStyleBackColor = true;
+            // 
+            // rtbIndex
+            // 
+            this.rtbIndex.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbIndex.Location = new System.Drawing.Point(4, 3);
+            this.rtbIndex.Name = "rtbIndex";
+            this.rtbIndex.Size = new System.Drawing.Size(626, 288);
+            this.rtbIndex.TabIndex = 7;
+            this.rtbIndex.Text = "";
+            // 
+            // btnHtml
+            // 
+            this.btnHtml.Location = new System.Drawing.Point(1012, 397);
+            this.btnHtml.Name = "btnHtml";
+            this.btnHtml.Size = new System.Drawing.Size(92, 29);
+            this.btnHtml.TabIndex = 31;
+            this.btnHtml.Text = "Html";
+            this.btnHtml.UseVisualStyleBackColor = true;
+            this.btnHtml.Click += new System.EventHandler(this.btnHtml_Click);
+            // 
+            // QueryForm
+            // 
+            this.QueryForm.Controls.Add(this.rtbQueryForm);
+            this.QueryForm.Location = new System.Drawing.Point(4, 22);
+            this.QueryForm.Name = "QueryForm";
+            this.QueryForm.Size = new System.Drawing.Size(635, 295);
+            this.QueryForm.TabIndex = 8;
+            this.QueryForm.Text = "QueryForm";
+            this.QueryForm.UseVisualStyleBackColor = true;
+            // 
+            // rtbQueryForm
+            // 
+            this.rtbQueryForm.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbQueryForm.Location = new System.Drawing.Point(4, 3);
+            this.rtbQueryForm.Name = "rtbQueryForm";
+            this.rtbQueryForm.Size = new System.Drawing.Size(626, 288);
+            this.rtbQueryForm.TabIndex = 4;
+            this.rtbQueryForm.Text = "";
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(699, 438);
+            this.txtUrl.MaxLength = 5;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(136, 20);
+            this.txtUrl.TabIndex = 32;
+            this.txtUrl.Text = "/Systems/Application";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(552, 445);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Url：";
+            // 
             // GenerateSQLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 472);
+            this.ClientSize = new System.Drawing.Size(1210, 470);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtUrl);
+            this.Controls.Add(this.btnHtml);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.btnGenerateEasyUI);
             this.Controls.Add(this.BtnGenerateEntity);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -366,13 +625,22 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxQueryKindCd);
             this.Controls.Add(this.btnGenerateSql);
-            this.Controls.Add(this.rtbResultSql);
             this.Controls.Add(this.dgvTable);
             this.Name = "GenerateSQLForm";
             this.Text = "IBatisQueryGenerator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.SQL.ResumeLayout(false);
+            this.Entity.ResumeLayout(false);
+            this.Query.ResumeLayout(false);
+            this.Dto.ResumeLayout(false);
+            this.IService接口.ResumeLayout(false);
+            this.Service实现.ResumeLayout(false);
+            this.Controller.ResumeLayout(false);
+            this.Indexcshtml.ResumeLayout(false);
+            this.QueryForm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,6 +677,28 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button BtnGenerateEntity;
+        private System.Windows.Forms.Button btnGenerateEasyUI;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage SQL;
+        private System.Windows.Forms.TabPage IService接口;
+        private System.Windows.Forms.TabPage Service实现;
+        private System.Windows.Forms.TabPage Controller;
+        private System.Windows.Forms.RichTextBox rtbIservice;
+        private System.Windows.Forms.RichTextBox rtbService;
+        private System.Windows.Forms.RichTextBox rtbController;
+        private System.Windows.Forms.TabPage Entity;
+        private System.Windows.Forms.RichTextBox rtbEntity;
+        private System.Windows.Forms.TabPage Query;
+        private System.Windows.Forms.TabPage Dto;
+        private System.Windows.Forms.RichTextBox rtbQuery;
+        private System.Windows.Forms.RichTextBox rtbEntityDto;
+        private System.Windows.Forms.TabPage Indexcshtml;
+        private System.Windows.Forms.RichTextBox rtbIndex;
+        private System.Windows.Forms.Button btnHtml;
+        private System.Windows.Forms.TabPage QueryForm;
+        private System.Windows.Forms.RichTextBox rtbQueryForm;
+        private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.Label label10;
     }
 }
 

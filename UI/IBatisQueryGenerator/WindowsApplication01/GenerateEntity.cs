@@ -9,7 +9,8 @@ namespace IBatisQueryGenerator
 {
     public class GenerateEntity
     {
-        private EntConnection connect;  
+        private EntConnection connect;
+        private string prefix = "   ";
         public GenerateEntity(EntConnection con)
         {
             this.connect = con;
@@ -57,14 +58,40 @@ namespace IBatisQueryGenerator
             return connect.GetDbColumns(sql, db, table);
         }
 
-        public string BeginGenerateEntity(string db,string table)
+        public string BeginGenerateEntity(string db,string table,string className,bool isEntityClass =false)
         {
             StringBuilder builder=new StringBuilder ();
-            builder.Append("public class " + table+ "\r\n");
-            builder.Append("{\r\n");
+            
+            if (isEntityClass)
+            {
+                builder.Append(prefix + "public class " + className + ":" + "AggregateRootIntId" + "\r\n");
+                builder.Append(prefix + "{\r\n");
+                builder.Append(prefix + prefix + "public " + className + "()");
+                builder.Append("\r\n");
+                builder.Append(prefix + prefix + ": this(int.MaxValue)");
+                builder.Append("\r\n");
+                builder.Append(prefix + prefix + "{");
+                builder.Append("\r\n");
+                builder.Append(prefix + prefix + "}");
+                builder.Append("\r\n");
+
+                builder.Append(prefix + prefix + "public " + className + "(int id)");
+                builder.Append("\r\n");
+                builder.Append(prefix + prefix + ": base(id)");
+                builder.Append("\r\n");
+                builder.Append(prefix + prefix + "{");
+                builder.Append("\r\n");
+                builder.Append(prefix + prefix + "}");
+                builder.Append("\r\n");
+            }
+            else
+            {
+                builder.Append(prefix + "public class " + className  + "\r\n");
+                builder.Append(prefix + "{\r\n");
+            }
             foreach (DbColumn column in GetTableColums(db, table))
             {
-                builder.Append("    public ");
+                builder.Append(prefix + "    public ");
                 builder.Append(column.CSharpType);
                 if(column.CommonType.IsValueType && column.IsNullable)
                 {
@@ -74,8 +101,66 @@ namespace IBatisQueryGenerator
                 builder.Append(" { get; set; } ");
                 builder.Append("\r\n");
             }
-            builder.Append("}\r\n");
+            builder.Append(prefix + "}\r\n");
 
+            return builder.ToString();
+        }
+
+        public string BeginGenerateEntityClass(string db, string table, string className)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("using System;");
+            builder.Append("\r\n");
+            builder.Append("using Study.Domains.Framework;");
+            builder.Append("\r\n");
+            builder.Append("namespace Study.Entity");
+            builder.Append("\r\n");
+            builder.Append("{");
+            builder.Append("\r\n");
+            builder.Append(BeginGenerateEntity(db, table, className,true));
+            builder.Append("}");
+            return builder.ToString();
+        }
+
+        public string BeginGenerateEntityQuery(string db, string table)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("using Study.Domains.Framework.Repositories;");
+            builder.Append("\r\n");
+            builder.Append("using System.ComponentModel.DataAnnotations;");
+            builder.Append("\r\n");
+            builder.Append("\r\n");
+            builder.Append("namespace Study.Entity");
+            builder.Append("\r\n");
+            builder.Append("{");
+            builder.Append("\r\n");
+            string className = table+"Query" + "  :   Pager";
+            string result = BeginGenerateEntity(db, table, className);
+            builder.Append( result);
+            builder.Append("\r\n");
+            builder.Append("}");
+            return builder.ToString();
+        }
+
+        public string BeginGenerateEntityDto(string db, string table)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("using System.ComponentModel.DataAnnotations;");
+            builder.Append("\r\n");
+            builder.Append("using System.Runtime.Serialization;");
+            builder.Append("\r\n");
+            builder.Append("using Study.ApplicationServices;");
+            builder.Append("\r\n");
+            builder.Append("\r\n");
+            builder.Append("namespace Study.Entity");
+            builder.Append("\r\n");
+            builder.Append("{");
+            builder.Append("\r\n");
+            string className = table + "Dto" + "  :   DtoBase";
+            string result = BeginGenerateEntity(db, table, className);
+            builder.Append(result);
+            builder.Append("\r\n");
+            builder.Append("}");
             return builder.ToString();
         }
     }

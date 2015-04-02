@@ -5,6 +5,12 @@
     <typeAlias alias="Staff" type="Study.Entity.Staff, Study.Entity"/>
     <typeAlias alias="Application" type="Study.Entity.Application, Study.Entity"/>
     <typeAlias alias="ApplicationDto" type="Study.Entity.ApplicationDto, Study.Entity"/>
+    <typeAlias alias="MoneyOutDto" type="Study.Entity.MoneyOutDto, Study.Entity"/>
+    <typeAlias alias="MoneyOutQuery" type="Study.Entity.MoneyOutQuery, Study.Entity"/>
+    <typeAlias alias="MoneyOut" type="Study.Entity.MoneyOut, Study.Entity"/>
+    <typeAlias alias="MoneyKind" type="Study.Entity.MoneyKind, Study.Entity"/>
+    <typeAlias alias="MoneyKindQuery" type="Study.Entity.MoneyKindQuery, Study.Entity"/>
+    <typeAlias alias="MoneyKindDto" type="Study.Entity.MoneyKindDto, Study.Entity"/>
   </alias>
   <cacheModels >
     <cacheModel id="TestCache" type ="Fifo" flushInterval="6000" share ="true">
@@ -81,7 +87,7 @@
       ,[SEX]
       FROM [Staff]
       where [SEX]='1'
-      and [STAFF_CARD_NO] in
+      and [STAFF_CARD_NO] in 
       (
       select [STAFF_CARD_NO]
       from [Staff]
@@ -96,6 +102,28 @@
         </isNotEmpty>
       </dynamic>
       
+    </select>
+
+    <select id="qMoneyOutId" parameterClass="MoneyOutQuery" resultClass="MoneyOutDto">
+      select A.Id,B.Name,A.Quality,A.OutTime,A.Remark
+      from MoneyOut as A
+      left outer join MoneyKind as B
+      on A.KindType=B.Id
+      <dynamic prepend="where">
+        <isNotEmpty prepend="and" property="Id">
+          A.KindType = #KindType#
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="qMoneyKind" parameterClass="MoneyKindQuery" resultClass="MoneyKindDto">
+      SELECT
+      T.Id                          AS "Id"
+      ,  T.KindType                    AS "KindType"
+      ,  T.Name                        AS "Name"
+      ,  T.InOrOut                     AS "InOrOut"
+      FROM  Study.dbo.MoneyKind  T
+
     </select>
   </statements>
 </sqlMap>

@@ -120,6 +120,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Css\common.css" />
+    <Content Include="Css\D3\dc.css" />
+    <Content Include="Css\D3\styles.css" />
     <Content Include="Css\icon.css" />
     <Content Include="Css\icons\add.png" />
     <Content Include="Css\icons\add_2.png" />
@@ -154,6 +156,9 @@
     <Content Include="DatabaseFilter\PTS\sqlMapConfig.xml" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\D3\crossfilter.js" />
+    <Content Include="Scripts\D3\d3.js" />
+    <Content Include="Scripts\D3\dc.js" />
     <Content Include="Scripts\EasyUi\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\EasyUi\jquery.easyui.min.js" />
     <Content Include="Scripts\EasyUi\jquery.min.js" />
@@ -426,7 +431,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\D3Report\Controllers\FirstReportController.cs" />
+    <Compile Include="Areas\D3Report\D3ReportAreaRegistration.cs" />
     <Compile Include="Areas\Systems\Controllers\ApplicationController.cs" />
+    <Compile Include="Areas\Systems\Controllers\MoneyKindController.cs" />
+    <Compile Include="Areas\Systems\Controllers\MoneyOutController.cs" />
     <Compile Include="Areas\Systems\SystemsAreaRegistration.cs" />
     <Compile Include="Base\CrudControllerBase.cs" />
     <Compile Include="Base\ManageControllerBase.cs" />
@@ -457,6 +466,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Areas\Systems\Views\Application\Parts\UpdateForm.cshtml" />
+    <Content Include="Areas\Systems\Views\MoneyOut\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\MoneyOut\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\MoneyKind\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\MoneyKind\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\D3Report\Views\web.config" />
+    <Content Include="Areas\D3Report\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\D3Report\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\D3Report\Views\FirstReport\Index1.cshtml" />
+    <Content Include="Scripts\data.tsv" />
+    <Content Include="Areas\D3Report\Views\FirstReport\Index2.cshtml" />
+    <Content Include="Areas\D3Report\Views\FirstReport\Index.cshtml" />
+    <Content Include="Areas\D3Report\Views\FirstReport\Indexdc.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -466,6 +487,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\D3Report\Models\" />
     <Folder Include="Areas\Systems\Models\" />
     <Folder Include="Areas\Systems\Views\Shared\" />
     <Folder Include="Models\" />
@@ -478,6 +500,14 @@
     <ProjectReference Include="..\..\Business\Study.Entity\Study.Entity.csproj">
       <Project>{f08f27dd-2ab6-4b74-8e93-7739e77e8d7f}</Project>
       <Name>Study.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NoSQL\MongoDB\MongoDB.csproj">
+      <Project>{b125bba6-bffd-44fa-9254-9b1754cd8af3}</Project>
+      <Name>MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NoSQL\Study.MongoDB.Core\Study.MongoDB.Core.csproj">
+      <Project>{cf19a7c6-5757-4836-bee0-a6ad48184278}</Project>
+      <Name>Study.MongoDB.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Study.DI.Autofac\Study.DI.Autofac.csproj">
       <Project>{1374328a-14b6-4980-b2dc-26e1785cddbd}</Project>

@@ -1,0 +1,18 @@
+﻿@model MoneyKindQuery
+@{
+   var x = @Html.EasyUi();
+}
+<div id="divQuery" class="divQueryForm">
+    <form id="formQuery" class="form" action="/Systems/Application/Query">
+        <dl>
+            <dt>@Html.LabelFor( t =>  t.KindType)</dt>
+            <dd>
+                @x.TextBox( t => t.KindType )
+            </dd>
+       </dl>
+                <span class="button">
+                    @x.LinkButton( "查 询" ).Width( 70 ).Icon( "icon-search" ).Click( "$.easyui.query()" )
+                </span>
+    </form>
+</div>
+

@@ -70,6 +70,14 @@
       <Project>{7299d11b-7317-4e1f-a923-06f1dd02d5ac}</Project>
       <Name>Study.BusinessService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Business\Study.Entity\Study.Entity.csproj">
+      <Project>{f08f27dd-2ab6-4b74-8e93-7739e77e8d7f}</Project>
+      <Name>Study.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoSQL\Study.MongoDB.Core\Study.MongoDB.Core.csproj">
+      <Project>{cf19a7c6-5757-4836-bee0-a6ad48184278}</Project>
+      <Name>Study.MongoDB.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ORM\Study.MyBatis\Study.MyBatis.csproj">
       <Project>{dbef33b2-f18a-4980-ba75-d47108b55ce0}</Project>
       <Name>Study.MyBatis</Name>

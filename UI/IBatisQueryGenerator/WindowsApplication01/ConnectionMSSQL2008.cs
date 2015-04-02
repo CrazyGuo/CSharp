@@ -35,7 +35,7 @@ namespace IBatisQueryGenerator
         {
             StringBuilder sbQuery = new StringBuilder(128);
             sbQuery.Append("select * from master.dbo.sysdatabases ");
-            sbQuery.Append("where name like 'PTS%' ");
+            //sbQuery.Append("where name like 'PTS%' ");
             sbQuery.Append("order by dbid");
             return sbQuery;
         }

@@ -1,0 +1,40 @@
+﻿@model MoneyOutDto
+@{
+   var x = @Html.EasyUi();
+}
+@section head {
+    <script type="text/javascript">
+      $(function () {
+          $.easyui.deleteUrl = "/systems/moneyout/delete";
+      });
+    </script>
+}
+
+@section top {
+    <div class="toolbar">
+        @x.DialogButton("添加", "/systems/moneyout/add").Icon("icon-add").Plain().DialogSize(420, 260)
+        @x.DialogButton("编辑", "/systems/moneyout/Edit").Id("btnEdit").OnInit("$.easyui.fnInitEdit").Icon("icon-edit").Plain().DialogSize(420, 260)
+        @x.LinkButton("删除").Icon("icon-delete").Plain().Click("$.easyui.delete()")
+        @x.DialogButton("查看详细", "/systems/moneyout/look").Id("btnLook").OnInit("$.easyui.fnInitLook").Icon("icon-look").Plain().DialogSize(500, 240)
+        @x.LinkButton("刷 新").Icon("icon-refresh").Plain().Click("$.easyui.refresh()")
+    </div>
+}
+@section content {
+    @Html.Partial("Parts/QueryForm")
+    @(x.Grid("grid").Toolbar("divQuery").Url("/systems/moneyout/Query")
+   .OnDblClickRow("$.easyui.showEditDialog").OnRowContextMenu("$.easyui.fnRightClickGridRow")
+   .Columns(
+           x.GridColumn("Id", "Id", 100),
+           x.GridColumn("Name", "消费名称", 100),
+           x.GridColumn("Quality", "金额", 50),
+           x.GridColumn("OutTime", "消费时间", 100),
+           x.GridColumn("Remark", "备注", 100)
+   )
+   )
+    @x.Menu("menuGrid").Click("$.easyui.fnClickGridMenu").Duration(600).Items(
+      x.MenuItem("menuItem_Edit", "编 辑", "icon-edit"),
+      x.MenuItem("menuItem_Delete", "删 除", "icon-delete"),
+      x.MenuItem("menuItem_Look", "查看详细", "icon-look")
+   )
+}
+
