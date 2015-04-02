@@ -16,7 +16,7 @@ namespace Study.MongoDB.Core
         {
             return new MondodbConfig
             {
-                ConnectionString = "mongodb://10.10.13.37:27200",
+                ConnectionString = "mongodb://192.168.80.6:27017",
                 TargetDb = "OpcDb",
             };
         }

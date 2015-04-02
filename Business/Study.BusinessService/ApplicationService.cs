@@ -8,7 +8,7 @@ namespace Study.BusinessService
     {
         public ApplicationService( )
         {
-            //Repository = repository;
+            
         }
 
         protected override ApplicationDto ToDto(Application entity)

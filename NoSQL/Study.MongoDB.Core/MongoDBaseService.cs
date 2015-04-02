@@ -20,7 +20,7 @@ namespace Study.MongoDB.Core
             dbConfig = GetMongoDbConfig();
             mongo = GetMongo();
             mongoDatabase = mongo.GetDatabase(dbConfig.TargetDb) as MongoDatabase;
-            mongoCollection = mongoDatabase.GetCollection<T>() as MongoCollection<T>;
+            mongoCollection = mongoDatabase.GetCollection<T>("Th1Opc") as MongoCollection<T>;
         }
 
         private Mongo GetMongo()
