@@ -104,7 +104,7 @@
       
     </select>
 
-    <select id="qMoneyOutId" parameterClass="MoneyOutQuery" resultClass="MoneyOutDto">
+    <select id="qMoneyOut" parameterClass="MoneyOutQuery" resultClass="MoneyOutDto">
       select A.Id,B.Name,A.Quality,A.OutTime,A.Remark
       from MoneyOut as A
       left outer join MoneyKind as B
@@ -125,6 +125,38 @@
       FROM  Study.dbo.MoneyKind  T
 
     </select>
+    <insert id="iMoneyOut" parameterClass="MoneyOutDto">
+      INSERT  INTO  Study.dbo.MoneyOut (
+         Quality
+      ,  KindType
+      ,  OutTime
+      ,  Remark
+      )  
+      VALUES  (
+         #Quality#
+      ,  #Id#
+      ,  #OutTime#
+      ,  #Remark#
+      )
+    </insert>
+
+    <select id="qMoneyOutId" parameterClass="string" resultClass="MoneyOutDto">
+      select A.Id as "MoneyOutId",A.KindType as "Id",B.Name,A.Quality,A.OutTime,A.Remark
+      from MoneyOut as A
+      left outer join MoneyKind as B
+      on A.KindType=B.Id
+      Where A.Id=#Id#
+    </select>
+
+    <update id="uMoneyOut" parameterClass="MoneyOutDto">
+      UPDATE  Study.dbo.MoneyOut
+      SET  Quality                        = #Quality#
+      ,  KindType                       = #Id#
+      ,  OutTime                        = #OutTime#
+      ,  Remark                         = #Remark#
+      Where Id=#MoneyOutId#
+    </update>
+    
   </statements>
 </sqlMap>
 

@@ -1,0 +1,36 @@
+﻿@model MoneyOutDto
+@{
+   var x = @Html.EasyUi();
+}
+<div class="divForm">
+    <form id="form" class="form" action="/Systems/MoneyOut/Update">
+        <dl>
+            <dt>@Html.LabelFor( t => t.Id )</dt>
+            <dd>
+                @x.Combox().Name(InfraUtils.GetPropertyName<MoneyOutDto>( i => i.Id)).Load("/systems/moneykind/QueryAll", "Id", "Name").Value(Model.Name)
+            </dd>
+         </dl>
+        <dl>
+            <dt>@Html.LabelFor(t => t.Quality)</dt>
+            <dd>
+                @x.TextBox(t=>t.Quality).Value(Model.Quality.ToStr())
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor(t => t.OutTime)</dt>
+            <dd>
+                @x.TextBox(t => t.OutTime).Value(Model.OutTime.ToStr()).Date()
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor(t => t.Remark)</dt>
+            <dd>
+                @x.TextBox(t => t.Remark).Value(Model.Remark)
+            </dd>
+        </dl>
+        @x.TextBox(t => t.MoneyOutId).Value(Model.MoneyOutId.ToStr()).
+    </form>
+</div><div id="dialogButtons">
+    @x.LinkButton("保 存").Icon("icon-ok").Width(90).Click("$.easyui.submit()")
+    @x.DialogButton("关 闭").Icon("icon-cancel").Width(90).CloseDialog()
+</div>

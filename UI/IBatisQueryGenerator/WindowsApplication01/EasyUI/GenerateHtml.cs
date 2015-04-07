@@ -123,6 +123,87 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append("</div>");
             return builder.ToString();
         }
+        
+        public string AddForm()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("@model " + Name + "Dto");
+            builder.Append(newLine);
+            builder.Append("@{");
+            builder.Append(newLine);
+            builder.Append(prefix + "var x = @Html.EasyUi();");
+            builder.Append(newLine);
+            builder.Append("}");
+            builder.Append(newLine);
+            builder.Append("<div class=\"divForm\">");
+            builder.Append(newLine);
+            builder.Append(prefix + "<form id=\"form\" class=\"form\" action=\"" + Url + "/Save\">");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + "<dl>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + "<dt>@Html.LabelFor( t =>  )</dt>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + "<dd>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + prefix + " @x.TextBox( t => t.Code )");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + "</dd>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + "</dl>");
+            builder.Append(newLine);
+            builder.Append(prefix + "</form>");
+            builder.Append(newLine);
+            builder.Append("</div>");
+            builder.Append("<div id=\"dialogButtons\">");
+            builder.Append(newLine);
+            builder.Append("@x.LinkButton(\"保 存\").Icon(\"icon-ok\").Width(90).Click(\"$.easyui.submit()\")");
+            builder.Append(newLine);
+            builder.Append("@x.DialogButton(\"关 闭\").Icon(\"icon-cancel\").Width(90).CloseDialog()");
+            builder.Append(newLine);
+            builder.Append("</div>");
+            return builder.ToString();
+        }
+
+        public string UpdateForm()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("@model " + Name + "Dto");
+            builder.Append(newLine);
+            builder.Append("@{");
+            builder.Append(newLine);
+            builder.Append(prefix + "var x = @Html.EasyUi();");
+            builder.Append(newLine);
+            builder.Append("}");
+            builder.Append(newLine);
+            builder.Append("<div class=\"divForm\">");
+            builder.Append(newLine);
+            builder.Append(prefix + "<form id=\"form\" class=\"form\" action=\"" + Url + "/Update\">");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + "<dl>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + "<dt>@Html.LabelFor( t =>  )</dt>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + "<dd>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + prefix + " @x.TextBox( t => t.Code )");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + prefix + "</dd>");
+            builder.Append(newLine);
+            builder.Append(prefix + prefix + "</dl>");
+            builder.Append(newLine);
+            builder.Append(prefix + "</form>");
+            builder.Append(newLine);
+            builder.Append("</div>");
+            builder.Append("<div id=\"dialogButtons\">");
+            builder.Append(newLine);
+            builder.Append("@x.LinkButton(\"保 存\").Icon(\"icon-ok\").Width(90).Click(\"$.easyui.submit()\")");
+            builder.Append(newLine);
+            builder.Append("@x.DialogButton(\"关 闭\").Icon(\"icon-cancel\").Width(90).CloseDialog()");
+            builder.Append(newLine);
+            builder.Append("</div>");
+            return builder.ToString();
+        }
+
         public void s()
         {
             StringBuilder builder = new StringBuilder();

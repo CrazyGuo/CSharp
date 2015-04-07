@@ -1,0 +1,36 @@
+﻿@model MoneyOutDto
+@{
+    var x = @Html.EasyUi();
+}
+<div class="divForm">
+    <form id="form" class="form" action="/Systems/MoneyOut/Save">
+        <dl>
+            <dt>@Html.Label("类别")</dt>
+            <dd>
+                @x.Combox(t=>t.Id).Load("/systems/moneykind/QueryAll", "Id", "Name")
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor(t => t.Quality)</dt>
+            <dd>
+                @x.TextBox(t => t.Quality).Editable()
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor(t => t.Remark)</dt>
+            <dd>
+                @x.TextBox(t => t.Remark)
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor(t => t.OutTime)</dt>
+            <dd>
+                @x.TextBox(t => t.OutTime).Date()
+            </dd>
+        </dl>
+    </form>
+</div>
+<div id="dialogButtons">
+    @x.LinkButton("保 存").Icon("icon-ok").Width(90).Click("$.easyui.submit()")
+    @x.DialogButton("关 闭").Icon("icon-cancel").Width(90).CloseDialog()
+</div>

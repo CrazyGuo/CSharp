@@ -478,6 +478,8 @@
     <Content Include="Areas\D3Report\Views\FirstReport\Index2.cshtml" />
     <Content Include="Areas\D3Report\Views\FirstReport\Index.cshtml" />
     <Content Include="Areas\D3Report\Views\FirstReport\Indexdc.cshtml" />
+    <Content Include="Areas\Systems\Views\MoneyOut\Parts\Form.cshtml" />
+    <Content Include="Areas\Systems\Views\MoneyOut\Parts\UpdateForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -528,6 +530,10 @@
     <ProjectReference Include="..\..\Tools\Syudy.Domains.Framework\Study.Domains.Framework.csproj">
       <Project>{b67abe2e-481c-4f6f-8a3b-e0c14fc819e6}</Project>
       <Name>Study.Domains.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utility\SeedWork\SeedWork.csproj">
+      <Project>{ee08021b-fa9f-469b-8bf2-96b21e453fe7}</Project>
+      <Name>SeedWork</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

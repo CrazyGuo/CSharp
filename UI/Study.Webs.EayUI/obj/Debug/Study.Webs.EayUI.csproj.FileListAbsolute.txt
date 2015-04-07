@@ -71,3 +71,5 @@ C:\work\CrazyCSharp\UI\Study.Webs.EayUI\bin\MyBatis.Common.pdb
 C:\work\CrazyCSharp\UI\Study.Webs.EayUI\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\work\CrazyCSharp\UI\Study.Webs.EayUI\obj\Debug\Study.Webs.EayUI.dll
 C:\work\CrazyCSharp\UI\Study.Webs.EayUI\obj\Debug\Study.Webs.EayUI.pdb
+C:\work\CrazyCSharp\UI\Study.Webs.EayUI\bin\SeedWork.dll
+C:\work\CrazyCSharp\UI\Study.Webs.EayUI\bin\SeedWork.pdb

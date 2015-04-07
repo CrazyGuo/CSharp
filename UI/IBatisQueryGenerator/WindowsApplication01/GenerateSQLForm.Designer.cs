@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTable = new System.Windows.Forms.DataGridView();
             this.col_eng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_kor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,11 +75,15 @@
             this.rtbController = new System.Windows.Forms.RichTextBox();
             this.Indexcshtml = new System.Windows.Forms.TabPage();
             this.rtbIndex = new System.Windows.Forms.RichTextBox();
-            this.btnHtml = new System.Windows.Forms.Button();
             this.QueryForm = new System.Windows.Forms.TabPage();
             this.rtbQueryForm = new System.Windows.Forms.RichTextBox();
+            this.btnHtml = new System.Windows.Forms.Button();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.AddForm = new System.Windows.Forms.TabPage();
+            this.txtAddForm = new System.Windows.Forms.RichTextBox();
+            this.UpdateForm = new System.Windows.Forms.TabPage();
+            this.txtUpdateForm = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SQL.SuspendLayout();
@@ -91,6 +95,8 @@
             this.Controller.SuspendLayout();
             this.Indexcshtml.SuspendLayout();
             this.QueryForm.SuspendLayout();
+            this.AddForm.SuspendLayout();
+            this.UpdateForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTable
@@ -113,8 +119,8 @@
             // col_eng
             // 
             this.col_eng.DataPropertyName = "col_eng";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_eng.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_eng.DefaultCellStyle = dataGridViewCellStyle1;
             this.col_eng.HeaderText = "字段";
             this.col_eng.Name = "col_eng";
             this.col_eng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -391,6 +397,8 @@
             this.tabControl1.Controls.Add(this.Controller);
             this.tabControl1.Controls.Add(this.Indexcshtml);
             this.tabControl1.Controls.Add(this.QueryForm);
+            this.tabControl1.Controls.Add(this.AddForm);
+            this.tabControl1.Controls.Add(this.UpdateForm);
             this.tabControl1.Location = new System.Drawing.Point(581, 50);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -545,16 +553,6 @@
             this.rtbIndex.TabIndex = 7;
             this.rtbIndex.Text = "";
             // 
-            // btnHtml
-            // 
-            this.btnHtml.Location = new System.Drawing.Point(1012, 397);
-            this.btnHtml.Name = "btnHtml";
-            this.btnHtml.Size = new System.Drawing.Size(92, 29);
-            this.btnHtml.TabIndex = 31;
-            this.btnHtml.Text = "Html";
-            this.btnHtml.UseVisualStyleBackColor = true;
-            this.btnHtml.Click += new System.EventHandler(this.btnHtml_Click);
-            // 
             // QueryForm
             // 
             this.QueryForm.Controls.Add(this.rtbQueryForm);
@@ -574,6 +572,16 @@
             this.rtbQueryForm.TabIndex = 4;
             this.rtbQueryForm.Text = "";
             // 
+            // btnHtml
+            // 
+            this.btnHtml.Location = new System.Drawing.Point(1012, 397);
+            this.btnHtml.Name = "btnHtml";
+            this.btnHtml.Size = new System.Drawing.Size(92, 29);
+            this.btnHtml.TabIndex = 31;
+            this.btnHtml.Text = "Html";
+            this.btnHtml.UseVisualStyleBackColor = true;
+            this.btnHtml.Click += new System.EventHandler(this.btnHtml_Click);
+            // 
             // txtUrl
             // 
             this.txtUrl.Location = new System.Drawing.Point(699, 438);
@@ -591,6 +599,46 @@
             this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 33;
             this.label10.Text = "Url：";
+            // 
+            // AddForm
+            // 
+            this.AddForm.Controls.Add(this.txtAddForm);
+            this.AddForm.Location = new System.Drawing.Point(4, 22);
+            this.AddForm.Name = "AddForm";
+            this.AddForm.Padding = new System.Windows.Forms.Padding(3);
+            this.AddForm.Size = new System.Drawing.Size(635, 295);
+            this.AddForm.TabIndex = 9;
+            this.AddForm.Text = "AddForm";
+            this.AddForm.UseVisualStyleBackColor = true;
+            // 
+            // txtAddForm
+            // 
+            this.txtAddForm.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddForm.Location = new System.Drawing.Point(4, 3);
+            this.txtAddForm.Name = "txtAddForm";
+            this.txtAddForm.Size = new System.Drawing.Size(626, 288);
+            this.txtAddForm.TabIndex = 5;
+            this.txtAddForm.Text = "";
+            // 
+            // UpdateForm
+            // 
+            this.UpdateForm.Controls.Add(this.txtUpdateForm);
+            this.UpdateForm.Location = new System.Drawing.Point(4, 22);
+            this.UpdateForm.Name = "UpdateForm";
+            this.UpdateForm.Padding = new System.Windows.Forms.Padding(3);
+            this.UpdateForm.Size = new System.Drawing.Size(635, 295);
+            this.UpdateForm.TabIndex = 10;
+            this.UpdateForm.Text = "UpdateForm";
+            this.UpdateForm.UseVisualStyleBackColor = true;
+            // 
+            // txtUpdateForm
+            // 
+            this.txtUpdateForm.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateForm.Location = new System.Drawing.Point(4, 3);
+            this.txtUpdateForm.Name = "txtUpdateForm";
+            this.txtUpdateForm.Size = new System.Drawing.Size(626, 288);
+            this.txtUpdateForm.TabIndex = 6;
+            this.txtUpdateForm.Text = "";
             // 
             // GenerateSQLForm
             // 
@@ -641,6 +689,8 @@
             this.Controller.ResumeLayout(false);
             this.Indexcshtml.ResumeLayout(false);
             this.QueryForm.ResumeLayout(false);
+            this.AddForm.ResumeLayout(false);
+            this.UpdateForm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,6 +749,10 @@
         private System.Windows.Forms.RichTextBox rtbQueryForm;
         private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage AddForm;
+        private System.Windows.Forms.RichTextBox txtAddForm;
+        private System.Windows.Forms.TabPage UpdateForm;
+        private System.Windows.Forms.RichTextBox txtUpdateForm;
     }
 }
 

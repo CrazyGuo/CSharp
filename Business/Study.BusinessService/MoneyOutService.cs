@@ -24,11 +24,11 @@ namespace Study.BusinessService
         }
         public override string  GetFetchQueryId()
         {
-            return "qMoneyOutId";
+            return "qMoneyOut";
         }
         public override string  GetFetchId()
         {
-            return string.Empty;
+            return "qMoneyOutId";
         }
         public override string  GetDeleteId()
         {
@@ -36,11 +36,11 @@ namespace Study.BusinessService
         }
         public override string  GetAddId()
         {
-            return string.Empty;
+            return "iMoneyOut";
         }
         public override string  GetUpdateId()
         {
-            return string.Empty;
+            return "uMoneyOut";
         }
     }
 }

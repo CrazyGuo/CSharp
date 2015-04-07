@@ -195,6 +195,8 @@ namespace IBatisQueryGenerator
             html.Url = txtUrl.Text.Trim();
             rtbIndex.Text = html.Index();
             rtbQueryForm.Text = html.QueryForm();
+            txtAddForm.Text = html.AddForm();
+            txtUpdateForm.Text = html.UpdateForm();
         }
     }
 }
