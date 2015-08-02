@@ -94,11 +94,11 @@
                 //判断选项卡是否存在,根据url进行判断
                 function exists() {
                     var allTabs = tabs.tabs("tabs");
-                    for (index = 0; index < allTabs.length; index++) {
+                    for (index = 0; index < allTabs.length; index++) {                        
                         iframe = allTabs[index].find('iframe');
                         if (iframe.length == 0)
                             continue;
-                        if ($.getUrlPath(iframe[0].src) === url)
+                        if ($.getUrlPath(iframe[0].src).substring(1) === url)
                             return true;
                     }
                     return false;

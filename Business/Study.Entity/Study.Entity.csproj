@@ -48,6 +48,7 @@
     <Compile Include="ApplicationDto.cs" />
     <Compile Include="ApplicationQuery.cs" />
     <Compile Include="Common\Menu.cs" />
+    <Compile Include="DtoBase.cs" />
     <Compile Include="MoneyKind.cs" />
     <Compile Include="MoneyKindDto.cs" />
     <Compile Include="MoneyKindQuery.cs" />
@@ -56,6 +57,12 @@
     <Compile Include="MoneyOutQuery.cs" />
     <Compile Include="OpcModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SportKind.cs" />
+    <Compile Include="SportKindDto.cs" />
+    <Compile Include="SportKindQuery.cs" />
+    <Compile Include="SportRecord.cs" />
+    <Compile Include="SportRecordDto.cs" />
+    <Compile Include="SportRecordQuery.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="WebJobs\JobInfo.cs" />
   </ItemGroup>
@@ -63,10 +70,6 @@
     <ProjectReference Include="..\..\NoSQL\MongoDB\MongoDB.csproj">
       <Project>{b125bba6-bffd-44fa-9254-9b1754cd8af3}</Project>
       <Name>MongoDB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Tools\Study.ApplicationServices\Study.ApplicationServices.csproj">
-      <Project>{20d09dca-cde9-4c9b-bcd8-429ba7d40599}</Project>
-      <Name>Study.ApplicationServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Tools\Study.Util\Study.Util.csproj">
       <Project>{70fc7313-b72a-4e28-8aaa-9f5556ec5a57}</Project>

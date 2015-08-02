@@ -17,7 +17,8 @@ namespace Study.Webs.EayUI.Areas.Systems
             context.MapRoute(
                 "Systems_default",
                 "Systems/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                new string[] { "Study.Webs.EayUI.Areas.Systems.Controllers" }
             );
         }
     }

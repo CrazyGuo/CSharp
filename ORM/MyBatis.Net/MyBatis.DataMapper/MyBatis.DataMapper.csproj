@@ -32,16 +32,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core">
-      <HintPath>..\External-Bin\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\DLLs\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.DynamicProxy2">
-      <HintPath>..\External-Bin\Castle.DynamicProxy2.dll</HintPath>
+      <HintPath>..\..\..\DLLs\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="Enyim.Caching">
-      <HintPath>..\..\..\OPCDialog\New folder\Enyim.Caching.dll</HintPath>
+      <HintPath>..\..\..\DLLs\Enyim.Caching.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\..\..\OPCDialog\New folder\log4net.dll</HintPath>
+      <HintPath>..\..\..\DLLs\log4net.dll</HintPath>
     </Reference>
     <Reference Include="MyBatis.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

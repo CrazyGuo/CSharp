@@ -82,14 +82,13 @@
       <Project>{dbef33b2-f18a-4980-ba75-d47108b55ce0}</Project>
       <Name>Study.MyBatis</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tools\Study.ApplicationServices\Study.ApplicationServices.csproj">
-      <Project>{20d09dca-cde9-4c9b-bcd8-429ba7d40599}</Project>
-      <Name>Study.ApplicationServices</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Tools\Syudy.Domains.Framework\Study.Domains.Framework.csproj">
       <Project>{b67abe2e-481c-4f6f-8a3b-e0c14fc819e6}</Project>
       <Name>Study.Domains.Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

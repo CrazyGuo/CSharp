@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Autofac;
-using Study.BusinessService;
 using Study.MongoDB.Core;
 using Study.Entity;
+using Study.BusinessService;
 
 namespace Study.DI.Autofac
 {
@@ -25,6 +25,8 @@ namespace Study.DI.Autofac
             builder.RegisterType<MoneyOutService>().As<IMoneyOutService>().InstancePerLifetimeScope();
             builder.RegisterType<MoneyKindService>().As<IMoneyKindService>().InstancePerLifetimeScope();
             builder.RegisterType<MongoDbRemoteRepository<OpcModel>>().As<MongoDbRemoteRepository<OpcModel>>().InstancePerLifetimeScope();
+            builder.RegisterType<SportRecordService>().As<ISportRecordService>().InstancePerLifetimeScope();
+            builder.RegisterType<SportKindService>().As<ISportKindService>().InstancePerLifetimeScope();
         }
     }
 }

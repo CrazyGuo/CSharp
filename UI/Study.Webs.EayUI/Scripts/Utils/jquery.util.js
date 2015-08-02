@@ -112,6 +112,7 @@
     $.fn.serializeJson = function () {
         var result = {};
         var array = this.serializeArray();
+        
         $(array).each(function () {
             if (result[this.name]) {
                 if ($.isArray(result[this.name])) {

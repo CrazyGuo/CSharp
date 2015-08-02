@@ -11,6 +11,7 @@ namespace IBatisQueryGenerator
     {
         private EntConnection connect;
         private string prefix = "   ";
+        public string ClassNameSpace = string.Empty;
         public GenerateEntity(EntConnection con)
         {
             this.connect = con;
@@ -113,7 +114,7 @@ namespace IBatisQueryGenerator
             builder.Append("\r\n");
             builder.Append("using Study.Domains.Framework;");
             builder.Append("\r\n");
-            builder.Append("namespace Study.Entity");
+            builder.Append("namespace " + ClassNameSpace);
             builder.Append("\r\n");
             builder.Append("{");
             builder.Append("\r\n");
@@ -125,12 +126,14 @@ namespace IBatisQueryGenerator
         public string BeginGenerateEntityQuery(string db, string table)
         {
             StringBuilder builder = new StringBuilder();
+            builder.Append("using System;");
+            builder.Append("\r\n");
             builder.Append("using Study.Domains.Framework.Repositories;");
             builder.Append("\r\n");
             builder.Append("using System.ComponentModel.DataAnnotations;");
             builder.Append("\r\n");
             builder.Append("\r\n");
-            builder.Append("namespace Study.Entity");
+            builder.Append("namespace " + ClassNameSpace);
             builder.Append("\r\n");
             builder.Append("{");
             builder.Append("\r\n");
@@ -145,18 +148,20 @@ namespace IBatisQueryGenerator
         public string BeginGenerateEntityDto(string db, string table)
         {
             StringBuilder builder = new StringBuilder();
+            builder.Append("using System;");
+            builder.Append("\r\n");
             builder.Append("using System.ComponentModel.DataAnnotations;");
             builder.Append("\r\n");
             builder.Append("using System.Runtime.Serialization;");
             builder.Append("\r\n");
-            builder.Append("using Study.ApplicationServices;");
+            //builder.Append("using Study.ApplicationServices;");
+            //builder.Append("\r\n");
             builder.Append("\r\n");
-            builder.Append("\r\n");
-            builder.Append("namespace Study.Entity");
+            builder.Append("namespace " + ClassNameSpace);
             builder.Append("\r\n");
             builder.Append("{");
             builder.Append("\r\n");
-            string className = table + "Dto" + "  :   DtoBase";
+            string className = table + "Dto";// +"  :   DtoBase";
             string result = BeginGenerateEntity(db, table, className);
             builder.Append(result);
             builder.Append("\r\n");

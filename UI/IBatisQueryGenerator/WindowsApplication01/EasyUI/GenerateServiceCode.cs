@@ -9,16 +9,19 @@ namespace IBatisQueryGenerator.EasyUI
     {
         public string Name;
         public string prefix = "    ";
-
+        public string ServiceNameSpace = string.Empty;
+        public string EntityNameSpace = string.Empty;
+        public string ProjectName = string.Empty;
+        public string AreaChildName = string.Empty;
         public string IServiceCode()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("using Study.ApplicationServices;");
+            builder.Append("using Study.BusinessService.Application;");
             builder.Append("\r\n");
-            builder.Append("using Study.Entity;");
+            builder.Append("using " + EntityNameSpace+";");
             builder.Append("\r\n");
             builder.Append("\r\n");
-            builder.Append("namespace Study.BusinessService");
+            builder.Append("namespace " + ServiceNameSpace);
             builder.Append("\r\n");
             builder.Append("{");
             builder.Append("\r\n");
@@ -42,14 +45,22 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append("\r\n");
             builder.Append("using Study.Entity;");
             builder.Append("\r\n");
-            builder.Append("using Study.ApplicationServices;");
+            builder.Append("using " + EntityNameSpace + ";");
             builder.Append("\r\n");
+            builder.Append("using Study.BusinessService.Application;");
             builder.Append("\r\n");
-            builder.Append("namespace Study.BusinessService");
+
+            builder.Append("using EmitMapper;");
+            builder.Append("\r\n");
+            builder.Append("using EmitMapper.MappingConfiguration;");
+            builder.Append("\r\n");
+
+            builder.Append("\r\n");
+            builder.Append("namespace " + ServiceNameSpace);
             builder.Append("\r\n");
             builder.Append("{");
             builder.Append("\r\n");
-            string className = "public class " + Name + "Service :" + "ServiceStudyBase <" + Name + ", "+Name+"Dto"+ "," + Name + "Query>, "+ "I"+Name+"Service";
+            string className = "public class " + Name + "Service :" + "ServiceStudyBaseIntId <" + Name + ", " + Name + "Dto" + "," + Name + "Query>, " + "I" + Name + "Service";
             builder.Append("    " + className);
             builder.Append("\r\n");
             builder.Append(prefix + "{");
@@ -90,7 +101,7 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(prefix + prefix + "}");
             builder.Append("\r\n");
 
-            builder.Append(prefix + prefix + "public override string " + " GetFetchQueryId()");
+            builder.Append(prefix + prefix + "public override string " + " GetQuerySqlId()");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "{");
             builder.Append("\r\n");
@@ -99,7 +110,16 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(prefix + prefix + "}");
             builder.Append("\r\n");
 
-            builder.Append(prefix + prefix + "public override string " + " GetFetchId()");
+            builder.Append(prefix + prefix + "public override string " + " GetQueryAllSqlId()");
+            builder.Append("\r\n");
+            builder.Append(prefix + prefix + "{");
+            builder.Append("\r\n");
+            builder.Append(prefix + prefix + "    return " + "\"q" + Name + "All\";");
+            builder.Append("\r\n");
+            builder.Append(prefix + prefix + "}");
+            builder.Append("\r\n");
+
+            builder.Append(prefix + prefix + "public override string " + " GetQuerySqlWithParameterIsId()");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "{");
             builder.Append("\r\n");
@@ -108,34 +128,36 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(prefix + prefix + "}");
             builder.Append("\r\n");
 
-            builder.Append(prefix + prefix + "public override string " + " GetDeleteId()");
+            builder.Append(prefix + prefix + "public override string " + " GetDeleteSqlId()");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "{");
             builder.Append("\r\n");
-            builder.Append(prefix + prefix + "    return " +"\"d"+Name+"Id\";");
+            builder.Append(prefix + prefix + "    return " +"\"d"+Name+"\";");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "}");
             builder.Append("\r\n");
 
-            builder.Append(prefix + prefix + "public override string " + " GetAddId()");
+            builder.Append(prefix + prefix + "public override string " + " GetInsertSqlId()");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "{");
             builder.Append("\r\n");
-            builder.Append(prefix + prefix + "    return " + "\"i" + Name + "Id\";");
+            builder.Append(prefix + prefix + "    return " + "\"i" + Name + "\";");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "}");
             builder.Append("\r\n");
 
-            builder.Append(prefix + prefix + "public override string " + " GetUpdateId()");
+            builder.Append(prefix + prefix + "public override string " + " GetUpdateSqlId()");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "{");
             builder.Append("\r\n");
-            builder.Append(prefix + prefix + "    return " + "\"u" + Name + "Id\";");
+            builder.Append(prefix + prefix + "    return " + "\"u" + Name + "\";");
             builder.Append("\r\n");
             builder.Append(prefix + prefix + "}");
             builder.Append("\r\n");
 
             builder.Append(prefix + "}");
+            builder.Append("\r\n");
+            builder.Append("}");
             builder.Append("\r\n");
             builder.Append("}");
             return builder.ToString();
@@ -144,14 +166,14 @@ namespace IBatisQueryGenerator.EasyUI
         public string ControllerCode()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("using Study.Webs.EayUI.Base;");
+            builder.Append("using " + ProjectName + ".Base;");
             builder.Append("\r\n");
-            builder.Append("using Study.Entity;");
+            builder.Append("using " + EntityNameSpace + ";");
             builder.Append("\r\n");
-            builder.Append("using Study.BusinessService;");
+            builder.Append("using " + ServiceNameSpace+";");
             builder.Append("\r\n");            
             builder.Append("\r\n");
-            builder.Append("namespace Study.Webs.EayUI.Areas..Controllers");
+            builder.Append("namespace " + ProjectName + ".Areas." + AreaChildName + ".Controllers");
             builder.Append("\r\n");
             builder.Append("{");
             builder.Append("\r\n");

@@ -30,6 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EmitMapper">
+      <HintPath>..\..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.1.13.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\PostSharp.4.1.13\lib\portable-net4+sl5+netcore45+wpa81+wp8\PostSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -56,6 +63,10 @@
       <Project>{dbef33b2-f18a-4980-ba75-d47108b55ce0}</Project>
       <Name>Study.MyBatis</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Utility\AopHelper\AopHelper.csproj">
+      <Project>{f6ed5a34-d46a-43bd-97a1-1a1b6ef2840f}</Project>
+      <Name>AopHelper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Study.Util\Study.Util.csproj">
       <Project>{70fc7313-b72a-4e28-8aaa-9f5556ec5a57}</Project>
       <Name>Study.Util</Name>
@@ -64,6 +75,9 @@
       <Project>{b67abe2e-481c-4f6f-8a3b-e0c14fc819e6}</Project>
       <Name>Study.Domains.Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

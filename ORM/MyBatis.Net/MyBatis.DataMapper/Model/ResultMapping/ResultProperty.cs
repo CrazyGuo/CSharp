@@ -548,14 +548,15 @@ namespace MyBatis.DataMapper.Model.ResultMapping
 		{
 			object value = null;
 
-			if (columnIndex == UNKNOWN_COLUMN_INDEX)  
-			{
+            if (columnIndex == UNKNOWN_COLUMN_INDEX)
+            {
                 value = TypeHandler.GetValueByName(this, dataReader);
-			} 
-			else 
-			{
-                value =TypeHandler.GetValueByIndex(this, dataReader);
-			}
+            }
+            else
+            {
+                value = TypeHandler.GetValueByIndex(this, dataReader);
+
+            }
 
 			bool wasNull = (value == DBNull.Value);
 			if (wasNull)

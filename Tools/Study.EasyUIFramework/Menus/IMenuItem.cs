@@ -30,6 +30,6 @@ namespace Study.EasyUIFramework.Menus
         /// 设置单击事件处理函数
         /// </summary>
         /// <param name="handler">单击事件处理函数</param>
-        IMenuItem Click( string handler );
+        IMenuItem Click(string handler, string parameter = "");
     }
 }

@@ -92,6 +92,7 @@
     <Compile Include="GridClass.cs" />
     <Compile Include="IBatisQueryFactory.cs" />
     <Compile Include="IEntQueryByProject.cs" />
+    <Compile Include="LoggingHelper.cs.cs" />
     <Compile Include="MakeCommonQuery.cs" />
     <Compile Include="MakeDeleteQuery.cs" />
     <Compile Include="MakeInsertQuery.cs" />

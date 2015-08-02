@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <DontImportPostSharp>True</DontImportPostSharp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -424,9 +425,16 @@
     <Content Include="Scripts\Utils\jquery.util.easyui.js" />
     <Content Include="Scripts\Utils\jquery.util.js" />
     <Content Include="Scripts\Utils\util.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\WebDisplayName.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebDisplayName.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -436,15 +444,18 @@
     <Compile Include="Areas\Systems\Controllers\ApplicationController.cs" />
     <Compile Include="Areas\Systems\Controllers\MoneyKindController.cs" />
     <Compile Include="Areas\Systems\Controllers\MoneyOutController.cs" />
+    <Compile Include="Areas\Systems\Controllers\SportKindController.cs" />
+    <Compile Include="Areas\Systems\Controllers\SportRecordController.cs" />
     <Compile Include="Areas\Systems\SystemsAreaRegistration.cs" />
+    <Compile Include="Base\CommonName.cs" />
     <Compile Include="Base\CrudControllerBase.cs" />
     <Compile Include="Base\ManageControllerBase.cs" />
+    <Compile Include="Controllers\AppErrorController.cs" />
     <Compile Include="Controllers\DesktopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LogOuts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -458,7 +469,9 @@
     <Content Include="Views\Shared\ContentLayout.cshtml" />
     <Content Include="Views\Shared\SitePath.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Systems\Views\web.config" />
+    <Content Include="Areas\Systems\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Systems\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Systems\Views\Application\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -480,6 +493,18 @@
     <Content Include="Areas\D3Report\Views\FirstReport\Indexdc.cshtml" />
     <Content Include="Areas\Systems\Views\MoneyOut\Parts\Form.cshtml" />
     <Content Include="Areas\Systems\Views\MoneyOut\Parts\UpdateForm.cshtml" />
+    <Content Include="Areas\Systems\Views\SportRecord\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\SportRecord\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\SportRecord\Parts\AddForm.cshtml" />
+    <Content Include="Areas\Systems\Views\SportRecord\Parts\UpdateForm.cshtml" />
+    <Content Include="log4net.config" />
+    <Content Include="Areas\Systems\Views\SportKind\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\SportKind\Parts\AddForm.cshtml" />
+    <Content Include="Areas\Systems\Views\SportKind\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\SportKind\Parts\UpdateForm.cshtml" />
+    <None Include="Properties\PublishProfiles\mywebs.pubxml" />
+    <Content Include="Views\AppError\Error.cshtml" />
+    <Content Include="Views\AppError\PageNotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -515,10 +540,6 @@
       <Project>{1374328a-14b6-4980-b2dc-26e1785cddbd}</Project>
       <Name>Study.DI.Autofac</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Tools\Study.ApplicationServices\Study.ApplicationServices.csproj">
-      <Project>{20d09dca-cde9-4c9b-bcd8-429ba7d40599}</Project>
-      <Name>Study.ApplicationServices</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Tools\Study.EasyUIFramework\Study.EasyUIFramework.csproj">
       <Project>{08076e91-d256-48b3-bc5a-c91839fba495}</Project>
       <Name>Study.EasyUIFramework</Name>
@@ -531,10 +552,20 @@
       <Project>{b67abe2e-481c-4f6f-8a3b-e0c14fc819e6}</Project>
       <Name>Study.Domains.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Utility\Log\Log.csproj">
+      <Project>{f78b09d9-8620-4938-8d3f-9e23c3b95f76}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Utility\SeedWork\SeedWork.csproj">
       <Project>{ee08021b-fa9f-469b-8bf2-96b21e453fe7}</Project>
       <Name>SeedWork</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\WebDisplayName.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>WebDisplayName.Designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -561,6 +592,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets" Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

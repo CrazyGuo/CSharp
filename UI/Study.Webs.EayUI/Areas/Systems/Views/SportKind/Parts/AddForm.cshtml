@@ -1,0 +1,17 @@
+﻿@model SportKindDto
+@{
+    var x = @Html.EasyUi();
+}
+<div class="divForm">
+    <form id="form" class="form" action="/Systems/SportKind/Save">
+        <dl>
+            <dt>@(InfraUtils.GetDisplayName<SportKindDto>(i => i.Name))</dt>
+            <dd>
+                @x.TextBox(t => t.Name)
+            </dd>
+        </dl>
+    </form>
+</div><div id="dialogButtons">
+    @x.LinkButton(EasyUiEvent.SaveOperation).Icon(EasyUiEvent.OKIcon).Width(90).Click(EasyUiEvent.AddEvent)
+    @x.DialogButton(EasyUiEvent.CloseOperation).Icon(EasyUiEvent.CancelIcon).Width(90).CloseDialog()
+</div>

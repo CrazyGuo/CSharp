@@ -1,0 +1,41 @@
+﻿@model SportRecordDto
+@{
+   var x = @Html.EasyUi();
+}
+<div class="divForm">
+    <form id="form" class="form" action="/Systems/SportRecord/Update">
+        <dl>
+            <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.Id))</dt>
+            <dd>
+                @x.TextBox(t => t.Id)
+            </dd>
+        </dl>
+        <dl>
+            <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.SportName))</dt>
+            <dd>
+                @x.TextBox(t => t.SportName)
+            </dd>
+        </dl>
+        <dl>
+            <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.ActivityTime))</dt>
+            <dd>
+                @x.TextBox(t => t.ActivityTime)
+            </dd>
+        </dl>
+        <dl>
+            <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.Numbers))</dt>
+            <dd>
+                @x.TextBox(t => t.Numbers)
+            </dd>
+        </dl>
+        <dl>
+            <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.Remark))</dt>
+            <dd>
+                @x.TextBox(t => t.Remark)
+            </dd>
+        </dl>
+    </form>
+</div><div id="dialogButtons">
+          @x.LinkButton(EasyUiEvent.SaveOperation).Icon(EasyUiEvent.OKIcon).Width(90).Click(EasyUiEvent.AddEvent)
+          @x.DialogButton(EasyUiEvent.CloseOperation).Icon(EasyUiEvent.CancelIcon).Width(90).CloseDialog()
+</div>

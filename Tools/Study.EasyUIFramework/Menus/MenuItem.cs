@@ -55,8 +55,13 @@ namespace Study.EasyUIFramework.Menus
         /// 设置单击事件处理函数
         /// </summary>
         /// <param name="handler">单击事件处理函数</param>
-        public IMenuItem Click( string handler ) 
+        public IMenuItem Click(string handler, string parameter = "") 
         {
+            if(string.IsNullOrEmpty(parameter)==false)
+            {
+                parameter ="'"+parameter+"'";
+                handler = string.Format(handler,parameter);
+            }
             AddAttribute( "onclick", handler );
             return This();
         }

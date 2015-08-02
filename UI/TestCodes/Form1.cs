@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Excel;
+using System.Threading;
 
 namespace TestCodes
 {
@@ -29,6 +30,13 @@ namespace TestCodes
                 MessageBox.Show(err.Message);
             }
             MessageBox.Show("Done");
+        }
+
+        [LoggingAspect(BusinessName = "我的AOP测试")]
+        private void AOPTest_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("业务执行时间:"+DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss"));
+            Thread.Sleep(3000);
         }
     }
 }

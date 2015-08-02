@@ -7,98 +7,72 @@ using Study.EasyUIFramework.Grids;
 
 namespace Study.EasyUIFramework 
 {
-    /// <summary>
-    /// EasyUi基控制器
-    /// </summary>
     public abstract class EasyUiControllerBase : Study.UtilWebs.ControllerBase 
     {
-        /// <summary>
-        /// 转换为DataGrid输出结果
-        /// </summary>
-        /// <typeparam name="T">实体类型</typeparam>
-        /// <param name="data">实体列表</param>
-        /// <param name="totalCount">总行数</param>
-        protected ActionResult ToDataGridResult<T>( IList<T> data, int totalCount = 0 ) 
+
+        #region 查询页面的数据表格返回数据
+
+        protected ActionResult ToDataGridResult<T>(IList<T> data, int totalCount = 0)
         {
-            return new DataGridResult( data, GetTotalCount( data, totalCount ) ).GetResult();
+            return new DataGridResult(data, GetTotalCount(data, totalCount)).GetResult();
         }
 
-        /// <summary>
-        /// 获取总行数
-        /// </summary>
-        private int GetTotalCount<T>( IList<T> data, int totalCount ) 
+        protected ActionResult ToComboxResult(IEnumerable<ComboxItem> items)
         {
-            if ( totalCount == 0 )
-                return data.Count;
-            return totalCount;
+            return new ContentResult() { Content = Combox.ToJson(items) };
         }
 
-        /// <summary>
-        /// 转换为Combox输出结果
-        /// </summary>
-        /// <param name="items">组合框项集合</param>
-        protected ActionResult ToComboxResult( IEnumerable<ComboxItem> items ) 
+        #endregion       
+
+        #region 界面操作结果提示
+
+        protected ActionResult Ok(string message)
         {
-            return new ContentResult() { Content = Combox.ToJson( items ) };
+            return new EasyUiResult(StateCode.Ok, message).GetResult();
         }
 
-        /// <summary>
-        /// 返回成功消息
-        /// </summary>
-        /// <param name="message">消息</param>
-        protected ActionResult Ok( string message ) 
+        protected ActionResult Fail(string message)
         {
-            return new EasyUiResult( StateCode.Ok, message ).GetResult();
+            return new EasyUiResult(StateCode.Fail, message).GetResult();
         }
 
-        /// <summary>
-        /// 返回失败消息
-        /// </summary>
-        /// <param name="message">消息</param>
-        protected ActionResult Fail( string message ) 
-        {
-            return new EasyUiResult( StateCode.Fail, message ).GetResult();
-        }
-
-        /// <summary>
-        /// 远程验证成功
-        /// </summary>
-        protected ActionResult RemoteOk() 
+        protected ActionResult RemoteOk()
         {
             return new ContentResult { Content = "true" };
         }
 
-        /// <summary>
-        /// 远程验证失败
-        /// </summary>
-        /// <param name="message">消息</param>
-        protected ActionResult RemoteFail( string message ) 
+        protected ActionResult RemoteFail(string message)
         {
             return new ContentResult { Content = message };
         }
 
-        /// <summary>
-        /// 获取分页的页索引
-        /// </summary>
-        protected int GetPageIndex() 
+        #endregion
+
+        #region 分页与排序相关参数的获取
+
+        protected int GetPageIndex()
         {
             return Request["page"].ToInt();
         }
 
-        /// <summary>
-        /// 获取分页大小
-        /// </summary>
-        protected int GetPageSize() 
+        protected int GetPageSize()
         {
             return Request["rows"].ToInt();
         }
 
-        /// <summary>
-        /// 获取排序
-        /// </summary>
-        protected string GetOrder() 
+        protected string GetOrder()
         {
-            return string.Format( "{0} {1}", Request["sort"].ToStr(), Request["order"].ToStr() );
+            return string.Format("{0} {1}", Request["sort"].ToStr(), Request["order"].ToStr());
         }
+
+        private int GetTotalCount<T>(IList<T> data, int totalCount)
+        {
+            if (totalCount == 0)
+                return data.Count;
+            return totalCount;
+        }
+
+        #endregion
+        
     }
 }

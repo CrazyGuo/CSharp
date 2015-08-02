@@ -60,6 +60,10 @@
     <Compile Include="EasyUiControllerBase.cs" />
     <Compile Include="EasyUiFactory.cs" />
     <Compile Include="EasyUiFactory`.cs" />
+    <Compile Include="EasyuiJsNames\CrudURL.cs" />
+    <Compile Include="EasyuiJsNames\DataGridNameAndEvent.cs" />
+    <Compile Include="EasyuiJsNames\EasyUiEvent.cs" />
+    <Compile Include="EasyuiJsNames\MenuNameAndEvent.cs" />
     <Compile Include="Forms\Comboxs\Combox.cs" />
     <Compile Include="Forms\Comboxs\ComboxItem.cs" />
     <Compile Include="Forms\Comboxs\Combox`.cs" />

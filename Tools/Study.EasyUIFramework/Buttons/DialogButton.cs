@@ -130,6 +130,17 @@ namespace Study.EasyUIFramework.Buttons
         }
 
         /// <summary>
+        /// 设置单击事件处理函数
+        /// </summary>
+        /// <param name="handler">事件处理函数或Js代码</param>
+        public IDialogButton Click(string handler, string url = "", string callback = "")
+        {
+            //故意忽略url和callback
+            AddAttribute("onClick", handler);
+            return This();
+        }
+
+        /// <summary>
         /// 创建单击事件处理
         /// </summary>
         private void CreateClickHandler( StringBuilder handler ) 

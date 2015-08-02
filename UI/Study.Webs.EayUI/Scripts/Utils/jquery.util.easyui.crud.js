@@ -297,5 +297,11 @@
         ///	</param>
         return initDialog(options,"请选择待查看的记录");
     };
+
+    $.easyui.getDefaultParameters = function () {
+        return getQueryForm$().serializeJson();
+        //alert(getQueryForm$().serializeJson().SportFromTime);
+        
+    };
 })(jQuery);
 

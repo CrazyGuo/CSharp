@@ -51,7 +51,7 @@ namespace Study.Domains.Framework
         /// 标识
         /// </summary>
         [Required]
-        public TKey Id { get; private set; }
+        public TKey Id { get;  set; }
 
         #endregion
 

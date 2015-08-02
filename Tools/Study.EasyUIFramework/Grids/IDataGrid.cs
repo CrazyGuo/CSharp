@@ -1,4 +1,5 @@
 ﻿using Study.EasyUIFramework.Base;
+using Study.EasyUIFramework.EasyuiJsNames;
 
 namespace Study.EasyUIFramework.Grids 
 {
@@ -59,7 +60,7 @@ namespace Study.EasyUIFramework.Grids
         /// 设置工具栏
         /// </summary>
         /// <param name="toolbarId">工具栏Id</param>
-        T Toolbar( string toolbarId );
+        T Toolbar(string toolbarId = DataGridNameAndEvent.ToolbarId);
         /// <summary>
         /// 设置加载数据的Url
         /// </summary>
@@ -69,16 +70,22 @@ namespace Study.EasyUIFramework.Grids
         /// 设置双击行事件处理函数
         /// </summary>
         /// <param name="handler">双击行事件处理函数</param>
-        T OnDblClickRow( string handler );
+        T OnDblClickRow(string handler = DataGridNameAndEvent.OnDblClickRowEvent);
         /// <summary>
         /// 设置右键单击行事件处理函数
         /// </summary>
         /// <param name="handler">右键单击行事件处理函数</param>
-        T OnRowContextMenu( string handler );
+        T OnRowContextMenu(string handler = DataGridNameAndEvent.OnRowContextMenuEvent);
         /// <summary>
         /// 设置列集合
         /// </summary>
         /// <param name="columns">列集合</param>
         T Columns( params IDataGridColumn[] columns );
+
+        /// <summary>
+        /// 获取默认的查询条件值
+        /// </summary>
+        /// <returns></returns>
+        T GetDefaultValues(string handler = DataGridNameAndEvent.GetDefaultValuesEvent);
     }
 }

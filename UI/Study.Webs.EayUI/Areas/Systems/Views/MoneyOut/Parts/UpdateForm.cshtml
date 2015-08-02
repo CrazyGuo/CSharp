@@ -7,7 +7,7 @@
         <dl>
             <dt>@Html.LabelFor( t => t.Id )</dt>
             <dd>
-                @x.Combox().Name(InfraUtils.GetPropertyName<MoneyOutDto>( i => i.Id)).Load("/systems/moneykind/QueryAll", "Id", "Name").Value(Model.Name)
+                @x.Combox(t=>t.Id).Load("/systems/moneykind/QueryAll", "Id", "Name").Value(Model.Id.ToStr())
             </dd>
          </dl>
         <dl>

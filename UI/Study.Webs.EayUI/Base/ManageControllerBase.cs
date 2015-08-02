@@ -5,9 +5,14 @@ namespace Study.Webs.EayUI.Base
 {
     public class ManageControllerBase : EasyUiControllerBase
     {
+        #region 控制器默认的路由页面
+
         public ActionResult Index()
         {
             return View();
         }
+
+        #endregion
+        
     }
 }

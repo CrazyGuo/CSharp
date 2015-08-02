@@ -11,6 +11,12 @@
     <typeAlias alias="MoneyKind" type="Study.Entity.MoneyKind, Study.Entity"/>
     <typeAlias alias="MoneyKindQuery" type="Study.Entity.MoneyKindQuery, Study.Entity"/>
     <typeAlias alias="MoneyKindDto" type="Study.Entity.MoneyKindDto, Study.Entity"/>
+    <typeAlias alias="SportRecord" type="Study.Entity.SportRecord, Study.Entity"/>
+    <typeAlias alias="SportRecordQuery" type="Study.Entity.SportRecordQuery, Study.Entity"/>
+    <typeAlias alias="SportRecordDto" type="Study.Entity.SportRecordDto, Study.Entity"/>
+    <typeAlias alias="SportKind" type="Study.Entity.SportKind, Study.Entity"/>
+    <typeAlias alias="SportKindQuery" type="Study.Entity.SportKindQuery, Study.Entity"/>
+    <typeAlias alias="SportKindDto" type="Study.Entity.SportKindDto, Study.Entity"/>
   </alias>
   <cacheModels >
     <cacheModel id="TestCache" type ="Fifo" flushInterval="6000" share ="true">
@@ -125,18 +131,18 @@
       FROM  Study.dbo.MoneyKind  T
 
     </select>
-    <insert id="iMoneyOut" parameterClass="MoneyOutDto">
+    <insert id="iMoneyOut" parameterClass="MoneyOut">
       INSERT  INTO  Study.dbo.MoneyOut (
-         Quality
+      Quality
       ,  KindType
       ,  OutTime
       ,  Remark
-      )  
+      )
       VALUES  (
-         #Quality#
-      ,  #Id#
-      ,  #OutTime#
-      ,  #Remark#
+      #Quality#
+      ,#KindType#
+      ,#OutTime#
+      ,#Remark#
       )
     </insert>
 
@@ -148,15 +154,90 @@
       Where A.Id=#Id#
     </select>
 
-    <update id="uMoneyOut" parameterClass="MoneyOutDto">
+    <update id="uMoneyOut" parameterClass="MoneyOut">
       UPDATE  Study.dbo.MoneyOut
       SET  Quality                        = #Quality#
-      ,  KindType                       = #Id#
+      ,  KindType                       = #KindType#
       ,  OutTime                        = #OutTime#
       ,  Remark                         = #Remark#
-      Where Id=#MoneyOutId#
+      Where Id=#Id#
+    </update>
+
+    <select id="qSportRecord" parameterClass="SportRecordQuery" resultClass="SportRecordDto">
+      SELECT T.Id                          AS "Id"
+      ,  T.Numbers                     AS "Numbers"
+      ,  T.ActivityTime                AS "ActivityTime"
+      ,  T.Remark                      AS "Remark"
+      ,  S.Name                     AS "SportName"
+      FROM  Study.dbo.SportRecord  T  Left join SportKind S
+      ON T.ActivityKind = S.Id
+      <dynamic prepend="where">
+        <isNotNull prepend="and" property="SportFromTime">
+          T.ActivityTime  >= #SportFromTime#
+        </isNotNull>
+        <isNotNull prepend="and" property="SportEndTime">
+          #SportEndTime# >= T.ActivityTime
+        </isNotNull>
+      </dynamic>
+    </select>
+
+    <insert id="iSportRecord" parameterClass="SportRecord">
+      INSERT  INTO  Study.dbo.SportRecord (
+      Numbers
+      ,  ActivityTime
+      ,  ActivityKind
+      ,  Remark
+      )  VALUES  (
+      #Numbers#
+      ,  #ActivityTime#
+      ,  #ActivityKind#
+      ,  #Remark#
+      )
+
+    </insert>
+
+    <select id="qSportRecordId" parameterClass="string" resultClass="SportRecordDto">
+      SELECT
+      T.Id                          AS "Id"
+      ,  S.Id                          AS "ActivityKind"
+      ,  S.Name                     AS "SportName"
+      ,  T.Numbers                     AS "Numbers"
+      ,  T.ActivityTime                AS "ActivityTime"
+      ,  T.Remark                      AS "Remark"
+      FROM  Study.dbo.SportRecord  T  Left join SportKind S
+      ON T.ActivityKind = S.Id
+      WHERE  T.Id                           = #Id#
+    </select>
+
+    <update id="uSportRecord" parameterClass="SportRecord">
+      UPDATE  Study.dbo.SportRecord
+      SET  Numbers                        = #Numbers#
+      ,  ActivityTime                   = #ActivityTime#
+      ,  ActivityKind                   = #ActivityKind#
+      ,  Remark                         = #Remark#
+      WHERE  Id                             = #Id#
     </update>
     
+    <delete id="dSportRecord" parameterClass="string">
+      DELETE  FROM  Study.dbo.SportRecord
+      WHERE  Id                             = #Id#
+
+    </delete>
+
+    <select id="qSportKind" parameterClass="SportKindQuery" resultClass="SportKindDto">
+      SELECT T1.Id AS "Id",T1.Name  AS "Name",T1.Unit AS "Unit"
+      FROM  Study.dbo.SportKind  T1
+      <dynamic prepend="where">
+        <isNotEmpty prepend="and" property="Name">
+          T1.Name                         = #Name#
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id="qSportKindAll" resultClass="SportKindDto">
+      SELECT T1.Id AS "Id",T1.Name  AS "Name",T1.Unit AS "Unit"
+      FROM  Study.dbo.SportKind  T1
+    </select>
   </statements>
 </sqlMap>
 

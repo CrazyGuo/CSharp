@@ -14,19 +14,19 @@ namespace Study.DevExpressForm
         [STAThread]
         static void Main()
         {
-            MySqlConnection con = new MySqlConnection();
-            Type t = con.GetType();
+            //MySqlConnection con = new MySqlConnection();
+            //Type t = con.GetType();
 
-            Oracle.ManagedDataAccess.Client.OracleConnection conn = new Oracle.ManagedDataAccess.Client.OracleConnection();
-            Type t1 = conn.GetType();
+            //Oracle.ManagedDataAccess.Client.OracleConnection conn = new Oracle.ManagedDataAccess.Client.OracleConnection();
+            //Type t1 = conn.GetType();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DevExpress.Skins.SkinManager.EnableFormSkins();
-            DevExpress.UserSkins.BonusSkins.Register();
+            //DevExpress.Skins.SkinManager.EnableFormSkins();
+            //DevExpress.UserSkins.BonusSkins.Register();
 
-            Application.Run(new WinFormTest());
+            Application.Run(new JobSearchForm());
         }
     }
 }

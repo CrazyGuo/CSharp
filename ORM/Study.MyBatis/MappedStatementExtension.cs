@@ -35,7 +35,8 @@ namespace Study.MyBatis
             string statementsql = request.PreparedStatement.PreparedSql;
 
             //难点2 改写自PetaPoco
-            return Page<T>(mappedStatement, request, session, willShowedPage, pageSize, statementsql, paramObject,ref totalCount);
+
+            return Page<T>(mappedStatement, request, session, willShowedPage, pageSize, statementsql, paramObject, ref totalCount);
         }
 
         public static DataTable RunQueryForDataTableWithPage(this IMappedStatement mappedStatement, ISession session, object paramObject, string orderby, int willShowedPage, int pageSize, ref int totalCount)
@@ -100,7 +101,8 @@ namespace Study.MyBatis
             //已经获取:查询数据总数SQL  分页SQL
             request.PreparedStatement.PreparedSql = sqlCount;
             mappedStatement.PreparedCommand.Create(request, session, mappedStatement.Statement, paramObject);
-            totalCount = GetCount(request, session, sqlCount);
+            totalCount =  GetCount(request, session, sqlCount);
+
 
             if (skip >= totalCount)
             {
@@ -134,13 +136,14 @@ namespace Study.MyBatis
 
         private static IList<T> Page<T>(IMappedStatement mappedStatement, RequestScope request, ISession session, long page, long itemsPerPage, string sql, object paramObject, ref int totalCount)
         {
-            string sqlCount, sqlPage,oldPreparedSql;
+            string sqlCount, sqlPage, oldPreparedSql = "";
             oldPreparedSql = request.PreparedStatement.PreparedSql;
-            BuildPageQueries(mappedStatement,request, session, (page - 1) * itemsPerPage, itemsPerPage, sql, paramObject, out sqlCount, out sqlPage,ref totalCount, paramObject);
+            BuildPageQueries(mappedStatement, request, session, (page - 1) * itemsPerPage, itemsPerPage, sql, paramObject, out sqlCount, out sqlPage, ref totalCount, paramObject);
 
-            
-            request.PreparedStatement.PreparedSql = sqlPage;
+
+            request.PreparedStatement.PreparedSql = sqlPage;//
             mappedStatement.PreparedCommand.Create(request, session, mappedStatement.Statement, paramObject);
+
             //难点三: 此处代码拷贝的MappedStatement的，就是增加了相关参数
             IList<T> result = RunQueryForList<T>(mappedStatement.Statement, request, session, paramObject, null, null);
             request.PreparedStatement.PreparedSql = oldPreparedSql;
@@ -161,10 +164,20 @@ namespace Study.MyBatis
 
         private static int GetCount(RequestScope request, ISession sqlMapSession, string cmdCountSql)
         {
-            int totalCount;
+            int totalCount = 0;
+            object countObject = 0;
+            string error;
             IDbCommand cmdCount = request.IDbCommand;
-            cmdCount.CommandText = cmdCountSql;
-            totalCount = Convert.ToInt32(cmdCount.ExecuteScalar());
+            try
+            {
+                cmdCount.CommandText = cmdCountSql;
+                countObject = cmdCount.ExecuteScalar();
+                totalCount = Convert.ToInt32(countObject);
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+            }
             return totalCount;
         }
 
@@ -279,10 +292,17 @@ namespace Study.MyBatis
                         {
                             while (reader.Read())
                             {
-                                object obj = resultStrategy.Process(request, ref reader, null);
-                                if (obj != BaseStrategy.SKIP)
+                                try
                                 {
-                                    list.Add((T)obj);
+                                    object obj = resultStrategy.Process(request, ref reader, null);
+                                    if (obj != BaseStrategy.SKIP)
+                                    {
+                                        list.Add((T)obj);
+                                    }
+                                }
+                                catch(Exception ed)
+                                {
+                                    string ms = ed.Message;
                                 }
                             }
                         }

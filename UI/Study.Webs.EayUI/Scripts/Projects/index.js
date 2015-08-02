@@ -15,7 +15,7 @@ $(function () {
 
     //添加我的桌面选项卡
     function addDesktopTab() {
-        $.easyui.addIframeToTabs("divMainTabs", "我的桌面", "/Desktop/Index", "icon-house", false);
+        $.easyui.addIframeToTabs("divMainTabs", "我的桌面", "Desktop/Index", "icon-house", false);
     }
 
     //绑定左侧树单击事件

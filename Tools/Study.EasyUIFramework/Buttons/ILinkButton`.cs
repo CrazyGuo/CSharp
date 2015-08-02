@@ -40,6 +40,6 @@ namespace Study.EasyUIFramework.Buttons
         /// 设置单击事件处理函数
         /// </summary>
         /// <param name="handler">事件处理函数或Js代码,范例: fun() 或 alert('1');</param>
-        T Click( string handler );
+        T Click( string handler, string url = "", string callback = "" );
     }
 }

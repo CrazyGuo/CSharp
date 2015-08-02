@@ -1,4 +1,4 @@
-﻿using Study.ApplicationServices;
+﻿using Study.BusinessService.Application;
 using Study.Entity;
 
 namespace Study.BusinessService

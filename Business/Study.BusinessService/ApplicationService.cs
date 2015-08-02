@@ -1,22 +1,22 @@
 ﻿using System;
-using Study.ApplicationServices;
 using Study.Entity;
+using Study.BusinessService.Application;
 
 namespace Study.BusinessService
 {
-    public class ApplicationService : ServiceStudyBase<Application, ApplicationDto, ApplicationQuery>, IApplicationService
+    public class ApplicationService : ServiceStudyBase<Study.Entity.Application, ApplicationDto, ApplicationQuery>, IApplicationService
     {
         public ApplicationService( )
         {
             
         }
 
-        protected override ApplicationDto ToDto(Application entity)
+        protected override ApplicationDto ToDto(Study.Entity.Application entity)
         {
             return null;// entity.ToDto();
         }
 
-        protected override Application ToEntity(ApplicationDto dto)
+        protected override Study.Entity.Application ToEntity(ApplicationDto dto)
         {
             return null;// dto.ToEntity();
         }
@@ -24,33 +24,32 @@ namespace Study.BusinessService
         public override ApplicationDto Create()
         {
             ApplicationDto dto = new ApplicationDto { Enabled = true };
-            dto.Id = Guid.NewGuid();
             dto.CreateTime = DateTime.Now;
             dto.Version = new byte[] { 251 };
             return dto;
         }
 
-        public override string GetFetchQueryId()
+        public override string GetQuerySqlId()
         {
             return "qApplication";
         }
 
-        public override string GetFetchId()
+        public override string GetQuerySqlWithParameterIsId()
         {
             return "qApplicationId";
         }
 
-        public override string GetDeleteId()
+        public override string GetDeleteSqlId()
         {
             return "dApplicationId";
         }
 
-        public override string GetAddId()
+        public override string GetInsertSqlId()
         {
             return "iApplicationId";
         }
 
-        public override string GetUpdateId()
+        public override string GetUpdateSqlId()
         {
             return "uApplicationId"; 
         }

@@ -1,0 +1,36 @@
+﻿@model SportKindDto
+
+@{
+   var x = Html.EasyUi();
+   CrudURL urls = new CrudURL();
+   urls.AddUrl = "/Systems/SportKind/add";
+   urls.EditUrl = "/Systems/SportKind/Edit";
+   urls.DeleteUrl = "/Systems/SportKind/delete";
+   urls.LookUrl = "/Systems/SportKind/look";
+   urls.QueryUrl = "/Systems/SportKind/Query";
+   
+@section top {
+    <div class="toolbar">
+        @(x.DialogButton(EasyUiEvent.AddOperation, urls.AddUrl).Icon(EasyUiEvent.AddIcon).Plain().DialogSize(420, 260))
+        @(x.DialogButton(EasyUiEvent.EditOperation, urls.EditUrl).Id(EasyUiEvent.ButtonEdit).OnInit(EasyUiEvent.EditDialogEvent).Icon(EasyUiEvent.EditIcon).Plain().DialogSize(420, 260))
+        @(x.LinkButton(EasyUiEvent.DeleteOperation).Icon(EasyUiEvent.DeleteIcon).Plain().Click(EasyUiEvent.DeleteDialogEvent, urls.DeleteUrl))
+        @(x.DialogButton(EasyUiEvent.DetailOperation, urls.LookUrl).Id(EasyUiEvent.ButtonDetail).OnInit(EasyUiEvent.LookDialogEvent).Icon(EasyUiEvent.LookIcon).Plain().DialogSize(500, 240))
+        @(x.LinkButton(EasyUiEvent.RefreshOperation).Icon(EasyUiEvent.RefreshIcon).Plain().Click(EasyUiEvent.RefreshEvent))
+    </div>
+}
+@section content {
+    @Html.Partial(EasyUiEvent.QueryFormUrl)
+    @(x.Grid().GetDefaultValues().Toolbar().Url(urls.QueryUrl)
+   .OnDblClickRow().OnRowContextMenu()
+   .Columns(
+      x.GridColumn(InfraUtils.GetPropertyName<SportKindDto>(i => i.Name), InfraUtils.GetDisplayName <SportKindDto>(i=>i.Name), 100)
+   )
+    )
+    @(x.Menu().Duration(600).Items(
+      x.MenuItem(EasyUiEvent.MenuItemEdit, EasyUiEvent.EditOperation, EasyUiEvent.EditIcon).Click(EasyUiEvent.MenuItemEditEvent),
+      x.MenuItem(EasyUiEvent.MenuItemDelete, EasyUiEvent.DeleteOperation, EasyUiEvent.DeleteIcon).Click(EasyUiEvent.MenuItemDeleteEvent, urls.DeleteUrl),
+      x.MenuItem(EasyUiEvent.MenuItemDetail, EasyUiEvent.DetailOperation, EasyUiEvent.LookIcon).Click(EasyUiEvent.MenuItemLookEvent)
+   ))
+}
+
+   }

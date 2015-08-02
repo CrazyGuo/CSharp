@@ -9,9 +9,9 @@ namespace Study.ApplicationServices
         where TDto : new()
         where TQuery : IPager
     {
-        protected ServiceStudyBaseIntId()
-            : base( ) 
+        protected ServiceStudyBaseIntId(): base()
         {
+
         }
     }
 }

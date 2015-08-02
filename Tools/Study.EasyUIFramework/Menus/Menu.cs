@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using Study.EasyUIFramework.Base;
+using Study.EasyUIFramework.EasyuiJsNames;
 
 namespace Study.EasyUIFramework.Menus 
 {
@@ -13,7 +14,7 @@ namespace Study.EasyUIFramework.Menus
         /// 初始化菜单
         /// </summary>
         /// <param name="id">Id</param>
-        public Menu( string id ) 
+        public Menu(string id = MenuNameAndEvent.DataGridMenu) 
         {
             _items = new List<IMenuItem>();
             Id( id ).AddClass( "easyui-menu" );
@@ -79,7 +80,7 @@ namespace Study.EasyUIFramework.Menus
         /// 设置单击事件处理函数
         /// </summary>
         /// <param name="handler">单击事件处理函数</param>
-        public IMenu Click( string handler ) 
+        public IMenu Click(string handler = MenuNameAndEvent.ClickGridMenu) 
         {
             AddDataOption( "onClick", handler );
             return This();

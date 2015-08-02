@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTable = new System.Windows.Forms.DataGridView();
             this.col_eng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_kor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,13 +77,20 @@
             this.rtbIndex = new System.Windows.Forms.RichTextBox();
             this.QueryForm = new System.Windows.Forms.TabPage();
             this.rtbQueryForm = new System.Windows.Forms.RichTextBox();
-            this.btnHtml = new System.Windows.Forms.Button();
-            this.txtUrl = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.AddForm = new System.Windows.Forms.TabPage();
             this.txtAddForm = new System.Windows.Forms.RichTextBox();
             this.UpdateForm = new System.Windows.Forms.TabPage();
             this.txtUpdateForm = new System.Windows.Forms.RichTextBox();
+            this.btnHtml = new System.Windows.Forms.Button();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtServiceNameSpace = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtClassNameSpace = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtProjectName = new System.Windows.Forms.TextBox();
+            this.BtnSaveFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SQL.SuspendLayout();
@@ -119,8 +126,8 @@
             // col_eng
             // 
             this.col_eng.DataPropertyName = "col_eng";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_eng.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_eng.DefaultCellStyle = dataGridViewCellStyle2;
             this.col_eng.HeaderText = "字段";
             this.col_eng.Name = "col_eng";
             this.col_eng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -159,11 +166,11 @@
             // 
             // btnGenerateSql
             // 
-            this.btnGenerateSql.Location = new System.Drawing.Point(152, 382);
+            this.btnGenerateSql.Location = new System.Drawing.Point(15, 422);
             this.btnGenerateSql.Name = "btnGenerateSql";
-            this.btnGenerateSql.Size = new System.Drawing.Size(106, 42);
+            this.btnGenerateSql.Size = new System.Drawing.Size(131, 32);
             this.btnGenerateSql.TabIndex = 4;
-            this.btnGenerateSql.Text = "GenerateSQL";
+            this.btnGenerateSql.Text = "生成SQL";
             this.btnGenerateSql.UseVisualStyleBackColor = true;
             this.btnGenerateSql.Click += new System.EventHandler(this.btnGenerateSql_Click);
             // 
@@ -175,15 +182,15 @@
             "INSERT",
             "UPDATE",
             "DELETE"});
-            this.listBoxQueryKindCd.Location = new System.Drawing.Point(73, 367);
+            this.listBoxQueryKindCd.Location = new System.Drawing.Point(73, 342);
             this.listBoxQueryKindCd.Name = "listBoxQueryKindCd";
-            this.listBoxQueryKindCd.Size = new System.Drawing.Size(73, 82);
+            this.listBoxQueryKindCd.Size = new System.Drawing.Size(73, 69);
             this.listBoxQueryKindCd.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(552, 380);
+            this.label2.Location = new System.Drawing.Point(965, 383);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 6;
@@ -192,7 +199,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(552, 411);
+            this.label3.Location = new System.Drawing.Point(965, 413);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 7;
@@ -200,7 +207,7 @@
             // 
             // txtNColEng
             // 
-            this.txtNColEng.Location = new System.Drawing.Point(699, 375);
+            this.txtNColEng.Location = new System.Drawing.Point(1056, 379);
             this.txtNColEng.MaxLength = 2;
             this.txtNColEng.Name = "txtNColEng";
             this.txtNColEng.Size = new System.Drawing.Size(40, 20);
@@ -209,7 +216,7 @@
             // 
             // txtNColKor
             // 
-            this.txtNColKor.Location = new System.Drawing.Point(699, 406);
+            this.txtNColKor.Location = new System.Drawing.Point(1056, 406);
             this.txtNColKor.MaxLength = 2;
             this.txtNColKor.Name = "txtNColKor";
             this.txtNColKor.Size = new System.Drawing.Size(40, 20);
@@ -228,7 +235,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 367);
+            this.label4.Location = new System.Drawing.Point(12, 358);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 12;
@@ -283,7 +290,7 @@
             this.chkComment.AutoSize = true;
             this.chkComment.Checked = true;
             this.chkComment.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkComment.Location = new System.Drawing.Point(827, 377);
+            this.chkComment.Location = new System.Drawing.Point(1102, 379);
             this.chkComment.Name = "chkComment";
             this.chkComment.Size = new System.Drawing.Size(110, 17);
             this.chkComment.TabIndex = 19;
@@ -294,7 +301,7 @@
             // chkUpperYn
             // 
             this.chkUpperYn.AutoSize = true;
-            this.chkUpperYn.Location = new System.Drawing.Point(827, 406);
+            this.chkUpperYn.Location = new System.Drawing.Point(1102, 408);
             this.chkUpperYn.Name = "chkUpperYn";
             this.chkUpperYn.Size = new System.Drawing.Size(50, 17);
             this.chkUpperYn.TabIndex = 20;
@@ -368,21 +375,21 @@
             // 
             // BtnGenerateEntity
             // 
-            this.BtnGenerateEntity.Location = new System.Drawing.Point(285, 381);
+            this.BtnGenerateEntity.Location = new System.Drawing.Point(165, 347);
             this.BtnGenerateEntity.Name = "BtnGenerateEntity";
-            this.BtnGenerateEntity.Size = new System.Drawing.Size(108, 42);
+            this.BtnGenerateEntity.Size = new System.Drawing.Size(113, 34);
             this.BtnGenerateEntity.TabIndex = 28;
-            this.BtnGenerateEntity.Text = "GenerateEntity";
+            this.BtnGenerateEntity.Text = "生成参数/实体类";
             this.BtnGenerateEntity.UseVisualStyleBackColor = true;
             this.BtnGenerateEntity.Click += new System.EventHandler(this.BtnGenerateEntity_Click);
             // 
             // btnGenerateEasyUI
             // 
-            this.btnGenerateEasyUI.Location = new System.Drawing.Point(409, 380);
+            this.btnGenerateEasyUI.Location = new System.Drawing.Point(165, 387);
             this.btnGenerateEasyUI.Name = "btnGenerateEasyUI";
-            this.btnGenerateEasyUI.Size = new System.Drawing.Size(113, 42);
+            this.btnGenerateEasyUI.Size = new System.Drawing.Size(113, 33);
             this.btnGenerateEasyUI.TabIndex = 29;
-            this.btnGenerateEasyUI.Text = "EasyUI";
+            this.btnGenerateEasyUI.Text = "生成Service";
             this.btnGenerateEasyUI.UseVisualStyleBackColor = true;
             this.btnGenerateEasyUI.Click += new System.EventHandler(this.btnGenerateEasyUI_Click);
             // 
@@ -399,7 +406,7 @@
             this.tabControl1.Controls.Add(this.QueryForm);
             this.tabControl1.Controls.Add(this.AddForm);
             this.tabControl1.Controls.Add(this.UpdateForm);
-            this.tabControl1.Location = new System.Drawing.Point(581, 50);
+            this.tabControl1.Location = new System.Drawing.Point(581, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(643, 321);
@@ -572,34 +579,6 @@
             this.rtbQueryForm.TabIndex = 4;
             this.rtbQueryForm.Text = "";
             // 
-            // btnHtml
-            // 
-            this.btnHtml.Location = new System.Drawing.Point(1012, 397);
-            this.btnHtml.Name = "btnHtml";
-            this.btnHtml.Size = new System.Drawing.Size(92, 29);
-            this.btnHtml.TabIndex = 31;
-            this.btnHtml.Text = "Html";
-            this.btnHtml.UseVisualStyleBackColor = true;
-            this.btnHtml.Click += new System.EventHandler(this.btnHtml_Click);
-            // 
-            // txtUrl
-            // 
-            this.txtUrl.Location = new System.Drawing.Point(699, 438);
-            this.txtUrl.MaxLength = 5;
-            this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(136, 20);
-            this.txtUrl.TabIndex = 32;
-            this.txtUrl.Text = "/Systems/Application";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(552, 445);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Url：";
-            // 
             // AddForm
             // 
             this.AddForm.Controls.Add(this.txtAddForm);
@@ -640,11 +619,110 @@
             this.txtUpdateForm.TabIndex = 6;
             this.txtUpdateForm.Text = "";
             // 
+            // btnHtml
+            // 
+            this.btnHtml.Location = new System.Drawing.Point(165, 426);
+            this.btnHtml.Name = "btnHtml";
+            this.btnHtml.Size = new System.Drawing.Size(113, 29);
+            this.btnHtml.TabIndex = 31;
+            this.btnHtml.Text = "生成View页面";
+            this.btnHtml.UseVisualStyleBackColor = true;
+            this.btnHtml.Click += new System.EventHandler(this.btnHtml_Click);
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(388, 434);
+            this.txtUrl.MaxLength = 100;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(207, 20);
+            this.txtUrl.TabIndex = 32;
+            this.txtUrl.Text = "/ControllerParentFolder/ControllerName";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(290, 438);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 13);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "MVC CRUD Url：";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(290, 403);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Service命名空间：";
+            // 
+            // txtServiceNameSpace
+            // 
+            this.txtServiceNameSpace.Location = new System.Drawing.Point(388, 400);
+            this.txtServiceNameSpace.MaxLength = 100;
+            this.txtServiceNameSpace.Name = "txtServiceNameSpace";
+            this.txtServiceNameSpace.Size = new System.Drawing.Size(207, 20);
+            this.txtServiceNameSpace.TabIndex = 35;
+            this.txtServiceNameSpace.Text = "Study.Service";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(284, 358);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 13);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "类命名空间：";
+            // 
+            // txtClassNameSpace
+            // 
+            this.txtClassNameSpace.Location = new System.Drawing.Point(368, 355);
+            this.txtClassNameSpace.MaxLength = 100;
+            this.txtClassNameSpace.Name = "txtClassNameSpace";
+            this.txtClassNameSpace.Size = new System.Drawing.Size(207, 20);
+            this.txtClassNameSpace.TabIndex = 37;
+            this.txtClassNameSpace.Text = "Study.Entity";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(637, 383);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "ProjectName：";
+            // 
+            // txtProjectName
+            // 
+            this.txtProjectName.Location = new System.Drawing.Point(722, 379);
+            this.txtProjectName.MaxLength = 100;
+            this.txtProjectName.Name = "txtProjectName";
+            this.txtProjectName.Size = new System.Drawing.Size(207, 20);
+            this.txtProjectName.TabIndex = 39;
+            this.txtProjectName.Text = "Study.Webs.EasyUI";
+            // 
+            // BtnSaveFile
+            // 
+            this.BtnSaveFile.Location = new System.Drawing.Point(642, 422);
+            this.BtnSaveFile.Name = "BtnSaveFile";
+            this.BtnSaveFile.Size = new System.Drawing.Size(109, 29);
+            this.BtnSaveFile.TabIndex = 40;
+            this.BtnSaveFile.Text = "SaveToFiles";
+            this.BtnSaveFile.UseVisualStyleBackColor = true;
+            this.BtnSaveFile.Click += new System.EventHandler(this.BtnSaveFile_Click);
+            // 
             // GenerateSQLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1210, 470);
+            this.Controls.Add(this.BtnSaveFile);
+            this.Controls.Add(this.txtProjectName);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtClassNameSpace);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtServiceNameSpace);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.btnHtml);
@@ -753,6 +831,13 @@
         private System.Windows.Forms.RichTextBox txtAddForm;
         private System.Windows.Forms.TabPage UpdateForm;
         private System.Windows.Forms.RichTextBox txtUpdateForm;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtServiceNameSpace;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtClassNameSpace;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtProjectName;
+        private System.Windows.Forms.Button BtnSaveFile;
     }
 }
 

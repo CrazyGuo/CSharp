@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using Study.EasyUIFramework.Base;
+using Study.EasyUIFramework.EasyuiJsNames;
 
 namespace Study.EasyUIFramework.Grids 
 {
@@ -15,7 +16,7 @@ namespace Study.EasyUIFramework.Grids
         /// </summary>
         protected DataGrid() 
         {
-            AddClass( "easyui-datagrid" );
+            AddClass(DataGridNameAndEvent.EasyuiDatagrid);
             _columns = new List<IDataGridColumn>();
         }
 
@@ -30,7 +31,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isShow">是否显示行号</param>
         public T RowNumber( bool isShow = true ) 
         {
-            AddDataOption( "rownumbers", isShow );
+            AddDataOption(DataGridNameAndEvent.RownumbersAtrribute, isShow);
             return This();
         }
 
@@ -40,7 +41,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isFit">是否自适应</param>
         public T Fit( bool isFit = true ) 
         {
-            AddDataOption( "fit", isFit );
+            AddDataOption(DataGridNameAndEvent.FitAtrribute, isFit);
             return This();
         }
 
@@ -50,7 +51,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isFit">是否自适应</param>
         public T FitColumns( bool isFit = true ) 
         {
-            AddDataOption( "fitColumns", isFit );
+            AddDataOption(DataGridNameAndEvent.FitColumnsAtrribute, isFit);
             return This();
         }
 
@@ -61,7 +62,8 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isPagination">是否分页</param>
         public T Pagination( int pageSize = 20, bool isPagination = true ) 
         {
-            AddDataOption( "pagination", isPagination ).AddDataOption( "pageSize", pageSize.ToString() );
+            AddDataOption(DataGridNameAndEvent.PaginationAtrribute, isPagination);
+            AddDataOption(DataGridNameAndEvent.PageSizeAtrribute, pageSize.ToString());
             return This();
         }
 
@@ -72,9 +74,9 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isAsc">是否正排序</param>
         public T Sort( string sortName, bool isAsc = true ) 
         {
-            AddDataOption( "sortName", GetValue( sortName ) );
-            string sort = isAsc ? "asc" : "desc";
-            AddDataOption( "sortOrder", GetValue( sort ) );
+            AddDataOption(DataGridNameAndEvent.SortNameAtrribute, GetValue(sortName));
+            string sort = isAsc ? DataGridNameAndEvent.AscValue : DataGridNameAndEvent.DescValue;
+            AddDataOption(DataGridNameAndEvent.SortOrderAtrribute, GetValue(sort));
             return This();
         }
 
@@ -84,7 +86,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isCheck">是否选中</param>
         public T CheckOnSelect( bool isCheck = true ) 
         {
-            AddDataOption( "checkOnSelect", isCheck );
+            AddDataOption(DataGridNameAndEvent.CheckOnSelectAtrribute, isCheck);
             return This();
         }
 
@@ -94,7 +96,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isSelect">是否选中</param>
         public T SelectOnCheck( bool isSelect = true ) 
         {
-            AddDataOption( "selectOnCheck", isSelect );
+            AddDataOption(DataGridNameAndEvent.SelectOnCheckAtrribute, isSelect);
             return This();
         }
 
@@ -104,7 +106,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isSingle">是否只能选中一行</param>
         public T SingleSelect( bool isSingle = true ) 
         {
-            AddDataOption( "singleSelect", isSingle );
+            AddDataOption(DataGridNameAndEvent.SingleSelectAtrribute, isSingle);
             return This();
         }
 
@@ -114,7 +116,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="isShow">是否显示条纹</param>
         public T Strip( bool isShow = true ) 
         {
-            AddDataOption( "striped", isShow );
+            AddDataOption(DataGridNameAndEvent.StripedAtrribute, isShow);
             return This();
         }
 
@@ -122,9 +124,9 @@ namespace Study.EasyUIFramework.Grids
         /// 设置工具栏
         /// </summary>
         /// <param name="toolbarId">工具栏Id</param>
-        public T Toolbar( string toolbarId ) 
+        public T Toolbar(string toolbarId = DataGridNameAndEvent.ToolbarId) 
         {
-            AddDataOption( "toolbar", GetValue( "#" + toolbarId ) );
+            AddDataOption(DataGridNameAndEvent.ToolbarAtrribute, GetValue("#" + toolbarId));
             return This();
         }
 
@@ -134,7 +136,7 @@ namespace Study.EasyUIFramework.Grids
         /// <param name="url">Url</param>
         public T Url( string url ) 
         {
-            AddDataOption( "url", GetValue( url ) );
+            AddDataOption(DataGridNameAndEvent.UrlAtrribute, GetValue(url));
             return This();
         }
 
@@ -142,9 +144,9 @@ namespace Study.EasyUIFramework.Grids
         /// 设置双击行事件处理函数
         /// </summary>
         /// <param name="handler">双击行事件处理函数</param>
-        public T OnDblClickRow( string handler ) 
+        public T OnDblClickRow(string handler = DataGridNameAndEvent.OnDblClickRowEvent) 
         {
-            AddDataOption( "onDblClickRow", handler );
+            AddDataOption(DataGridNameAndEvent.OnDblClickRowEventAttribute, handler);
             return This();
         }
 
@@ -152,9 +154,9 @@ namespace Study.EasyUIFramework.Grids
         /// 设置右键单击行事件处理函数
         /// </summary>
         /// <param name="handler">右键单击行事件处理函数</param>
-        public T OnRowContextMenu( string handler ) 
+        public T OnRowContextMenu(string handler = DataGridNameAndEvent.OnRowContextMenuEvent) 
         {
-            AddDataOption( "onRowContextMenu", handler );
+            AddDataOption(DataGridNameAndEvent.OnRowContextMenuEventAttribute, handler);
             return This();
         }
 
@@ -185,6 +187,12 @@ namespace Study.EasyUIFramework.Grids
             result.Append( "</tr></thead>" );
             result.Append( "</table>" );
             return result.ToString();
+        }
+
+        public T GetDefaultValues(string handler = DataGridNameAndEvent.GetDefaultValuesEvent)
+        {
+            AddDataOption(DataGridNameAndEvent.QueryParamsAttribute, handler);
+            return This();
         }
     }
 }

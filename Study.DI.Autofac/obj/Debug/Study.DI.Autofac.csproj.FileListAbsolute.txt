@@ -1,10 +1,9 @@
-C:\work\CrazyCSharp\Study.DI.Autofac\obj\Debug\Study.DI.Autofac.csprojResolveAssemblyReference.cache
+C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.DI.Autofac.dll.config
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.DI.Autofac.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.DI.Autofac.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Autofac.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Autofac.Integration.Mvc.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Autofac.Integration.WebApi.dll
-C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.ApplicationServices.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.BusinessService.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.Entity.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.MongoDB.Core.dll
@@ -13,10 +12,12 @@ C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Web.Http.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Web.Http.WebHost.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Web.Mvc.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Syudy.Domains.Framework.dll
+C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\EmitMapper.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\MongoDB.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\MyBatis.DataMapper.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\MyBatis.Common.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\DotnetPark.dll
+C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\AopHelper.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.Util.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.Validations.EntLib.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Net.Http.Formatting.dll
@@ -29,7 +30,6 @@ C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.BusinessService.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.Entity.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.MongoDB.Core.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.MyBatis.pdb
-C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.ApplicationServices.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Syudy.Domains.Framework.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Autofac.xml
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Autofac.Integration.Mvc.xml
@@ -38,11 +38,14 @@ C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Web.Http.xml
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Web.Http.WebHost.xml
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Web.Mvc.xml
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\MongoDB.pdb
+C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\MongoDB.xml
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\MyBatis.DataMapper.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\MyBatis.Common.pdb
+C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\AopHelper.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.Util.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Study.Validations.EntLib.pdb
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\System.Net.Http.Formatting.xml
 C:\work\CrazyCSharp\Study.DI.Autofac\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\work\CrazyCSharp\Study.DI.Autofac\obj\Debug\Study.DI.Autofac.csprojResolveAssemblyReference.cache
 C:\work\CrazyCSharp\Study.DI.Autofac\obj\Debug\Study.DI.Autofac.dll
 C:\work\CrazyCSharp\Study.DI.Autofac\obj\Debug\Study.DI.Autofac.pdb

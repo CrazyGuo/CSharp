@@ -1,6 +1,6 @@
 ﻿using System;
 using Study.Entity;
-using Study.ApplicationServices;
+using Study.BusinessService.Application;
 
 namespace Study.BusinessService
 {
@@ -22,23 +22,23 @@ namespace Study.BusinessService
             MoneyKindDto dto = new MoneyKindDto();
             return dto;
         }
-        public override string  GetFetchQueryId()
+        public override string  GetQuerySqlId()
         {
             return "qMoneyKind";
         }
-        public override string  GetFetchId()
+        public override string  GetQuerySqlWithParameterIsId()
         {
             return "qMoneyKindId";
         }
-        public override string  GetDeleteId()
+        public override string  GetDeleteSqlId()
         {
             return "dMoneyKindId";
         }
-        public override string  GetAddId()
+        public override string  GetInsertSqlId()
         {
             return "iMoneyKindId";
         }
-        public override string  GetUpdateId()
+        public override string  GetUpdateSqlId()
         {
             return "uMoneyKindId";
         }

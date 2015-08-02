@@ -86,8 +86,24 @@ namespace Study.EasyUIFramework.Buttons
         /// 设置单击事件处理函数
         /// </summary>
         /// <param name="handler">事件处理函数或Js代码</param>
-        public T Click( string handler ) 
+        public T Click(string handler, string url = "", string callback = "") 
         {
+            string split = ",";
+            
+            if (string.IsNullOrEmpty(url) == false && string.IsNullOrEmpty(callback) == false)
+            {
+                url = "'" + url + "'";
+                handler = string.Format(handler, url, split, callback);
+            }
+            else if (string.IsNullOrEmpty(url) == false && string.IsNullOrEmpty(callback) == true)
+            {
+                url = "'" + url + "'";
+                handler = string.Format(handler, url, string.Empty, string.Empty);
+            }
+            else 
+            {
+                handler = string.Format(handler, string.Empty, string.Empty, string.Empty);
+            }
             AddAttribute( "onClick", handler );
             return This();
         }

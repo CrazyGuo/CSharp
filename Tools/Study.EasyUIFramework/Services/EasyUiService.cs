@@ -7,6 +7,7 @@ using Study.EasyUIFramework.Forms.TextBoxs;
 using Study.EasyUIFramework.Grids;
 using Study.EasyUIFramework.Layouts;
 using Study.EasyUIFramework.Menus;
+using Study.EasyUIFramework.EasyuiJsNames;
 
 namespace Study.EasyUIFramework.Services 
 {
@@ -76,7 +77,7 @@ namespace Study.EasyUIFramework.Services
         /// 菜单
         /// </summary>
         /// <param name="id">Id</param>
-        public IMenu Menu( string id ) 
+        public IMenu Menu(string id = MenuNameAndEvent.DataGridMenu) 
         {
             return EasyUiFactory.CreateMenu( id );
         }
@@ -96,7 +97,7 @@ namespace Study.EasyUIFramework.Services
         /// 表格
         /// </summary>
         /// <param name="id">Id</param>
-        public IDataGrid Grid( string id = "" ) 
+        public IDataGrid Grid( string id = DataGridNameAndEvent.GridId ) 
         {
             return EasyUiFactory.CreateDataGrid().Id( id ).RowNumber().Fit().FitColumns()
                 .Pagination().CheckOnSelect( false ).SelectOnCheck( false ).SingleSelect().Strip();

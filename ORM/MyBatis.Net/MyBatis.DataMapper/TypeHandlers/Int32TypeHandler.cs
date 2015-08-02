@@ -69,7 +69,16 @@ namespace MyBatis.DataMapper.TypeHandlers
 				return DBNull.Value;
 			}
             // Don't used dataReader.GetInt32 to fix oracle who alwray return decimal type
-            return Convert.ToInt32(dataReader.GetValue(mapping.ColumnIndex));
+            object obj=0;
+            try
+            {
+                obj = dataReader.GetValue(mapping.ColumnIndex);
+            }
+            catch(Exception e)
+            {
+                string m =mapping.ColumnName+ e.Message;
+            }
+            return Convert.ToInt32(obj);
 		}
 
         /// <summary>
