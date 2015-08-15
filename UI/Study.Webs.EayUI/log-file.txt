@@ -1340,4 +1340,20 @@ B:2015-08-02 21:07:03,758,1,INFO ,log4a,Application_Start
 2015-08-02 21:07:05,103,1,INFO ,log4a,Application_End
 2015-08-02 21:07:16,237,7,INFO ,log4a,Query
 2015-08-02 21:07:16,482,6,INFO ,log4a,Query
-B:E:
+B:E:B:2015-08-15 14:52:15,372,1,INFO ,log4a,Application_Start
+2015-08-15 14:52:17,617,1,INFO ,log4a,Application_End
+B:2015-08-15 14:57:11,815,1,INFO ,log4a,Application_Start
+2015-08-15 14:57:12,543,1,INFO ,log4a,Application_End
+B:2015-08-15 15:10:36,208,1,INFO ,log4a,Application_Start
+2015-08-15 15:10:36,747,1,INFO ,log4a,Application_End
+B:2015-08-15 16:01:56,920,1,INFO ,log4a,Application_Start
+2015-08-15 16:01:58,215,1,INFO ,log4a,Application_End
+B:2015-08-15 16:07:56,044,1,INFO ,log4a,Application_Start
+2015-08-15 16:07:57,300,1,INFO ,log4a,Application_End
+B:2015-08-15 16:09:29,994,1,INFO ,log4a,Application_Start
+2015-08-15 16:09:31,209,1,INFO ,log4a,Application_End
+2015-08-15 16:09:47,748,7,INFO ,log4a,Query
+2015-08-15 16:09:47,853,6,INFO ,log4a,Query
+2015-08-15 16:09:47,858,6,INFO ,log4a,aoplog:FetchPages : Entry at 2015/8/15 16:09:47
+2015-08-15 16:09:48,163,6,INFO ,log4a,aoplog:FetchPages : Success at 2015/8/15 16:09:48
+2015-08-15 16:09:48,164,6,INFO ,log4a,aoplog:FetchPages : Exit at 2015/8/15 16:09:48

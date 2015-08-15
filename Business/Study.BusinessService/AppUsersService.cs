@@ -6,6 +6,7 @@ using EmitMapper;
 using EmitMapper.MappingConfiguration;
 using System.Collections.Generic;
 using SeedWork;
+using Log;
 
 namespace Study.BusinessService
 {
@@ -59,6 +60,7 @@ namespace Study.BusinessService
 
         public IList<AppUsersDto> FetchLogonUser(string userName, string pwd)
         {
+            LogOuts.Debug("user:" + userName + " login system");
             string sqlId=GetLogonSqlId();
             AppUsersQuery parameter=new AppUsersQuery ();
             parameter.LogOnName = userName;

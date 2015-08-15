@@ -6,7 +6,7 @@ namespace Log
     {
         public static void Debug(string message)
         {
-            ILog log = LogManager.GetLogger("log4a");
+            ILog log = LogManager.GetLogger("log4Debug");
             if (log.IsDebugEnabled)
             {
                 log.Debug(message);
@@ -15,7 +15,6 @@ namespace Log
 
         public static void Error(string message)
         {
-            //log4net.ILog log = log4net.LogManager.GetLogger("log4net");
             ILog log = LogManager.GetLogger("log4a");
             if (log.IsErrorEnabled)
             {
@@ -35,13 +34,11 @@ namespace Log
 
         public static void Info(string message)
         {
-            //log4net.ILog log = log4net.LogManager.GetLogger("log4net");
             ILog log = LogManager.GetLogger("log4a");
             if (log.IsInfoEnabled)
             {
                 log.Info(message);
             }
-
         }
 
         public static void Warn(string message)
@@ -53,5 +50,4 @@ namespace Log
             }
         }
     }
-
 }
