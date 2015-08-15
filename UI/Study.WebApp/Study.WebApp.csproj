@@ -569,14 +569,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Business\Study.Business\Study.Business.csproj">
-      <Project>{abb35307-1b7d-475c-ac30-51d40c8cd031}</Project>
-      <Name>Study.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Business\Study.Entity\Study.Entity.csproj">
-      <Project>{f08f27dd-2ab6-4b74-8e93-7739e77e8d7f}</Project>
-      <Name>Study.Entity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\NoSQL\Study.MongoDB.Core\Study.MongoDB.Core.csproj">
       <Project>{cf19a7c6-5757-4836-bee0-a6ad48184278}</Project>
       <Name>Study.MongoDB.Core</Name>

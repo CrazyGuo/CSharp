@@ -17,6 +17,9 @@
     <typeAlias alias="SportKind" type="Study.Entity.SportKind, Study.Entity"/>
     <typeAlias alias="SportKindQuery" type="Study.Entity.SportKindQuery, Study.Entity"/>
     <typeAlias alias="SportKindDto" type="Study.Entity.SportKindDto, Study.Entity"/>
+    <typeAlias alias="AppUsers" type="Study.Entity.AppUsers, Study.Entity"/>
+    <typeAlias alias="AppUsersQuery" type="Study.Entity.AppUsersQuery, Study.Entity"/>
+    <typeAlias alias="AppUsersDto" type="Study.Entity.AppUsersDto, Study.Entity"/>
   </alias>
   <cacheModels >
     <cacheModel id="TestCache" type ="Fifo" flushInterval="6000" share ="true">
@@ -237,6 +240,27 @@
     <select id="qSportKindAll" resultClass="SportKindDto">
       SELECT T1.Id AS "Id",T1.Name  AS "Name",T1.Unit AS "Unit"
       FROM  Study.dbo.SportKind  T1
+    </select>
+
+    <select id="qAppuserLogon" parameterClass="AppUsersQuery" resultClass="AppUsersDto">
+      SELECT
+      T.Id                          AS "Id"
+      ,  T.BadgeNo                     AS "BadgeNo"
+      ,  T.Name                        AS "Name"
+      ,  T.Remark                      AS "Remark"
+      ,  T.IsAvailable                 AS "IsAvailable"
+      ,  T.LogOnName                   AS "LogOnName"
+      ,  T.EmailAddress                AS "EmailAddress"
+      ,  T.AppAuthTypeId               AS "AppAuthTypeId"
+      ,  T.IsLocked                    AS "IsLocked"
+      ,  T.LocalPassword               AS "LocalPassword"
+      ,  T.LocalPasswordSetTime        AS "LocalPasswordSetTime"
+      ,  T.IsMustChangeLocalPassword   AS "IsMustChangeLocalPassword"
+      ,  T.RfidNo                      AS "RfidNo"
+      ,  T.PssUserNo                   AS "PssUserNo"
+      FROM  Study.dbo.AppUsers  T
+      WHERE  T.LogOnName                    = #LogOnName#
+      AND  T.LocalPassword                = #LocalPassword#
     </select>
   </statements>
 </sqlMap>

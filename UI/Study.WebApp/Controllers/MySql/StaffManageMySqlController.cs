@@ -1,4 +1,4 @@
-﻿using Study.Business;
+﻿using Study.BusinessService;
 using Study.Entity;
 using System;
 using System.Collections.Generic;
@@ -17,25 +17,25 @@ namespace Study.WebApp.Controllers
 
         public JsonResult GetStaffs(int page, int rows, string birthBegin, string birthEnd)
         {
-            OAService oaService = new OAService();
-            if (!string.IsNullOrEmpty(birthBegin))
-            {
-                birthBegin = Convert.ToDateTime(birthBegin).ToString("yyyy-MM-dd");
-            }
-            if (!string.IsNullOrEmpty(birthEnd))
-            {
-                birthEnd = Convert.ToDateTime(birthEnd).ToString("yyyy-MM-dd");
-            }
+            //OAService oaService = new OAService();
+            //if (!string.IsNullOrEmpty(birthBegin))
+            //{
+            //    birthBegin = Convert.ToDateTime(birthBegin).ToString("yyyy-MM-dd");
+            //}
+            //if (!string.IsNullOrEmpty(birthEnd))
+            //{
+            //    birthEnd = Convert.ToDateTime(birthEnd).ToString("yyyy-MM-dd");
+            //}
 
-            int totalCount = 0;
-            IList<Staff> staffs = oaService.GetStaffs(page, rows, birthBegin, birthEnd, ref totalCount);
-            var json = new
-            {
-                total = totalCount,
-                rows = staffs.ToArray(),
-            };
+            //int totalCount = 0;
+            //IList<Staff> staffs = oaService.GetStaffs(page, rows, birthBegin, birthEnd, ref totalCount);
+            //var json = new
+            //{
+            //    total = totalCount,
+            //    rows = staffs.ToArray(),
+            //};
 
-            return Json(json, JsonRequestBehavior.AllowGet);
+            return Json(null, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Study.DI.Autofac
             builder.RegisterType<MongoDbRemoteRepository<OpcModel>>().As<MongoDbRemoteRepository<OpcModel>>().InstancePerLifetimeScope();
             builder.RegisterType<SportRecordService>().As<ISportRecordService>().InstancePerLifetimeScope();
             builder.RegisterType<SportKindService>().As<ISportKindService>().InstancePerLifetimeScope();
+            builder.RegisterType<AppUsersService>().As<IAppUsersService>().InstancePerLifetimeScope();
         }
     }
 }

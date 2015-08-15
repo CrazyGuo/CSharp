@@ -54,7 +54,9 @@
     <Compile Include="Application\ServiceStudyBase.cs" />
     <Compile Include="Application\ServiceStudyBaseIntId.cs" />
     <Compile Include="Application\ServiceStudyBase`.cs" />
+    <Compile Include="AppUsersService.cs" />
     <Compile Include="IApplicationService.cs" />
+    <Compile Include="IAppUsersService.cs" />
     <Compile Include="IMoneyKindService.cs" />
     <Compile Include="IMoneyOutService.cs" />
     <Compile Include="ISportKindService.cs" />
@@ -89,6 +91,10 @@
     <ProjectReference Include="..\..\Utility\Log\Log.csproj">
       <Project>{f78b09d9-8620-4938-8d3f-9e23c3b95f76}</Project>
       <Name>Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utility\SeedWork\SeedWork.csproj">
+      <Project>{ee08021b-fa9f-469b-8bf2-96b21e453fe7}</Project>
+      <Name>SeedWork</Name>
     </ProjectReference>
     <ProjectReference Include="..\Study.Entity\Study.Entity.csproj">
       <Project>{f08f27dd-2ab6-4b74-8e93-7739e77e8d7f}</Project>

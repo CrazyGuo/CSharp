@@ -2,6 +2,7 @@
 using Study.Domains.Framework.Repositories;
 using Study.BusinessService.Application;
 using Log;
+using System;
 
 namespace Study.Webs.EayUI.Base
 {
@@ -102,7 +103,16 @@ namespace Study.Webs.EayUI.Base
         {
             LogOuts.Info("Query");
             SetPage(query);
-            var list = Service.FetchPages(query);
+            PagerList<TDto> list = null;
+            try
+            {
+                list = Service.FetchPages(query);
+            }
+            catch(Exception e)
+            {
+                LogOuts.Info("FetchPages Error:"+e.Message);
+            }
+            
             return ToDataGridResult(list, list.TotalCount);
         }
 

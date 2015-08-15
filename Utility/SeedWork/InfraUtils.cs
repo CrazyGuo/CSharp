@@ -42,5 +42,18 @@ namespace SeedWork
                  return info;
             }
         }
+
+        public static string Encrypt(string plainPassword)
+        {
+            if (String.IsNullOrEmpty(plainPassword))
+            {
+                return String.Empty;
+            }
+
+            MD5 md5 = new MD5CryptoServiceProvider();
+            Byte[] plainBytes = ASCIIEncoding.Default.GetBytes(plainPassword);
+            Byte[] encodedBytes = md5.ComputeHash(plainBytes);
+            return BitConverter.ToString(encodedBytes);
+        }
     }
 }

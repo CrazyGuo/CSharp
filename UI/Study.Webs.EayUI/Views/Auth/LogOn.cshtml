@@ -1,32 +1,27 @@
-﻿@{  
-    Layout = null; 
+﻿@using System.Web.Optimization
+@{
+    Layout = null;
 }
 <!DOCTYPE html>
 <html>
 <head>
     <title>系统登录</title>
-    <script src="/Scripts/jquery.min.js" type="text/javascript"></script>
-    @Styles.Render("~/Content/themes/blue/css")
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/EasyUi/jquery.min.js" type="text/javascript"></script>  
     <style type="text/css">
-        body
-        {
+        body {
             letter-spacing: 1px;
             color: #444;
         }
 
-        #LoginTb
-        {
+        #LoginTb {
             font-size: 14px;
         }
 
-        #LoginTb
-        {
+        #LoginTb {
             font-size: 12px;
         }
 
-            #LoginTb input
-            {
+            #LoginTb input {
                 width: 190px;
                 height: 24px;
                 line-height: 24px;
@@ -58,9 +53,6 @@
                     return false;
                 }
             });
-
-
-
         });
 
         function LoginSys() {
@@ -85,44 +77,65 @@
             }
             $("#Loading").show();
 
-            alert(1);
+            $.ajax({
+                type: "POST",
+                url: "LogOn",
+                data: { name: $("#UserName").val(), pwd: $("#Password").val(), vlidateCode: $.trim($("#ValidateCode").val()) ,returnUrl:''},
+                dataType: "json",
+                success: function (data) {
+                    $("#Loading").hide();
+                    if(data.isSuccess)
+                    {
+                        window.location = data.url;
+                    }
+                    else
+                    {
+                        alert(data.message);
+                        changeCheckCode();
+                    }
+                }
+            });
             return false;
         }
-     
+
+        function changeCheckCode() {
+            $("#img").attr("src", $("#img").attr("src") + 1);  //id=2,为了不重复
+        }
     </script>
 </head>
 <body>
-
     <div>
         <div class="define-head" style="height: 67px;">
             <div class="define-logo">
                 <div id="LoginTopLine">YmNets.cnblogs.com</div>
                 <div id="LoginBotoomLine">MVC4+EF5.0+EasyUI</div>
             </div>
-
         </div>
     </div>
     <div style="margin: 0 auto; margin-top: 100px; width: 800px;">
         <table style="width: 800px; margin: 0 auto;">
             <tr>
-                <td><img src="/Content/Images/account.jpg"></td>
+                <td><img src="~/Content/Images/account.jpg"></td>
                 <td style="width: 310px;">
 
                     <table id="LoginTb" style="margin-top: 10px; background: #fff; width: 100%; height: 230px; border: 1px #ccc solid;">
                         <tr>
-                            <td colspan="2" style="font-size: 18px;  font-weight: bold; padding: 5px 20px;">欢迎登录
+                            <td colspan="2" style="font-size: 18px;  font-weight: bold; padding: 5px 20px;">
+                                欢迎登录
                             </td>
 
                         </tr>
                         <tr>
-                            <td style="width: 80px; text-align: right">用户名：
+                            <td style="width: 80px; text-align: right">
+                                用户名：
                             </td>
                             <td>
                                 <input id="UserName" name="UserName" type="text" />
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 80px; text-align: right;">密 码：
+                            <td style="width: 80px; text-align: right;">
+                                密 码：
                             </td>
                             <td>
                                 <input id="Password" name="Password" type="password" />
@@ -130,16 +143,25 @@
                         </tr>
 
                         <tr>
-                            <td style="width: 80px; text-align: right">验证码：
+                            <td style="width: 80px; text-align: right">
+                                验证码：
                             </td>
                             <td>
-                               
+                                <input id="ValidateCode" name="ValidateCode" type="text" />                               
                             </td>
                         </tr>
-
-
                         <tr>
-
+                            <td style="width: 80px; text-align: right;">
+                                
+                            </td>
+                            <td>
+                                <img id="img" src="ShowValidateCode/?id=1" style="float: left; height: 24px;" />
+                                <div style="float: left; margin-left: 5px; margin-top: 10px;">
+                                    <a href="javascript:void(0)" onclick="changeCheckCode();return false;">看不清，换一张</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="2">
                                 <table style="width: 100%;">
                                     <tr>
@@ -149,7 +171,8 @@
                                             </div>
                                             <div id="Loading" style="display: none" class='panel-loading'><font color='#000'>加载中...</font></div>
                                         </td>
-                                        <td style="width: 100px;"><a id="LoginSys" href="javascript:void(0)" class="easyui-linkbutton l-btn"><span class="l-btn-left"><span class="l-btn-text icon-ok" style="padding-left: 20px;">登录</span></span></a>
+                                        <td style="width: 100px;">
+                                            <a id="LoginSys" href="javascript:void(0)" class="easyui-linkbutton l-btn"><span class="l-btn-left"><span class="l-btn-text icon-ok" style="padding-left: 20px;">登录</span></span></a>
                                         </td>
                                     </tr>
 
@@ -169,3 +192,4 @@
     </div>
 </body>
 </html>
+

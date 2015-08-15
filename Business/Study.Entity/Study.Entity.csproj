@@ -47,6 +47,9 @@
     <Compile Include="Application.cs" />
     <Compile Include="ApplicationDto.cs" />
     <Compile Include="ApplicationQuery.cs" />
+    <Compile Include="AppUsers.cs" />
+    <Compile Include="AppUsersDto.cs" />
+    <Compile Include="AppUsersQuery.cs" />
     <Compile Include="Common\Menu.cs" />
     <Compile Include="DtoBase.cs" />
     <Compile Include="MoneyKind.cs" />
