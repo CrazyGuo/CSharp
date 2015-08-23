@@ -117,8 +117,8 @@ namespace Study.MyBatis
                 {
                     sqlSelectRemoved = "peta_inner.* FROM (SELECT " + sqlSelectRemoved + ") peta_inner";
                 }
-                sqlPage = string.Format("SELECT * FROM (SELECT ROW_NUMBER() OVER ({0}) peta_rn, {1}) peta_paged WHERE peta_rn>{2} AND peta_rn<={3}",
-                                        sqlOrderBy == null ? "ORDER BY (SELECT NULL)" : sqlOrderBy, sqlSelectRemoved, skip, skip + take);
+                sqlPage = string.Format("SELECT * FROM (SELECT  ROW_NUMBER() OVER ({0}) peta_rn,{1}) peta_paged WHERE peta_rn>{2} AND peta_rn<={3}",
+                                         sqlOrderBy == null ? "ORDER BY (SELECT NULL)" : sqlOrderBy, sqlSelectRemoved, skip, skip + take);
                 //args = args.Concat(new object[] { skip, skip + take }).ToArray();
             }
             else if (dbType.Contains("sqlserverce"))

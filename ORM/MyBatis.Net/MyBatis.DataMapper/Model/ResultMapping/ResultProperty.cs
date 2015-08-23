@@ -547,8 +547,13 @@ namespace MyBatis.DataMapper.Model.ResultMapping
 		public object GetDataBaseValue(IDataReader dataReader)
 		{
 			object value = null;
-
-            if (columnIndex == UNKNOWN_COLUMN_INDEX)
+            ///Add by me. 用列名称解决分页之后造成的下标错位问题
+            if (!string.IsNullOrEmpty(ColumnName))
+            {
+                value = TypeHandler.GetValueByName(this, dataReader);
+            }
+            ///
+            else if (columnIndex == UNKNOWN_COLUMN_INDEX)
             {
                 value = TypeHandler.GetValueByName(this, dataReader);
             }
