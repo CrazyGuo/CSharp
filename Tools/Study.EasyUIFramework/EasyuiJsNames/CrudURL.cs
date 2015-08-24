@@ -13,5 +13,6 @@ namespace Study.EasyUIFramework.EasyuiJsNames
         public string DeleteUrl { get; set; }
         public string LookUrl { get; set; }
         public string QueryUrl { get; set; }
+        public string DownloadUrl { get; set; }
     }
 }

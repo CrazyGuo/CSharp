@@ -50,6 +50,12 @@ namespace Study.EasyUIFramework.EasyuiJsNames
         public const string RefreshEvent = "$.easyui.refresh()";
         public const string RefreshIcon = "icon-refresh";
 
+        /// <summary>
+        /// 下载数据事件
+        /// </summary>
+        public const string DownloadEvent = "$.easyui.download({0})";
+        public const string DownloadIcon = "icon-delete";
+
         public const string OKIcon = "icon-ok";
         public const string CancelIcon = "icon-cancel";
 
@@ -74,6 +80,7 @@ namespace Study.EasyUIFramework.EasyuiJsNames
         public const string RefreshOperation = "刷 新";
         public const string SaveOperation = "保 存";
         public const string CloseOperation = "关 闭";
+        public const string DownloadOperation = "下 载";
 
         #endregion
     }

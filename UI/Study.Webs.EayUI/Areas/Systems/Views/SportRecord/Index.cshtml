@@ -8,6 +8,7 @@
     urls.DeleteUrl = "/Systems/SportRecord/delete";
     urls.LookUrl = "/Systems/SportRecord/look";
     urls.QueryUrl = "SportRecord/Query";
+    urls.DownloadUrl = "SportRecord/Download";
     
 @section top {
     <div class="toolbar">
@@ -25,8 +26,8 @@
            .Id(EasyUiEvent.ButtonDetail).OnInit(EasyUiEvent.LookDialogEvent)
            .Icon(EasyUiEvent.LookIcon).Plain().DialogSize(500, 240)
          )
-        @(x.LinkButton(EasyUiEvent.RefreshOperation).Icon(EasyUiEvent.RefreshIcon)
-           .Plain().Click(EasyUiEvent.RefreshEvent)
+        @(x.LinkButton(EasyUiEvent.DownloadOperation).Icon(EasyUiEvent.DownloadIcon)
+           .Plain().Click(EasyUiEvent.DownloadEvent,urls.DownloadUrl)
          )
     </div>
 }

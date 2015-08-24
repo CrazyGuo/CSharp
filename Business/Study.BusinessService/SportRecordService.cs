@@ -3,6 +3,9 @@ using Study.Entity;
 using Study.BusinessService.Application;
 using EmitMapper;
 using EmitMapper.MappingConfiguration;
+using System.Collections.Generic;
+using Excel;
+using System.IO;
 
 namespace Study.BusinessService
 {
@@ -56,6 +59,26 @@ namespace Study.BusinessService
         public override string GetUpdateSqlId()
         {
             return "uSportRecord";
+        }
+
+        public override MemoryStream ExportExcel(IList<SportRecordDto> content)
+        {
+            Utility excelUtility = new Utility();
+            excelUtility.CreateExcelSheet();
+            string header = "项目,时间,数量";
+            excelUtility.WriteDataToSheet(header, 0);
+            if (content != null)
+            {
+                for (int i = 0; i < content.Count; i++)
+                {
+                    SportRecordDto model = content[i];
+                    string Line = model.SportName + "," + model.ActivityTime.ToString("yyyy/MM/dd HH:mm:ss") + "," + model.Numbers;
+                    excelUtility.WriteDataToSheet(Line, i + 1);
+                }
+            }
+            MemoryStream ms = excelUtility.SaveToMemoryStream();
+
+            return ms;
         }
     }
 }

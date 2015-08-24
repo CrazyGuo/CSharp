@@ -10,6 +10,7 @@ namespace Excel
 {
     public class Utility
     {
+        private ISheet sheet { get; set; }
         public IWorkbook GetIWorkbook(Stream stream, string fileExtens)
         {
             IWorkbook iworkbook = null;
@@ -79,11 +80,11 @@ namespace Excel
             return isheet;
         }
 
-        public ISheet CreateExcelSheet(string sheetName = "autosheet")
+        public void CreateExcelSheet(string sheetName = "autosheet")
         {
             IWorkbook iworkbook = new HSSFWorkbook();
-            ISheet isheet = iworkbook.CreateSheet(sheetName);
-            return isheet;
+            sheet = iworkbook.CreateSheet(sheetName);
+            //return sheet;
         }
 
         public void WriteDataToSheet(ISheet sheet, string line, int rowIndex)
@@ -97,6 +98,26 @@ namespace Excel
                 iCell.SetCellValue(value);
                 columIndex++;
             }
+        }
+
+        public void WriteDataToSheet(string line, int rowIndex)
+        {
+            IRow row = sheet.CreateRow(rowIndex);
+            string[] values = line.Split(',');
+            int columIndex = 0;
+            foreach (var value in values)
+            {
+                ICell iCell = row.CreateCell(columIndex);
+                iCell.SetCellValue(value);
+                columIndex++;
+            }
+        }
+
+        public MemoryStream SaveToMemoryStream()
+        {
+            MemoryStream ms = new MemoryStream();
+            sheet.Workbook.Write(ms);
+            return ms;
         }
 
         public void WriteDataToSheet(object objectSheet, string line, int rowIndex)
@@ -113,7 +134,7 @@ namespace Excel
             }
         }
 
-        public void SaveSheetData(ISheet sheet, string excelFullPath)
+        public void SaveSheetToFile(ISheet sheet, string excelFullPath)
         {
             if (string.IsNullOrEmpty(excelFullPath))
                 throw new Exception("parameter filePath is empty, so wrong!");
@@ -135,7 +156,7 @@ namespace Excel
         public void SaveSheetData(object objectSheet, string filePath)
         {
             ISheet sheet = (ISheet)objectSheet;
-            SaveSheetData(sheet, filePath);
+            SaveSheetToFile(sheet, filePath);
         }
 
         /// <summary>
@@ -281,7 +302,7 @@ namespace Excel
                 }
             }
 
-            SaveSheetData(sheet, excelFullPath);
+            SaveSheetToFile(sheet, excelFullPath);
         }
 
         private string GetMergedContent(CellRangeAddress region ,ISheet sheet)

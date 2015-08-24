@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Study.Domains.Framework.Repositories;
 using AopHelper;
+using System.IO;
 
 namespace Study.BusinessService.Application
 {
@@ -20,6 +21,8 @@ namespace Study.BusinessService.Application
         PagerList<TDto> FetchPages(TQuery query);
         IList<TDto> FetchAll(TQuery query);
         IList<TDto> FetchAll();
+
+        MemoryStream ExportExcel(IList<TDto> content);
     }
 
 }

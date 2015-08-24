@@ -9,6 +9,7 @@ using EmitMapper.MappingConfiguration;
 using AopHelper;
 using System;
 using Log;
+using System.IO;
 
 namespace Study.BusinessService.Application
 {
@@ -205,7 +206,10 @@ namespace Study.BusinessService.Application
             return string.Empty;
         }
 
-
+        public virtual MemoryStream ExportExcel(IList<TDto> content)
+        {
+            return null;
+        }
 
         #endregion
     }

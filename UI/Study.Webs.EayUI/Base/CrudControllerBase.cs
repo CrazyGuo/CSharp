@@ -3,6 +3,7 @@ using Study.Domains.Framework.Repositories;
 using Study.BusinessService.Application;
 using Log;
 using System;
+using System.IO;
 
 namespace Study.Webs.EayUI.Base
 {
@@ -114,6 +115,17 @@ namespace Study.Webs.EayUI.Base
             }
             
             return ToDataGridResult(list, list.TotalCount);
+        }
+
+        [HttpGet]
+        public FileResult Download(TQuery query)
+        {
+            LogOuts.Info("Download");
+            var list = Service.FetchAll(query);
+            var stream = Service.ExportExcel(list);
+            stream.Seek(0, SeekOrigin.Begin);
+            string name = DateTime.Now.Millisecond.ToString();
+            return File(stream.ToArray(), "application/vnd.ms-excel",  name+ ".xls"); ;
         }
 
         protected void SetPage(IPager query)

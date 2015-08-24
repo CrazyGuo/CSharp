@@ -70,6 +70,26 @@
             queryParams: getQueryForm$().serializeJson()
         });
     };
+
+    $.easyui.download = function (downloadurl) {
+        var parameter = "?";
+        var array = getQueryForm$().serializeArray();
+        var len = array.length;
+        for (var i = 0; i < len; i++)
+        {
+            if (i == len - 1)
+            {
+                parameter = parameter + array[i].name + "=" + array[i].value;
+            }
+            else
+            {
+                parameter = parameter + array[i].name + "=" + array[i].value + "&";
+            }
+        }
+
+        window.location.href = downloadurl + parameter;
+    };
+
     //显示更新窗口
     $.easyui.showEditDialog = function () {
         $("#" + $.easyui.btnEditId).click();
