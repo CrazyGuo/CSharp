@@ -18,6 +18,7 @@ namespace Study.Webs.EayUI.Controllers
             menus.Add(new MenuItem { id = 3, text = "D3Report", attributes = new Attributes { url = "D3Report/FirstReport" } });
             menus.Add(new MenuItem { id = 4, text = "SportRecord", attributes = new Attributes { url = "systems/SportRecord" } });
             menus.Add(new MenuItem { id = 5, text = "SportKind", attributes = new Attributes { url = "systems/SportKind" } });
+            menus.Add(new MenuItem { id = 5, text = "MySql", attributes = new Attributes { url = "OtherDB/User" } });
 
             return Json(menus,JsonRequestBehavior.AllowGet);
         }

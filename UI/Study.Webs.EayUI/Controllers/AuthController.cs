@@ -44,7 +44,7 @@ namespace Study.Webs.EayUI.Controllers
             var user = appUserService.FetchLogonUser(name, pwd);
             if(user!=null && user.Count>0)
             {
-                FormsAuthentication.SetAuthCookie(name, true);
+                FormsAuthentication.SetAuthCookie(name, false);
                 var json = new { isSuccess = true, url = "../home" };
                 return Json(json);
             }
