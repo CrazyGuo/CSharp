@@ -29,6 +29,7 @@
         @(x.LinkButton(EasyUiEvent.DownloadOperation).Icon(EasyUiEvent.DownloadIcon)
            .Plain().Click(EasyUiEvent.DownloadEvent,urls.DownloadUrl)
          )
+        @Html.Partial("Parts/Upload")
     </div>
 }
 @section content {

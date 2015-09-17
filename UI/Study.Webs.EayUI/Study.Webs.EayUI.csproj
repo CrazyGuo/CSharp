@@ -120,6 +120,10 @@
     <Content Include="Content\Images\account.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\login_bgx.gif" />
+    <Content Include="Content\Images\login_m_bg.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\site_bg.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Css\common.css" />
     <Content Include="Css\D3\dc.css" />
@@ -163,6 +167,7 @@
     <Content Include="Scripts\D3\dc.js" />
     <Content Include="Scripts\EasyUi\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\EasyUi\jquery.easyui.min.js" />
+    <Content Include="Scripts\EasyUi\jquery.form.js" />
     <Content Include="Scripts\EasyUi\jquery.min.js" />
     <Content Include="Scripts\EasyUi\themes\black\accordion.css" />
     <Content Include="Scripts\EasyUi\themes\black\calendar.css" />
@@ -442,6 +447,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\D3Report\Controllers\FirstReportController.cs" />
     <Compile Include="Areas\D3Report\D3ReportAreaRegistration.cs" />
+    <Compile Include="Areas\OtherDB\Controllers\UserController.cs" />
+    <Compile Include="Areas\OtherDB\OtherDBAreaRegistration.cs" />
     <Compile Include="Areas\Systems\Controllers\ApplicationController.cs" />
     <Compile Include="Areas\Systems\Controllers\MoneyKindController.cs" />
     <Compile Include="Areas\Systems\Controllers\MoneyOutController.cs" />
@@ -491,7 +498,6 @@
     <Content Include="Areas\D3Report\Views\_ViewStart.cshtml" />
     <Content Include="Areas\D3Report\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\D3Report\Views\FirstReport\Index1.cshtml" />
-    <Content Include="Scripts\data.tsv" />
     <Content Include="Areas\D3Report\Views\FirstReport\Index2.cshtml" />
     <Content Include="Areas\D3Report\Views\FirstReport\Index.cshtml" />
     <Content Include="Areas\D3Report\Views\FirstReport\Indexdc.cshtml" />
@@ -508,10 +514,13 @@
     <Content Include="Areas\Systems\Views\SportKind\Parts\AddForm.cshtml" />
     <Content Include="Areas\Systems\Views\SportKind\Parts\QueryForm.cshtml" />
     <Content Include="Areas\Systems\Views\SportKind\Parts\UpdateForm.cshtml" />
+    <Content Include="Areas\OtherDB\Views\web.config" />
     <None Include="Properties\PublishProfiles\mywebs.pubxml" />
     <Content Include="Views\AppError\Error.cshtml" />
     <Content Include="Views\AppError\PageNotFound.cshtml" />
+    <Content Include="Views\Auth\LogOn_newstyle.cshtml" />
     <Content Include="Views\Auth\LogOn.cshtml" />
+    <Content Include="Areas\Systems\Views\SportRecord\Parts\Upload.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -522,6 +531,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\D3Report\Models\" />
+    <Folder Include="Areas\OtherDB\Models\" />
+    <Folder Include="Areas\OtherDB\Views\Shared\" />
+    <Folder Include="Areas\OtherDB\Views\User\" />
     <Folder Include="Areas\Systems\Models\" />
     <Folder Include="Areas\Systems\Views\Shared\" />
     <Folder Include="Models\" />

@@ -1,0 +1,15 @@
+﻿@{
+    var x = @Html.EasyUi();
+}
+<div>
+    <form method="post" enctype="multipart/form-data" id="form_upload">
+        @(x.TextBox().AddClass("easyui-filebox").AddAttribute("name", "berkas").AddAttribute("buttonAlign", "left").AddAttribute("buttonText", "文件")
+        )
+    </form>
+    @(x.LinkButton(EasyUiEvent.UploadOperation).Icon(EasyUiEvent.UploadIcon)
+                   .Plain().Click(EasyUiEvent.UploadEvent, "SportRecord/Upload")
+    )
+    <div id="notification-area" class="alert info pull-right notification-area">
+        123
+    </div>
+</div>

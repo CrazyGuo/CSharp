@@ -19,6 +19,11 @@
         return $("#" + $.easyui.formId);
     }
 
+    //获取上传表单jQuery对象
+    function getUpLoadForm$() {
+        return $("#form_upload");
+    }
+
     //获取查询表单jQuery对象
     function getQueryForm$() {
         return $("#" + $.easyui.queryFormId);
@@ -319,9 +324,105 @@
     };
 
     $.easyui.getDefaultParameters = function () {
-        return getQueryForm$().serializeJson();
-        //alert(getQueryForm$().serializeJson().SportFromTime);
+        return getQueryForm$().serializeJson();      
+    };
+
+    function NotificationArea($container) {
+        this.showProgressNotification = function ($progress, $isVisible) {
+            $container.html("<span>Progress : " + $progress + " %</span>");
+
+            /*if ($isVisible == false) {
+                $container.fadeIn();
+            }*/
+        };
+
+        this.showErrorNotification = function () {
+            $container.removeAttr("class");
+            $container.addClass("alert error pull-right");
+            $container.html("<span>Upload error.</span>");
+        };
+
+        this.showSuccessNotification = function () {
+            $container.removeAttr("class");
+            $container.addClass("alert info pull-right");
+            $container.html("<span>Uploaded successfully.</span>");
+        };
+    }
+
+
+    function FileUpload() {
+        this.guid = "";
+        this.onUploadProgress = false;
+        this.notificationObject = null;
+        this.trackUrl = "";
+
+        this.uploadSingleFile = function ($form, $guid, $url, $notificationObject, $trackUrl) {
+            if ($form != null) {
+                this.guid = $guid;
+                this.trackUrl = $trackUrl;
+                var trackTimer = setInterval(function () {
+                    trackUploadProgress($trackUrl, $notificationObject, $guid);
+                }, 1000);
+
+                $form.ajaxSubmit({
+                    url: $url,
+                    data: {
+                        guid: $guid
+                    },
+                    beforeSend: function () {
+                        $notificationObject.showProgressNotification(0, false);
+                    },
+                    success: function (data) {
+                        console.log("sukses");
+
+                        if (data == true) {
+                            clearTimeout(trackTimer);
+                            $notificationObject.showSuccessNotification();
+                        }
+                        else {
+                            $notificationObject.showErrorNotification();
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, error) {
+                        $notificationObject.showErrorNotification();
+                    },
+                    complete: function () {
+                        clearTimeout(trackTimer);
+                    }
+                });
+            }
+        };
+    }
+    var i = 1;
+    function trackUploadProgress($url, $notificationObject, $guid) {
         
+        $.ajax({
+            url: $url,
+            type: "post",
+            data: {
+                guid: $guid
+            },
+            success: function (data) {
+                //console.log(i);
+                //console.log(data);
+                //i++;
+                $notificationObject.showProgressNotification(data, true);
+            }
+        });
+    }
+
+
+    $.easyui.upload = function (uploadurl) {
+        var gid = $.newGuid();
+        var trackUrl = "TrackProgress";
+        var index = uploadurl.lastIndexOf("/");
+        if (index > 0)
+        {
+            trackUrl = uploadurl.substr(0, index + 1) + trackUrl;
+        }
+        var notificationArea = new NotificationArea($("#notification-area"));
+        var fileUpload = new FileUpload();
+        fileUpload.uploadSingleFile(getUpLoadForm$(), gid, uploadurl, notificationArea, trackUrl);
     };
 })(jQuery);
 
