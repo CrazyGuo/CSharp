@@ -2,29 +2,30 @@
 @{
    var x = @Html.EasyUi();
 }
-<div id="divQuery" class="divQueryForm">
-    <form id="formQuery" class="form">
-        <dl>
-            <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.SportName))</dt>
-            <dd>
-                @x.Combox(t => t.SportName).Load("/systems/SportKind/QueryAll", "Id", "Name")
-            </dd>
-        </dl>
-        <dl>
-            <dt>@Html.LabelFor(t => t.SportFromTime)</dt>
-            <dd>
-                @x.TextBox(t => t.SportFromTime).Value("2015-02-01")
-            </dd>
-        </dl>
-        <dl>
-            <dt>@Html.LabelFor(t => t.SportEndTime)</dt>
-            <dd>
-                @x.TextBox(t => t.SportEndTime).Value("2015-02-04")
-            </dd>
-        </dl>
-        <span class="button">
-            @x.LinkButton(EasyUiEvent.QueryOperation).Width(70).Icon(EasyUiEvent.QueryIcon).Click(EasyUiEvent.QueryEvent)
-        </span>
-    </form>
-
+<div  id="divQuery">
+    <div class="easyui-panel divQueryForm" title="Panel Tools" data-options="collapsible:true" style="padding:3px;">
+        <form id="formQuery" class="form">
+            <dl>
+                <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.SportName))</dt>
+                <dd>
+                    @x.Combox(t => t.SportName).Load("/systems/SportKind/QueryAll", "Id", "Name")
+                </dd>
+            </dl>
+            <dl>
+                <dt>@Html.LabelFor(t => t.SportFromTime)</dt>
+                <dd>
+                    @x.TextBox(t => t.SportFromTime).Value("2015-02-01")
+                </dd>
+            </dl>
+            <dl>
+                <dt>@Html.LabelFor(t => t.SportEndTime)</dt>
+                <dd>
+                    @x.TextBox(t => t.SportEndTime).Value("2015-02-04")
+                </dd>
+            </dl>
+            <span class="button">
+                @x.LinkButton(EasyUiEvent.QueryOperation).Width(70).Icon(EasyUiEvent.QueryIcon).Click(EasyUiEvent.QueryEvent)
+            </span>
+        </form>
+    </div>
 </div>

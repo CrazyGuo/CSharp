@@ -29,16 +29,17 @@
         @(x.LinkButton(EasyUiEvent.DownloadOperation).Icon(EasyUiEvent.DownloadIcon)
            .Plain().Click(EasyUiEvent.DownloadEvent,urls.DownloadUrl)
          )
-        @Html.Partial("Parts/Upload")
+        @*@Html.Partial("Parts/Upload")*@
     </div>
 }
 @section content {
+
     @Html.Partial(EasyUiEvent.QueryFormUrl)
     @(x.Grid().GetDefaultValues().Toolbar().Url(urls.QueryUrl)
        .OnDblClickRow().OnRowContextMenu()
        .Columns(
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.Id), InfraUtils.GetDisplayName<SportRecordDto>(i => i.Id), 100),
-                 x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.SportName), InfraUtils.GetDisplayName <SportRecordDto>(i=>i.SportName), 100),
+                 x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.SportName), InfraUtils.GetDisplayName<SportRecordDto>(i => i.SportName), 100),
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.Numbers), InfraUtils.GetDisplayName<SportRecordDto>(i => i.Numbers), 100),
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.ActivityTime), InfraUtils.GetDisplayName<SportRecordDto>(i => i.ActivityTime), 100),
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.Remark), InfraUtils.GetDisplayName<SportRecordDto>(i => i.Remark), 100)
@@ -52,6 +53,6 @@
                   x.MenuItem(EasyUiEvent.MenuItemDelete, EasyUiEvent.DeleteOperation, EasyUiEvent.DeleteIcon).Click(EasyUiEvent.MenuItemDeleteEvent, urls.DeleteUrl),
                   x.MenuItem(EasyUiEvent.MenuItemDetail, EasyUiEvent.DetailOperation, EasyUiEvent.LookIcon).Click(EasyUiEvent.MenuItemLookEvent)
        )
-     )
+    )
 }
 }
