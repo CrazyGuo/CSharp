@@ -88,6 +88,10 @@
       <Project>{f6ed5a34-d46a-43bd-97a1-1a1b6ef2840f}</Project>
       <Name>AopHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Utility\Excel\Excel.csproj">
+      <Project>{12f87848-edde-4fb3-8912-8b1b506255a8}</Project>
+      <Name>Excel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Utility\Log\Log.csproj">
       <Project>{f78b09d9-8620-4938-8d3f-9e23c3b95f76}</Project>
       <Name>Log</Name>

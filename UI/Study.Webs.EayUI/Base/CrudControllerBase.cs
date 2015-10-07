@@ -162,9 +162,10 @@ namespace Study.Webs.EayUI.Base
                 {
                     outputFileStream.Write(buffer, 0, bytesRead);
                     outputFileStream.Flush();
-
-                    HttpContext.Cache[guid + "_current"] = Convert.ToInt32(HttpContext.Cache[guid + "_current"]) + bytesRead;
-                    Thread.Sleep(50);
+                    int current = 0;
+                    int.TryParse(HttpContext.Cache[guid + "_current"].ToString(), out current);
+                    HttpContext.Cache[guid + "_current"] = current + bytesRead;
+                    Thread.Sleep(100);
                 }
 
                 inputFileStream.Close();
@@ -189,9 +190,17 @@ namespace Study.Webs.EayUI.Base
             {
                 int.TryParse(current.ToString(), out paramCurrentFileSize);
             }
+            else
+            {
+                paramCurrentFileSize = 100;
+            }
             if (total != null)
             {
                 int.TryParse(total.ToString(), out paramTotalFileSize);
+            }
+            else
+            {
+                paramTotalFileSize = 100;
             }
             int uploadProgress = paramCurrentFileSize * 100 / paramTotalFileSize;
             return Json(uploadProgress);

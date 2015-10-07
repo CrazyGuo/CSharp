@@ -1,9 +1,9 @@
 ﻿@model SportRecordQuery
 @{
-   var x = @Html.EasyUi();
+    var x = @Html.EasyUi();
 }
-<div  id="divQuery">
-    <div class="easyui-panel divQueryForm" title="Panel Tools" data-options="collapsible:true" style="padding:3px;">
+<div id="divQuery">
+    <div class="easyui-panel divQueryForm" title="筛选条件" data-options="collapsible:true,fit:true" style="padding:3px;">
         <form id="formQuery" class="form">
             <dl>
                 <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.SportName))</dt>

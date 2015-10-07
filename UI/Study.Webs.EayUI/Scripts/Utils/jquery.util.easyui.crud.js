@@ -424,5 +424,15 @@
         var fileUpload = new FileUpload();
         fileUpload.uploadSingleFile(getUpLoadForm$(), gid, uploadurl, notificationArea, trackUrl);
     };
+
+    $.easyui.uploadDialog = function () {
+        $('#upLoadDialog').dialog({
+            title:"上传文件",
+            open: true,
+            closed: false,
+            modal: false,
+            height:150
+        }).dialog('center');
+    };
 })(jQuery);
 

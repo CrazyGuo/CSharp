@@ -55,11 +55,13 @@ namespace Study.EasyUIFramework.EasyuiJsNames
         /// </summary>
         public const string DownloadEvent = "$.easyui.download({0})";
         public const string DownloadIcon = "icon-delete";
+        
         /// <summary>
         /// 上传数据事件
         /// </summary>
         public const string UploadEvent = "$.easyui.upload({0})";
         public const string UploadIcon = "icon-delete";
+        public const string ShowUploadDialogEvent = "$.easyui.uploadDialog()";
 
         public const string OKIcon = "icon-ok";
         public const string CancelIcon = "icon-cancel";
