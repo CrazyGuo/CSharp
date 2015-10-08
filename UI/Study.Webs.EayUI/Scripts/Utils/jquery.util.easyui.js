@@ -98,7 +98,8 @@
                         iframe = allTabs[index].find('iframe');
                         if (iframe.length == 0)
                             continue;
-                        if ($.getUrlPath(iframe[0].src).substring(1) === url)
+                        var sUrl = $.getUrlPath(iframe[0].src).substring(1);
+                        if (decodeURI(sUrl) === decodeURI(url))
                             return true;
                     }
                     return false;
@@ -122,7 +123,7 @@
 
                 //选中选项卡
                 function selectTab() {
-                    tabs.tabs('select', index);
+                    tabs.tabs('select', index);                    
                 }
             },
             refreshTabs: function (tabsId) {

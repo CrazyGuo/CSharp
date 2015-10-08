@@ -7,8 +7,9 @@ namespace Study.Webs.EayUI.Base
     {
         #region 控制器默认的路由页面
 
-        public ActionResult Index()
+        public ActionResult Index(string path = "trd")
         {
+            ViewData["Path"] = path;
             return View();
         }
 

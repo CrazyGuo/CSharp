@@ -18,13 +18,35 @@ $(function () {
         $.easyui.addIframeToTabs("divMainTabs", "我的桌面", "Desktop/Index", "icon-house", false);
     }
 
+    function getNodePath(node, result) {
+        var parent = $('#divMenuTree').tree('getParent', node.target);
+        if (parent != null) {
+            getNodePath(parent, result);
+        }
+        result.push(node.text);
+        return result;
+    }
+
     //绑定左侧树单击事件
     function bindTreeClick() {
         $('#divMenuTree').tree({
             onClick: function (node) {
                 if (!node.attributes)
                     return;
-                $.easyui.addIframeToTabs("divMainTabs", node.text, node.attributes.url, node.attributes.icon, true);
+                var r = getNodePath(node, []);
+                var path = "";
+                for (var i = 0; i < r.length; i++) {
+                    if (i != r.length - 1)
+                    {
+                        path = path + r[i] + ",";
+                    }
+                    else
+                    {
+                        path = path + r[i];
+                    }
+                }
+                var url = node.attributes.url + "?path=" + path;
+                $.easyui.addIframeToTabs("divMainTabs", node.text, url, node.attributes.icon, true);
                 bindTabsEvent();
             }
         });
