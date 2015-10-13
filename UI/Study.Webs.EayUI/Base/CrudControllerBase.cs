@@ -175,7 +175,7 @@ namespace Study.Webs.EayUI.Base
             outputFileStream.Close();
             outputFileStream.Dispose();
             result = true;
-
+            
             return Json(result);
         }
 
@@ -183,9 +183,11 @@ namespace Study.Webs.EayUI.Base
         public ActionResult TrackProgress(string guid)
         {
             var current = HttpContext.Cache[guid + "_current"];
+            
             var total = HttpContext.Cache[guid + "_total"];
             int paramCurrentFileSize = 0;
             int paramTotalFileSize = 1;
+            
             if (current != null)
             {
                 int.TryParse(current.ToString(), out paramCurrentFileSize);

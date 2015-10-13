@@ -362,7 +362,7 @@
                 this.trackUrl = $trackUrl;
                 var trackTimer = setInterval(function () {
                     trackUploadProgress($trackUrl, $notificationObject, $guid);
-                }, 1000);
+                }, 3000);
 
                 $form.ajaxSubmit({
                     url: $url,
@@ -391,14 +391,16 @@
                     }
                 });
             }
-        };
+        };     
     }
-    var i = 1;
+    
     function trackUploadProgress($url, $notificationObject, $guid) {
         
         $.ajax({
             url: $url,
             type: "post",
+            async: true,
+            cache: false,
             data: {
                 guid: $guid
             },

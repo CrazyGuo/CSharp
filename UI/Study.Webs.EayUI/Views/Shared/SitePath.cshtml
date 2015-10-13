@@ -1,6 +1,20 @@
-﻿<div class="sitepath">
-    <span class="title">当前位置：</span>
-    <span><a href="#">首页</a> ></span>
-    <span><a href="#">系统管理</a> ></span>
-    <span><a href="#">权限管理</a></span>
+﻿@{
+    string path = ViewData["Path"].ToString();
+    string[] content = path.Split(',');
+<div id ="nodePath" class="sitepath">
+    <span class="title">当前位置：</span>  
+    @{
+        for (int i = 0; i < content.Length; i++)
+        {
+            if (i != content.Length - 1)
+            {
+                <span><a href="#">@content[i]</a> ></span>
+            }
+            else
+            {
+                <span><a href="#">@content[i]</a></span>
+            }
+        }
+    }
 </div>
+}

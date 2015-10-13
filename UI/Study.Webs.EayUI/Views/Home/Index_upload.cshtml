@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "管理系统";
+}
+@section head
+{
+    <script type="text/javascript" src="~/Scripts/EasyUi/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/EasyUi/jquery.form.js"></script>
+    <script type="text/javascript" src="~/Scripts/EasyUi/single-file-upload.js"></script>
+}
+<div class="title">
+    Single File Upload
+</div>
+<div class="content">
+    <form method="post" enctype="multipart/form-data" id="form_upload" name="form_upload" style="display: none;">
+        <input type="file" name="berkas" id="berkas" />
+    </form>
+    <div class="control-group">
+        <div class="input-prepend">
+            <button class="btn" id="buttonSelectFile"><i class="icon icon-folder-open"></i></button>
+            <input type="text" name="berkas_name" id="berkas_name" class="span3 uneditable-input" placeholder="Select File to Upload" />
+        </div>
+        <button class="btn btn-primary" id="buttonUploadFile"><i class="icon icon-upload"></i>&nbsp;Upload File</button>
+        <div id="notification-area" class="alert info pull-right notification-area">
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#buttonSelectFile").on("click", function (event) {
+            $("#berkas").trigger("click");
+        });
+
+        $("#berkas").on("change", function (event) {
+            $("#berkas_name").val($("#berkas").val());
+        });
+
+        $("#buttonUploadFile").on("click", function (event) {
+            var notificationArea = new NotificationArea($("#notification-area"));
+
+            var fileUpload = new FileUpload();
+            fileUpload.uploadSingleFile($("#form_upload"), "87shd-09ld2-9sdkl-09dlp-02kdm", "@Url.Content("~/Home/DoUploadSingleFile")", notificationArea, "@Url.Content("~/Home/TrackProgress")");
+        });
+    });
+</script>

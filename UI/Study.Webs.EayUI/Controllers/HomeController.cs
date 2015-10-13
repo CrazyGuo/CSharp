@@ -1,13 +1,15 @@
 ﻿using Study.Webs.EayUI.Base;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
 namespace Study.Webs.EayUI.Controllers
 {
-    [CustomAuthorize(Roles="Test")]
+    //[CustomAuthorize(Roles = "Test")]
     public class HomeController : ManageControllerBase
     {
         public ActionResult GetTree()
@@ -43,4 +45,6 @@ namespace Study.Webs.EayUI.Controllers
     {
         public string url { get; set; }
     }
+
+
 }
