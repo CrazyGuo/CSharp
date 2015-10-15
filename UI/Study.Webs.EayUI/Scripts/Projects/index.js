@@ -48,7 +48,8 @@ $(function () {
                 var url = node.attributes.url + "?path=" + path;
                 $.easyui.addIframeToTabs("divMainTabs", node.text, url, node.attributes.icon, true);
                 bindTabsEvent();
-            }
+            },
+            url: 'Home/GetTree'
         });
     }
 
