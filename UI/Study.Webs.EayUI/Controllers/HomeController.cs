@@ -9,7 +9,6 @@ using System.Web.Mvc;
 
 namespace Study.Webs.EayUI.Controllers
 {
-    //[CustomAuthorize(Roles = "Test")]
     public class HomeController : ManageControllerBase
     {
         public ActionResult GetTree()
