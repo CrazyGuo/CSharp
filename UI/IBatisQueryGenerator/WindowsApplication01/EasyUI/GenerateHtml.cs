@@ -9,6 +9,8 @@ namespace IBatisQueryGenerator.EasyUI
     {
         public string Name = string.Empty;
         public string Url = string.Empty;
+        //这个url比较特别，因为iframe链接默认带有area部分？
+        public string QueryAndDownloadUrl = string.Empty;
         private string newLine = "\r\n";
         private string prefix = "   ";
         public string Index()
@@ -22,7 +24,7 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(newLine);
             builder.Append("CrudURL urls = new CrudURL();");
             builder.Append(newLine);
-            builder.Append("urls.AddUrl = \""+ Url+ "/add\";");
+            builder.Append("urls.AddUrl = \"" + Url + "/add\";");
             builder.Append(newLine);
             builder.Append("urls.EditUrl = \"" + Url + "/Edit\";");
             builder.Append(newLine);
@@ -30,21 +32,10 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(newLine);
             builder.Append("urls.LookUrl = \"" + Url + "/look\";");
             builder.Append(newLine);
-            builder.Append("urls.QueryUrl = \"" + Url + "/Query\";");
-            //builder.Append("@section head {");
-            //builder.Append(newLine);
-            //builder.Append(prefix + "<script type=\"text/javascript\">");
-            //builder.Append(newLine);
-            //builder.Append(prefix + prefix + "$(function () {");
-            //builder.Append(newLine);
-            //builder.Append(prefix + prefix + prefix + "$.easyui.deleteUrl = \""+Url+"/delete\";");
-            //builder.Append(newLine);
-            //builder.Append(prefix + prefix + "});");
-            //builder.Append(newLine);
-            //builder.Append(prefix + "</script>");
-            //builder.Append(newLine);
-            //builder.Append("}");
-            //builder.Append(newLine);
+            builder.Append("urls.QueryUrl = \"" + QueryAndDownloadUrl + "/Query\";");
+            builder.Append(newLine);
+            //下载url
+            builder.Append("urls.DownloadUrl = \"" + QueryAndDownloadUrl + "/Download\";");
             builder.Append(newLine);
             builder.Append("@section top {");
             builder.Append(newLine);
@@ -59,6 +50,15 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(prefix + prefix + "@(x.DialogButton(EasyUiEvent.DetailOperation, urls.LookUrl).Id(EasyUiEvent.ButtonDetail).OnInit(EasyUiEvent.LookDialogEvent).Icon(EasyUiEvent.LookIcon).Plain().DialogSize(500, 240))");
             builder.Append(newLine);
             builder.Append(prefix + prefix + "@(x.LinkButton(EasyUiEvent.RefreshOperation).Icon(EasyUiEvent.RefreshIcon).Plain().Click(EasyUiEvent.RefreshEvent))");
+            builder.Append(newLine);
+            //下载按钮
+            builder.Append(prefix + prefix + "@(x.LinkButton(EasyUiEvent.DownloadOperation).Icon(EasyUiEvent.DownloadIcon).Plain().Click(EasyUiEvent.DownloadEvent, urls.DownloadUrl))");
+            builder.Append(newLine);
+            //上传按钮
+            builder.Append(prefix + prefix + "@(x.LinkButton(EasyUiEvent.UploadOperation).Icon(EasyUiEvent.UploadIcon).Plain().Click(EasyUiEvent.ShowUploadDialogEvent))");
+            builder.Append(newLine);
+            //上传对话框
+            builder.Append(prefix + prefix + "@Html.Partial(\"Parts/Upload\")");
             builder.Append(newLine);
             builder.Append(prefix + "</div>");
             builder.Append(newLine);
@@ -108,9 +108,12 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(newLine);
             builder.Append("}");
             builder.Append(newLine);
-            builder.Append("<div id=\"divQuery\" class=\"divQueryForm\">");
+            builder.Append("<div id=\"divQuery\">");
             builder.Append(newLine);
-            builder.Append(prefix + "<form id=\"formQuery\" class=\"form\" >");//action=\"" + Url + "/Query\"
+            //添加折叠panel
+            builder.Append("<div class=\"easyui-panel divQueryForm\" title=\"筛选条件\" data-options=\"collapsible:true,fit:true\" style=\"padding:3px;\">");
+            builder.Append(newLine);
+            builder.Append(prefix + "<form id=\"formQuery\" class=\"form\" >");
             builder.Append(newLine);
             builder.Append(prefix + prefix + "<dl>");
             builder.Append(newLine);
@@ -131,6 +134,8 @@ namespace IBatisQueryGenerator.EasyUI
             builder.Append(prefix + prefix + "</span>");
             builder.Append(newLine);
             builder.Append(prefix + "</form>");
+            builder.Append(newLine);
+            builder.Append("</div>");
             builder.Append(newLine);
             builder.Append("</div>");
             return builder.ToString();

@@ -196,9 +196,9 @@ namespace IBatisQueryGenerator
             if (AreaName.Contains("/"))
             {
                var content = AreaName.Split('/');
-                if(content.Length == 3)
+                if(content.Length == 2)
                 {
-                    AreaName = content[1];
+                    AreaName = content[0];
                 }
                 else
                 {
@@ -242,7 +242,18 @@ namespace IBatisQueryGenerator
             GenerateHtml html = new GenerateHtml();
             string name = cboTable.SelectedItem.ToString();
             html.Name = name;
-            html.Url = txtUrl.Text.Trim();
+            //此处的url截取最后一个/后面的字符串,因为mvc路由设置了Area
+            int lastIndex = txtUrl.Text.LastIndexOf('/');
+            if(lastIndex>0)
+            {
+                html.Url = txtUrl.Text.Trim();
+                html.QueryAndDownloadUrl = txtUrl.Text.Substring(lastIndex + 1);
+            }
+            else
+            {
+                html.Url = txtUrl.Text.Trim();
+            }
+            
             rtbIndex.Text = html.Index();
             rtbQueryForm.Text = html.QueryForm();
             txtAddForm.Text = html.AddForm();

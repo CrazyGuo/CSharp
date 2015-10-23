@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTable = new System.Windows.Forms.DataGridView();
             this.col_eng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_kor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,8 +126,8 @@
             // col_eng
             // 
             this.col_eng.DataPropertyName = "col_eng";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_eng.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_eng.DefaultCellStyle = dataGridViewCellStyle3;
             this.col_eng.HeaderText = "字段";
             this.col_eng.Name = "col_eng";
             this.col_eng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -636,7 +636,7 @@
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(207, 20);
             this.txtUrl.TabIndex = 32;
-            this.txtUrl.Text = "/ControllerParentFolder/ControllerName";
+            this.txtUrl.Text = "AreaName/ControllerName";
             // 
             // label10
             // 
