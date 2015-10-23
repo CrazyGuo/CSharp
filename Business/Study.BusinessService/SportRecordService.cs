@@ -24,7 +24,7 @@ namespace Study.BusinessService
                GetMapper<SportRecordDto, SportRecord>(new DefaultMapConfig().ConvertUsing<SportRecordDto, SportRecord>(value => new SportRecord(value.Id)
                {
                    Id = value.Id,
-                   ActivityKind = 6,//value.ActivityKind,
+                   ActivityKind =Convert.ToInt16( dto.SportName),
                    ActivityTime = value.ActivityTime,
                    Numbers = value.Numbers,
                    Remark = value.Remark,

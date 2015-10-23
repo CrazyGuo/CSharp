@@ -175,6 +175,9 @@
       FROM  Study.dbo.SportRecord  T  Left join SportKind S
       ON T.ActivityKind = S.Id
       <dynamic prepend="where">
+        <isNotNull prepend="and" property="SportName">
+          S.Id  = #SportName#
+        </isNotNull>
         <isNotNull prepend="and" property="SportFromTime">
           T.ActivityTime  >= #SportFromTime#
         </isNotNull>

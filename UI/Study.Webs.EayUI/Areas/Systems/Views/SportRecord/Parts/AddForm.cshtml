@@ -7,7 +7,7 @@
         <dl>
             <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.SportName))</dt>
             <dd>
-                @x.TextBox(t => t.SportName)
+                @x.Combox(t => t.SportName).Load("/systems/SportKind/QueryAll", "Id", "Name")
             </dd>
         </dl>
         <dl>
