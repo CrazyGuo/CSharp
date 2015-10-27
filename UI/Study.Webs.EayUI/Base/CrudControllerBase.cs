@@ -54,6 +54,10 @@ namespace Study.Webs.EayUI.Base
         public virtual ActionResult Save(TDto dto)
         {
             LogOuts.Info("Save");
+            if(!ModelState.IsValid)
+            {
+                return View(dto);
+            }
             Service.Add(dto);
             return Ok("SaveSuccess");
         }

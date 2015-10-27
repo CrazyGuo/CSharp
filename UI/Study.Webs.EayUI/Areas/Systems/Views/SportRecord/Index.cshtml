@@ -46,7 +46,7 @@
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.Id), InfraUtils.GetDisplayName<SportRecordDto>(i => i.Id), 100),
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.SportName), InfraUtils.GetDisplayName<SportRecordDto>(i => i.SportName), 100),
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.Numbers), InfraUtils.GetDisplayName<SportRecordDto>(i => i.Numbers), 100),
-                 x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.ActivityTime), InfraUtils.GetDisplayName<SportRecordDto>(i => i.ActivityTime), 100),
+                 x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.ActivityTime), InfraUtils.GetDisplayName<SportRecordDto>(i => i.ActivityTime), 100).FormatDate(),
                  x.GridColumn(InfraUtils.GetPropertyName<SportRecordDto>(i => i.Remark), InfraUtils.GetDisplayName<SportRecordDto>(i => i.Remark), 100)
                )
         )

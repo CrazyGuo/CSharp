@@ -26,6 +26,7 @@
             <dt>@(InfraUtils.GetDisplayName<SportRecordDto>(i => i.Remark))</dt>
             <dd>
                 @x.TextBox(t => t.Remark)
+                @Html.ValidationMessageFor(t=>t.Remark)
             </dd>
         </dl>
     </form>
